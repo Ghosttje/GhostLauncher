@@ -80,3 +80,6 @@ D:\TeamFoundation\Ghosttje\GhostLauncher\Development\GhostLauncher\GhostLauncher
 D:\TeamFoundation\Ghosttje\GhostLauncher\Development\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.pdb
 D:\TeamFoundation\Ghosttje\GhostLauncher\Development\GhostLauncher\GhostLauncher.Client\bin\Debug\GhostLauncher.Core.dll
 D:\TeamFoundation\Ghosttje\GhostLauncher\Development\GhostLauncher\GhostLauncher.Client\bin\Debug\GhostLauncher.Core.pdb
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\GhostLauncher.Client.exe.config
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.exe
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.pdb
