@@ -1,0 +1,38 @@
+﻿<Window x:Class="GhostLauncher.Client.Views.VersionSelectorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Select Version" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../ResourceDictionaries/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <StackPanel Margin="5,10,5,5">
+        <Grid>
+            <ListView ItemsSource="{Binding InstanceCollection}" SelectedItem="{Binding SelectedInstance}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="200" DisplayMemberBinding="{Binding Version}">
+                            <GridViewColumn.Header>
+                                <GridViewColumnHeader Tag="Version">Version</GridViewColumnHeader>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                        <GridViewColumn Width="70" DisplayMemberBinding="{Binding IsSnapshot}">
+                            <GridViewColumn.Header>
+                                <GridViewColumnHeader Tag="IsSnapshot">IsSnapshot</GridViewColumnHeader>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Width="75" Content="Cancel" Margin="5" Command="ApplicationCommands.Close" />
+            <Button Width="75" Content="OK" Margin="5" Command="{Binding SelectCommand}" />
+        </StackPanel>
+    </StackPanel>
+</Window>

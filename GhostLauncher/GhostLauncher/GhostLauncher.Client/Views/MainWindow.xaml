@@ -1,0 +1,42 @@
+﻿<Window x:Class="GhostLauncher.Client.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GhostLauncher" Height="700" Width="800" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="Manual">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../ResourceDictionaries/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <DockPanel>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button Command="{Binding AddInstanceCommand}">
+                    <Image Style="{StaticResource NewInstance}" />
+                </Button>
+                <Button>
+                    <Image Style="{StaticResource Settings}" />
+                </Button>
+                <Button>
+                    <Image Style="{StaticResource About}" />
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+        <ListView DockPanel.Dock="Left" ItemsSource="{Binding InstanceCollection}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <Image Style="{Binding Icon}" />
+                        <Label HorizontalAlignment="Center" Content="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel DockPanel.Dock="Right">
+
+        </StackPanel>
+    </DockPanel>
+</Window>

@@ -1,0 +1,151 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostLauncher.Client", "GhostLauncher.Client\GhostLauncher.Client.csproj", "{8EA599FD-31E2-454B-9ACD-373017191B53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostLauncher.MasterServer", "GhostLauncher.MasterServer\GhostLauncher.MasterServer.csproj", "{79BDA931-8EDD-4A50-9591-D35BA3872637}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{6B091E3D-6438-48B7-BC1E-41BFEEC515D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MasterServer", "MasterServer", "{D6B156FA-6CE4-40BA-9B01-D006AF852DE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{836683D5-B4F7-44AA-AB70-890B8A2E434B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Pattern", "Repository.Pattern\Repository.Pattern.csproj", "{6E682A14-C872-4813-B620-76E108DEA683}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Pattern.Ef6", "Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj", "{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{EB57DE52-518C-4C81-89E6-CB456E467007}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostLauncher.MasterServer.Database", "GhostLauncher.MasterServer.Database\GhostLauncher.MasterServer.Database.csproj", "{A76E79A2-4D0D-4DFF-9571-11F8BEEB1DE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{DE8442FA-3792-46C6-9F5E-3AC082ADD367}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "IntegrationTests", "{5D3B8C82-9CB4-426B-A7FF-685F577E4216}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostLauncher.Client.Database", "GhostLauncher.Client.Database\GhostLauncher.Client.Database.csproj", "{02A7943D-8910-446F-8087-360571C539EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostLauncher.Entities", "GhostLauncher.Entities\GhostLauncher.Entities.csproj", "{D5F35E9F-9000-4272-AE5B-F48F038A71C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{35C225A4-2F8F-4694-81BE-98E363B7EEA6}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostLauncher.Core", "GhostLauncher.Core\GhostLauncher.Core.csproj", "{DBA9608B-F53B-45ED-98D0-51DDC81F18AB}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://ghosttje.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Repository.Pattern\\Repository.Pattern.csproj
+		SccProjectTopLevelParentUniqueName1 = GhostLauncher.sln
+		SccProjectName1 = Repository.Pattern
+		SccLocalPath1 = Repository.Pattern
+		SccProjectUniqueName2 = Repository.Pattern.Ef6\\Repository.Pattern.Ef6.csproj
+		SccProjectTopLevelParentUniqueName2 = GhostLauncher.sln
+		SccProjectName2 = Repository.Pattern.Ef6
+		SccLocalPath2 = Repository.Pattern.Ef6
+		SccProjectUniqueName3 = GhostLauncher.Client.Database\\GhostLauncher.Client.Database.csproj
+		SccProjectTopLevelParentUniqueName3 = GhostLauncher.sln
+		SccProjectName3 = GhostLauncher.Client.Database
+		SccLocalPath3 = GhostLauncher.Client.Database
+		SccProjectUniqueName4 = GhostLauncher.Client\\GhostLauncher.Client.csproj
+		SccProjectTopLevelParentUniqueName4 = GhostLauncher.sln
+		SccProjectName4 = GhostLauncher.Client
+		SccLocalPath4 = GhostLauncher.Client
+		SccProjectUniqueName5 = GhostLauncher.Entities\\GhostLauncher.Entities.csproj
+		SccProjectTopLevelParentUniqueName5 = GhostLauncher.sln
+		SccProjectName5 = GhostLauncher.Entities
+		SccLocalPath5 = GhostLauncher.Entities
+		SccProjectUniqueName6 = GhostLauncher.MasterServer.Database\\GhostLauncher.MasterServer.Database.csproj
+		SccProjectTopLevelParentUniqueName6 = GhostLauncher.sln
+		SccProjectName6 = GhostLauncher.MasterServer.Database
+		SccLocalPath6 = GhostLauncher.MasterServer.Database
+		SccProjectUniqueName7 = GhostLauncher.MasterServer\\GhostLauncher.MasterServer.csproj
+		SccProjectTopLevelParentUniqueName7 = GhostLauncher.sln
+		SccProjectName7 = GhostLauncher.MasterServer
+		SccLocalPath7 = GhostLauncher.MasterServer
+		SccProjectUniqueName8 = GhostLauncher.Core\\GhostLauncher.Core.csproj
+		SccProjectTopLevelParentUniqueName8 = GhostLauncher.sln
+		SccProjectName8 = GhostLauncher.Core
+		SccLocalPath8 = GhostLauncher.Core
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EA599FD-31E2-454B-9ACD-373017191B53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EA599FD-31E2-454B-9ACD-373017191B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EA599FD-31E2-454B-9ACD-373017191B53}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8EA599FD-31E2-454B-9ACD-373017191B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EA599FD-31E2-454B-9ACD-373017191B53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EA599FD-31E2-454B-9ACD-373017191B53}.Release|x86.ActiveCfg = Release|Any CPU
+		{79BDA931-8EDD-4A50-9591-D35BA3872637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79BDA931-8EDD-4A50-9591-D35BA3872637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79BDA931-8EDD-4A50-9591-D35BA3872637}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{79BDA931-8EDD-4A50-9591-D35BA3872637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79BDA931-8EDD-4A50-9591-D35BA3872637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79BDA931-8EDD-4A50-9591-D35BA3872637}.Release|x86.ActiveCfg = Release|Any CPU
+		{6E682A14-C872-4813-B620-76E108DEA683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E682A14-C872-4813-B620-76E108DEA683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E682A14-C872-4813-B620-76E108DEA683}.Debug|x86.ActiveCfg = Debug|x86
+		{6E682A14-C872-4813-B620-76E108DEA683}.Debug|x86.Build.0 = Debug|x86
+		{6E682A14-C872-4813-B620-76E108DEA683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E682A14-C872-4813-B620-76E108DEA683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E682A14-C872-4813-B620-76E108DEA683}.Release|x86.ActiveCfg = Release|x86
+		{6E682A14-C872-4813-B620-76E108DEA683}.Release|x86.Build.0 = Release|x86
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}.Release|x86.ActiveCfg = Release|Any CPU
+		{A76E79A2-4D0D-4DFF-9571-11F8BEEB1DE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A76E79A2-4D0D-4DFF-9571-11F8BEEB1DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A76E79A2-4D0D-4DFF-9571-11F8BEEB1DE6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A76E79A2-4D0D-4DFF-9571-11F8BEEB1DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A76E79A2-4D0D-4DFF-9571-11F8BEEB1DE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A76E79A2-4D0D-4DFF-9571-11F8BEEB1DE6}.Release|x86.ActiveCfg = Release|Any CPU
+		{02A7943D-8910-446F-8087-360571C539EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02A7943D-8910-446F-8087-360571C539EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02A7943D-8910-446F-8087-360571C539EC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{02A7943D-8910-446F-8087-360571C539EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02A7943D-8910-446F-8087-360571C539EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02A7943D-8910-446F-8087-360571C539EC}.Release|x86.ActiveCfg = Release|Any CPU
+		{D5F35E9F-9000-4272-AE5B-F48F038A71C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F35E9F-9000-4272-AE5B-F48F038A71C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5F35E9F-9000-4272-AE5B-F48F038A71C6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D5F35E9F-9000-4272-AE5B-F48F038A71C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5F35E9F-9000-4272-AE5B-F48F038A71C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5F35E9F-9000-4272-AE5B-F48F038A71C6}.Release|x86.ActiveCfg = Release|Any CPU
+		{DBA9608B-F53B-45ED-98D0-51DDC81F18AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBA9608B-F53B-45ED-98D0-51DDC81F18AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBA9608B-F53B-45ED-98D0-51DDC81F18AB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DBA9608B-F53B-45ED-98D0-51DDC81F18AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBA9608B-F53B-45ED-98D0-51DDC81F18AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBA9608B-F53B-45ED-98D0-51DDC81F18AB}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8EA599FD-31E2-454B-9ACD-373017191B53} = {6B091E3D-6438-48B7-BC1E-41BFEEC515D2}
+		{79BDA931-8EDD-4A50-9591-D35BA3872637} = {D6B156FA-6CE4-40BA-9B01-D006AF852DE6}
+		{6E682A14-C872-4813-B620-76E108DEA683} = {EB57DE52-518C-4C81-89E6-CB456E467007}
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C} = {EB57DE52-518C-4C81-89E6-CB456E467007}
+		{A76E79A2-4D0D-4DFF-9571-11F8BEEB1DE6} = {D6B156FA-6CE4-40BA-9B01-D006AF852DE6}
+		{02A7943D-8910-446F-8087-360571C539EC} = {6B091E3D-6438-48B7-BC1E-41BFEEC515D2}
+		{D5F35E9F-9000-4272-AE5B-F48F038A71C6} = {EB57DE52-518C-4C81-89E6-CB456E467007}
+		{DBA9608B-F53B-45ED-98D0-51DDC81F18AB} = {EB57DE52-518C-4C81-89E6-CB456E467007}
+	EndGlobalSection
+EndGlobal
