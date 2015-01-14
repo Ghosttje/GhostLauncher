@@ -4,25 +4,19 @@ using GhostLauncher.Entities.Enums;
 
 namespace GhostLauncher.Entities
 {
-    [DataContract]
+    [DataContract(Namespace = "")]
     public class MinecraftVersion : GhostLauncherEntity
     {
         private const string BaseUrl = "https://s3.amazonaws.com/Minecraft.Download/versions/";
 
-        [DataMember(Name = "version")]
         private string _version;
-
-        [DataMember(Name = "url")]
         private string _url;
-
-        [DataMember(Name = "instanceType")]
         private InstanceTypes _instanceType = InstanceTypes.Client;
-
-        [DataMember(Name = "releaseType")]
         private ReleaseTypes _releaseType = ReleaseTypes.Release;
 
         #region Setters / Getters
 
+        [DataMember]
         public string Version
         {
             get
@@ -36,6 +30,7 @@ namespace GhostLauncher.Entities
             }
         }
 
+        [DataMember]
         public string Url
         {
             get
@@ -49,6 +44,7 @@ namespace GhostLauncher.Entities
             }
         }
 
+        [DataMember]
         public InstanceTypes InstanceType
         {
             get
@@ -62,6 +58,7 @@ namespace GhostLauncher.Entities
             }
         }
 
+        [DataMember]
         public ReleaseTypes ReleaseType
         {
             get

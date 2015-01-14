@@ -12,10 +12,10 @@ namespace GhostLauncher.Entities.JsonResponse
             Status = status;
         }
 
-        [DataMember(Name = "statusCode")]
+        [DataMember]
         public HttpStatusCode Status { get; set; }
 
-        [DataMember(Name = "result")]
+        [DataMember]
         public T Result { get; set; }
     }
 }
