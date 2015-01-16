@@ -8,9 +8,16 @@ using Repository.Pattern.Ef6;
 
 namespace GhostLauncher.MasterServer.Controllers
 {
+    /// <summary>
+    /// The MinecraftVersionController Class
+    /// </summary>
     public class MinecraftVersionController : ApiController
     {
         private readonly UnitOfWork _unitOfWork;
+
+        /// <summary>
+        /// Constructor of MinecraftVersionController
+        /// </summary>
         public MinecraftVersionController()
         {
             _unitOfWork = new MasterUnitOfWork(new MasterContext());
@@ -21,9 +28,27 @@ namespace GhostLauncher.MasterServer.Controllers
         /// </summary>
         /// <param name="type">The type of instance (Server, Client, ...)</param>
         /// <returns>Minecraft versions data</returns>
-        public IEnumerable<MinecraftVersion> GetAll(InstanceTypes type = InstanceTypes.Client & InstanceTypes.Server)
+        public IEnumerable<MinecraftVersion> Get()
         {
-            return _unitOfWork.Repository<MinecraftVersion>().Queryable().Where(x => x.InstanceType == type).ToList();
+            return _unitOfWork.Repository<MinecraftVersion>().Queryable().ToList();
+        }
+
+        /// <summary>
+        /// Get all the different minecraft client versions
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<MinecraftVersion> GetClients()
+        {
+            return _unitOfWork.Repository<MinecraftVersion>().Queryable().Where(x => x.InstanceType == InstanceTypes.Client).ToList();
+        }
+
+        /// <summary>
+        /// Get all the different minecraft server versions
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<MinecraftVersion> GetServers()
+        {
+            return _unitOfWork.Repository<MinecraftVersion>().Queryable().Where(x => x.InstanceType == InstanceTypes.Client).ToList();
         }
 
         /// <summary>
