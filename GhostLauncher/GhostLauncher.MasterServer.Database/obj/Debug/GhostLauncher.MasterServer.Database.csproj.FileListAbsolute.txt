@@ -64,7 +64,5 @@ D:\git\ghostlauncher\GhostLauncher\GhostLauncher.MasterServer.Database\bin\Debug
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.MasterServer.Database\bin\Debug\Microsoft.Data.OData.xml
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.MasterServer.Database\bin\Debug\System.Spatial.xml
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.MasterServer.Database\obj\Debug\GhostLauncher.MasterServer.Database.csprojResolveAssemblyReference.cache
-D:\git\ghostlauncher\GhostLauncher\GhostLauncher.MasterServer.Database\obj\Debug\GhostLauncher.MasterServer.Database.Migrations.MasterDB.resources
-D:\git\ghostlauncher\GhostLauncher\GhostLauncher.MasterServer.Database\obj\Debug\GhostLauncher.MasterServer.Database.csproj.GenerateResource.Cache
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.MasterServer.Database\obj\Debug\GhostLauncher.MasterServer.Database.dll
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.MasterServer.Database\obj\Debug\GhostLauncher.MasterServer.Database.pdb
