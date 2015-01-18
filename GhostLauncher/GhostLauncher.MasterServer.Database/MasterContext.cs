@@ -9,7 +9,7 @@ namespace GhostLauncher.MasterServer.Database
     {
         static MasterContext()
         {
-            System.Data.Entity.Database.SetInitializer(new MigrateDatabaseToLatestVersion<MasterContext, Configuration>());
+            
         }
 
         public MasterContext()

@@ -5,7 +5,7 @@ using GhostLauncher.Entities.Enums;
 
 namespace GhostLauncher.MasterServer.Database.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<MasterContext>
+    public class Configuration : DbMigrationsConfiguration<MasterContext>
     {
         public Configuration()
         {

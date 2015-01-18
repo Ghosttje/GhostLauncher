@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Data.Entity;
+using GhostLauncher.MasterServer;
+using GhostLauncher.MasterServer.Database;
+using GhostLauncher.MasterServer.Database.Migrations;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(GhostLauncher.MasterServer.Startup))]
+[assembly: OwinStartup(typeof(Startup))]
 
 namespace GhostLauncher.MasterServer
 {
@@ -12,6 +13,9 @@ namespace GhostLauncher.MasterServer
     {
         public void Configuration(IAppBuilder app)
         {
+            System.Data.Entity.Database.SetInitializer(
+                new MigrateDatabaseToLatestVersion<MasterContext, Configuration>());
+
             ConfigureAuth(app);
         }
     }
