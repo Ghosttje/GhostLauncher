@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views;
+using GhostLauncher.Client.Views.Windows;
 using GhostLauncher.Entities;
 
 namespace GhostLauncher.Client.ViewModels
@@ -26,10 +27,6 @@ namespace GhostLauncher.Client.ViewModels
                 _command = new RelayCommand(CreateInstance);
                 return _command;
             }
-            set
-            {
-                _command = value;
-            }
         }
 
         public RelayCommand SelectPathCommand
@@ -39,10 +36,6 @@ namespace GhostLauncher.Client.ViewModels
                 _command = new RelayCommand(SelectPath);
                 return _command;
             }
-            set
-            {
-                _command = value;
-            }
         }
 
         public RelayCommand SelectVersionCommand
@@ -51,10 +44,6 @@ namespace GhostLauncher.Client.ViewModels
             {
                 _command = new RelayCommand(SelectVersion);
                 return _command;
-            }
-            set
-            {
-                _command = value;
             }
         }
 

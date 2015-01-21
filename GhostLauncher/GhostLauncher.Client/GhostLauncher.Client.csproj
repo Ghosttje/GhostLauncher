@@ -94,21 +94,29 @@
       <DependentUpon>ProgramResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\JsonService.cs" />
+    <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\AddInstanceViewModel.cs" />
     <Compile Include="ViewModels\Commands\RelayCommand.cs" />
     <Compile Include="ViewModels\CreateInstanceViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\VersionSelectorViewModel.cs" />
-    <Compile Include="Views\AddInstanceWindow.xaml.cs">
+    <Compile Include="Views\Windows\AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\AddInstanceWindow.xaml.cs">
       <DependentUpon>AddInstanceWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CreateInstanceWindow.xaml.cs">
+    <Compile Include="Views\Windows\CreateInstanceWindow.xaml.cs">
       <DependentUpon>CreateInstanceWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainWindow.xaml.cs">
+    <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\VersionSelectorWindow.xaml.cs">
+    <Compile Include="Views\Windows\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\VersionSelectorWindow.xaml.cs">
       <DependentUpon>VersionSelectorWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -139,6 +147,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ProgramResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Config\versions.json" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -153,19 +162,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AddInstanceWindow.xaml">
+    <Page Include="Views\Windows\AboutWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CreateInstanceWindow.xaml">
+    <Page Include="Views\Windows\AddInstanceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainWindow.xaml">
+    <Page Include="Views\Windows\CreateInstanceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\VersionSelectorWindow.xaml">
+    <Page Include="Views\Windows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\VersionSelectorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,6 +247,9 @@
       <Project>{6E682A14-C872-4813-B620-76E108DEA683}</Project>
       <Name>Repository.Pattern</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Pages\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

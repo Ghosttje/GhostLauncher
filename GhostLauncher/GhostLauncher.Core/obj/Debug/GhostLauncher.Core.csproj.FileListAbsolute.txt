@@ -40,5 +40,3 @@ D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\System.Spatial.x
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.csprojResolveAssemblyReference.cache
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.dll
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.pdb
-D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\GhostLauncher.Entities.dll
-D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\GhostLauncher.Entities.pdb

@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views;
+using GhostLauncher.Client.Views.Windows;
 
 namespace GhostLauncher.Client.ViewModels
 {
@@ -23,10 +24,6 @@ namespace GhostLauncher.Client.ViewModels
                 _command = new RelayCommand(NewInstance);
                 return _command;
             }
-            set
-            {
-                _command = value;
-            }
         }
 
         public RelayCommand AddServerCommand
@@ -35,10 +32,6 @@ namespace GhostLauncher.Client.ViewModels
             {
                 _command = new RelayCommand(NewServer);
                 return _command;
-            }
-            set
-            {
-                _command = value;
             }
         }
 

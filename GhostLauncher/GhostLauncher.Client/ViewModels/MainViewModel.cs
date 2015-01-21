@@ -4,6 +4,7 @@ using System.Windows;
 using GhostLauncher.Client.Models;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views;
+using GhostLauncher.Client.Views.Windows;
 
 namespace GhostLauncher.Client.ViewModels
 {
@@ -54,9 +55,23 @@ namespace GhostLauncher.Client.ViewModels
                 _command = new RelayCommand(NewInstance);
                 return _command;
             }
-            set
+        }
+
+        public RelayCommand SettingsCommand
+        {
+            get
             {
-                _command = value;
+                _command = new RelayCommand(Settings);
+                return _command;
+            }
+        }
+
+        public RelayCommand AboutCommand
+        {
+            get
+            {
+                _command = new RelayCommand(About);
+                return _command;
             }
         }
 
@@ -66,8 +81,20 @@ namespace GhostLauncher.Client.ViewModels
 
         private void NewInstance()
         {
-            var addInstanceWindow = new AddInstanceWindow {Owner = _window};
+            var addInstanceWindow = new AddInstanceWindow { Owner = _window };
             addInstanceWindow.Show();
+        }
+
+        private void Settings()
+        {
+            var settingsWindow = new SettingsWindow() { Owner = _window };
+            settingsWindow.Show();
+        }
+
+        private void About()
+        {
+            var aboutWindow = new AboutWindow() { Owner = _window };
+            aboutWindow.Show();
         }
 
         #endregion
