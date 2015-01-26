@@ -1,22 +1,22 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows;
-using GhostLauncher.Client.Annotations;
+﻿using System.Windows;
+using GhostLauncher.Core;
 
-namespace GhostLauncher.Client.Models
+namespace GhostLauncher.Client.Entities
 {
-    public class MinecraftInstance : INotifyPropertyChanged
+    public class ClientInstance : NotifyPropertyChanged
     {
         private string _name;
         private Style _icon;
         private string _path;
 
-        public MinecraftInstance(string name, Style icon, string path)
+        public ClientInstance(string name, Style icon, string path)
         {
             Name = name;
             Icon = icon;
             Path = path;
         }
+
+        #region Setters/Getters
 
         public string Name
         {
@@ -57,13 +57,6 @@ namespace GhostLauncher.Client.Models
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
-        }
+        #endregion
     }
 }

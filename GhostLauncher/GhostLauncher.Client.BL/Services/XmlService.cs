@@ -11,11 +11,11 @@ namespace GhostLauncher.Client.BL.Services
 
         public XmlService()
         {
-            _fileStream = new FileStream(GetFullConfigUrl(Settings.Default.ConfigFileName), FileMode.OpenOrCreate);
+            _fileStream = new FileStream(DirectoryService.GetFullConfigUrl(Settings.Default.ConfigFileName), FileMode.OpenOrCreate);
             
             DirectoryService.CreateConfigDir();
 
-            if (!File.Exists(GetFullConfigUrl(Settings.Default.ConfigFileName)))
+            if (!File.Exists(DirectoryService.GetFullConfigUrl(Settings.Default.ConfigFileName)))
             {
                 GenerateDefaultConfig();
             }
@@ -46,11 +46,6 @@ namespace GhostLauncher.Client.BL.Services
 
             xmlWriter.Serialize(writer, config);
             writer.Close();
-        }
-
-        private static string GetFullConfigUrl(string configFile)
-        {
-            return DirectoryService.GetConfigDirectory() + "/" + configFile;
         }
     }
 }

@@ -11,5 +11,8 @@
     <Setting Name="VersionsFileName" Type="System.String" Scope="User">
       <Value Profile="(Default)">versions.json</Value>
     </Setting>
+    <Setting Name="VersionsDownloadUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://s3.amazonaws.com/Minecraft.Download/versions/versions.json</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

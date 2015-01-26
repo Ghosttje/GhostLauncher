@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Windows;
 using GhostLauncher.Client.BL;
-using GhostLauncher.Client.Models;
+using GhostLauncher.Client.Entities;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views.Windows;
 
@@ -10,7 +10,7 @@ namespace GhostLauncher.Client.ViewModels
 {
     public class MainViewModel
     {
-        private ObservableCollection<MinecraftInstanceModel> _instanceCollection = new ObservableCollection<MinecraftInstanceModel>();
+        private ObservableCollection<ClientInstance> _instanceCollection = new ObservableCollection<ClientInstance>();
         private RelayCommand _command;
         private readonly Window _window;
         
@@ -24,16 +24,16 @@ namespace GhostLauncher.Client.ViewModels
                 Source = new Uri("pack://application:,,,/ResourceDictionaries/ResourceDictionary.xaml")
             };
 
-            _instanceCollection.Add(new MinecraftInstanceModel("Instance 1", (Style)resourceDictionary["InstanceLogo"], ""));
-            _instanceCollection.Add(new MinecraftInstanceModel("Instance 2", (Style)resourceDictionary["InstanceLogo"], ""));
-            _instanceCollection.Add(new MinecraftInstanceModel("Instance 3", (Style)resourceDictionary["InstanceLogo"], "qsdf"));
-            _instanceCollection.Add(new MinecraftInstanceModel("Instance 4", (Style)resourceDictionary["InstanceLogo"], "qsdfqsdf"));
-            _instanceCollection.Add(new MinecraftInstanceModel("Instance 5", (Style)resourceDictionary["InstanceLogo"], "qsdf"));
+            _instanceCollection.Add(new ClientInstance("Instance 1", (Style)resourceDictionary["InstanceLogo"], ""));
+            _instanceCollection.Add(new ClientInstance("Instance 2", (Style)resourceDictionary["InstanceLogo"], ""));
+            _instanceCollection.Add(new ClientInstance("Instance 3", (Style)resourceDictionary["InstanceLogo"], "qsdf"));
+            _instanceCollection.Add(new ClientInstance("Instance 4", (Style)resourceDictionary["InstanceLogo"], "qsdfqsdf"));
+            _instanceCollection.Add(new ClientInstance("Instance 5", (Style)resourceDictionary["InstanceLogo"], "qsdf"));
         }
 
         #region Setters / Getters
 
-        public ObservableCollection<MinecraftInstanceModel> InstanceCollection
+        public ObservableCollection<ClientInstance> InstanceCollection
         {
             get
             {

@@ -58,5 +58,17 @@ namespace GhostLauncher.Client.BL.Properties {
                 this["VersionsFileName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://s3.amazonaws.com/Minecraft.Download/versions/versions.json")]
+        public string VersionsDownloadUrl {
+            get {
+                return ((string)(this["VersionsDownloadUrl"]));
+            }
+            set {
+                this["VersionsDownloadUrl"] = value;
+            }
+        }
     }
 }

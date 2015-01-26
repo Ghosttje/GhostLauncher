@@ -10,6 +10,11 @@ namespace GhostLauncher.Client.BL.Services
             return Settings.Default.ConfigDirectory;
         }
 
+        public static string GetFullConfigUrl(string file)
+        {
+            return DirectoryService.GetConfigDirectory() + "/" + file;
+        }
+
         private static bool CheckConfigDir()
         {
             return Directory.Exists(GetConfigDirectory());
