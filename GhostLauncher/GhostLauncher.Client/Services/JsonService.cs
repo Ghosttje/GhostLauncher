@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using GhostLauncher.Client.Properties;
 using GhostLauncher.Entities;
 using Newtonsoft.Json;
 
@@ -7,14 +8,21 @@ namespace GhostLauncher.Client.Services
 {
     public class JsonService
     {
-        private const string BaseUrl = "http://localhost:59555/api/";
-
-        private static string CreateUrl(string direction)
+        public JsonService()
         {
-            return BaseUrl + direction;
+            DirectoryService.CreateConfigDir();
+            if (File.Exists(Settings.Default.VersionsFileName))
+            {
+                DownloadVersionFile();
+            }
         }
 
-        public static List<MinecraftVersion> ParseMinecraftVersions()
+        private static void DownloadVersionFile()
+        {
+            
+        }
+
+        public IEnumerable<MinecraftVersion> ParseMinecraftVersions()
         {
             JsonVersionRoot root;
             using (StreamReader r = new StreamReader("config/versions.json"))
@@ -24,11 +32,6 @@ namespace GhostLauncher.Client.Services
             }
 
             return root.Versions;
-        }
-
-        public static List<T> RequestList<T>(string requestUrl, bool buildUrlFromBase = true)
-        {
-            return null;
         }
     }
 }

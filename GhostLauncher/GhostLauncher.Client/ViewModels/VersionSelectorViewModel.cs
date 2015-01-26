@@ -13,16 +13,25 @@ namespace GhostLauncher.Client.ViewModels
         private MinecraftVersion _selectedInstance;
         private readonly Window _window;
         private RelayCommand _command;
+        private readonly JsonService _jsonService;
 
         public VersionSelectorViewModel(Window window)
         {
             _window = window;
-            var results = JsonService.ParseMinecraftVersions();
+            _jsonService = new JsonService();
+            ParseVersions();
+        }
 
-            foreach (var result in results) 
+        private void ParseVersions()
+        {
+            var results = _jsonService.ParseMinecraftVersions();
+            _instanceCollection.Clear();
+            _selectedInstance = null;
+
+            foreach (var result in results)
             {
                 _instanceCollection.Add(result);
-            }
+            } 
         }
 
         #region Setters / Getters
