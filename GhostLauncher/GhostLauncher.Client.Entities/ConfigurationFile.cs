@@ -1,6 +1,6 @@
 ﻿namespace GhostLauncher.Client.Entities
 {
-    public class Configuration
+    public class ConfigurationFile
     {
         public string InstanceFolderPath { get; set; }
     }

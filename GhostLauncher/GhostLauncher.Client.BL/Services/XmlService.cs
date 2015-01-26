@@ -7,24 +7,45 @@ namespace GhostLauncher.Client.BL.Services
 {
     public class XmlService
     {
+        private readonly FileStream _fileStream;
+
         public XmlService()
         {
+            _fileStream = new FileStream(GetFullConfigUrl(Settings.Default.ConfigFileName), FileMode.OpenOrCreate);
+            
             DirectoryService.CreateConfigDir();
+
             if (!File.Exists(GetFullConfigUrl(Settings.Default.ConfigFileName)))
             {
                 GenerateDefaultConfig();
             }
         }
 
-        private static void GenerateDefaultConfig()
+        private void GenerateDefaultConfig()
         {
-            var config = new Configuration {InstanceFolderPath = "instances/"};
+            var config = new ConfigurationFile {InstanceFolderPath = "instances/"};
+            
+            SaveConfig(config);
+        }
 
-            var file = new StreamWriter(new FileStream(GetFullConfigUrl(Settings.Default.ConfigFileName), FileMode.OpenOrCreate));
-            var xmlWriter = new XmlSerializer(typeof(Configuration));
+        public ConfigurationFile ReadConfig()
+        {
+            var reader = new StreamReader(_fileStream);
+            var xmlWriter = new XmlSerializer(typeof(ConfigurationFile));
 
-            xmlWriter.Serialize(file, config);
-            file.Close();
+            var config = (ConfigurationFile)xmlWriter.Deserialize(reader);
+            reader.Close();
+
+            return config;
+        }
+
+        public void SaveConfig(ConfigurationFile config)
+        {
+            var writer = new StreamWriter(_fileStream);
+            var xmlWriter = new XmlSerializer(typeof(ConfigurationFile));
+
+            xmlWriter.Serialize(writer, config);
+            writer.Close();
         }
 
         private static string GetFullConfigUrl(string configFile)
