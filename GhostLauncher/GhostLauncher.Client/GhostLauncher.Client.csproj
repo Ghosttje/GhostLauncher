@@ -56,6 +56,14 @@
     <StartupObject>GhostLauncher.Client.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Data" />
@@ -82,6 +90,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="App.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ResourceDictionaries\InstanceResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -231,6 +240,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GhostLauncher.Client.Database\GhostLauncher.Client.Database.csproj">
+      <Project>{02a7943d-8910-446f-8087-360571c539ec}</Project>
+      <Name>GhostLauncher.Client.Database</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GhostLauncher.Core\GhostLauncher.Core.csproj">
       <Project>{dba9608b-f53b-45ed-98d0-51ddc81f18ab}</Project>
       <Name>GhostLauncher.Core</Name>

@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace GhostLauncher.Entities.Enums
 {
     [Flags]
     public enum ReleaseTypes
     {
-        Alpha = 0,
-        Beta = 1,
-        Snapshot = 2,
-        Release = 3
+        Release = 0,
+        Snapshot = 1,
+        [EnumMember(Value = "old_beta")]
+        Beta = 2,
+        [EnumMember(Value = "old_alpha")]
+        Alpha = 3
     }
 }

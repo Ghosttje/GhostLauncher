@@ -5,7 +5,7 @@ namespace GhostLauncher.Client.Database.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<GhostLauncher.Client.Database.ClientContext>
+    public class Configuration : DbMigrationsConfiguration<GhostLauncher.Client.Database.ClientContext>
     {
         public Configuration()
         {

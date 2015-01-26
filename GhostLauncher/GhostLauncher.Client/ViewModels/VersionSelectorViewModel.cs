@@ -10,15 +10,14 @@ namespace GhostLauncher.Client.ViewModels
     public class VersionSelectorViewModel : NotifyPropertyChanged
     {
         private ObservableCollection<MinecraftVersion> _instanceCollection = new ObservableCollection<MinecraftVersion>();
-        private MinecraftVersion _selectedInstance = null;
+        private MinecraftVersion _selectedInstance;
         private readonly Window _window;
         private RelayCommand _command;
 
         public VersionSelectorViewModel(Window window)
         {
             _window = window;
-
-            var results = JsonService.RequestList<MinecraftVersion>(JsonService.ALL_MINECRAFT_VERSIONS);
+            var results = JsonService.ParseMinecraftVersions();
             
             foreach (var result in results) 
             {

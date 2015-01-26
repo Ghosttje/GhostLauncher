@@ -3,7 +3,6 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using GhostLauncher.Client.Models;
 using GhostLauncher.Client.ViewModels.Commands;
-using GhostLauncher.Client.Views;
 using GhostLauncher.Client.Views.Windows;
 
 namespace GhostLauncher.Client.ViewModels

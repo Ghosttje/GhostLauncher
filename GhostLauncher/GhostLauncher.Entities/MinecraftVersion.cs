@@ -1,15 +1,24 @@
-﻿using GhostLauncher.Core;
+﻿using System;
+using System.Runtime.Serialization;
+using GhostLauncher.Core;
 using GhostLauncher.Entities.Enums;
+using GhostLauncher.Entities.Properties;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace GhostLauncher.Entities
 {
-    public class MinecraftVersion : GhostLauncherEntity
+    [DataContract]
+    public class MinecraftVersion : NotifyPropertyChanged
     {
-        private const string BaseUrl = "https://s3.amazonaws.com/Minecraft.Download/versions/";
-
+        [DataMember(Name = "id")]
         private string _version;
-        private string _url;
-        private InstanceTypes _instanceType = InstanceTypes.Client;
+        [DataMember(Name = "time")]
+        private DateTime _time;
+        [DataMember(Name = "releaseTime")]
+        private DateTime _releaseTime;
+        [DataMember(Name = "type")]
+        [JsonConverter(typeof(StringEnumConverter))]
         private ReleaseTypes _releaseType = ReleaseTypes.Release;
 
         #region Setters / Getters
@@ -27,28 +36,15 @@ namespace GhostLauncher.Entities
             }
         }
 
-        public string Url
+        public DateTime ReleaseTime
         {
             get
             {
-                return _url;
+                return _releaseTime;
             }
             set
             {
-                _url = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public InstanceTypes InstanceType
-        {
-            get
-            {
-                return _instanceType;
-            }
-            set
-            {
-                _instanceType = value;
+                _releaseTime = value;
                 OnPropertyChanged();
             }
         }
@@ -68,9 +64,14 @@ namespace GhostLauncher.Entities
 
         #endregion
 
-        public static string CreateUrl(string version)
+        public string CreateClientUrl()
         {
-            return BaseUrl + version + "/" + version + ".jar";
+            return Settings.Default.MinecraftVersionBaseUrl + _version + "/" + _version + ".jar";
+        }
+
+        public string CreateServerUrl()
+        {
+            return Settings.Default.MinecraftVersionBaseUrl + _version + "/minecraft_server." + _version + ".jar";
         }
     }
 }
