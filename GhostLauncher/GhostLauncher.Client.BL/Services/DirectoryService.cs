@@ -1,7 +1,7 @@
 ﻿using System.IO;
-using GhostLauncher.Client.Properties;
+using GhostLauncher.Client.BL.Properties;
 
-namespace GhostLauncher.Client.Services
+namespace GhostLauncher.Client.BL.Services
 {
     public static class DirectoryService
     {

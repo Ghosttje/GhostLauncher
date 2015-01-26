@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
-using GhostLauncher.Client.Services;
+using GhostLauncher.Client.BL;
+using GhostLauncher.Client.BL.Services;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Core;
 using GhostLauncher.Entities;

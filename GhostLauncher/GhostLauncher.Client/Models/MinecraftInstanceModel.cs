@@ -1,10 +1,9 @@
 ﻿using System.Windows;
 using GhostLauncher.Core;
-using GhostLauncher.Entities;
 
 namespace GhostLauncher.Client.Models
 {
-    public class MinecraftInstanceModel : GhostLauncherEntity
+    public class MinecraftInstanceModel : NotifyPropertyChanged
     {
         private string _name;
         private Style _icon;

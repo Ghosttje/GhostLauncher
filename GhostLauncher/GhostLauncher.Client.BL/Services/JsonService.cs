@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using GhostLauncher.Client.Properties;
+using GhostLauncher.Client.BL.Properties;
 using GhostLauncher.Entities;
 using Newtonsoft.Json;
 
-namespace GhostLauncher.Client.Services
+namespace GhostLauncher.Client.BL.Services
 {
     public class JsonService
     {

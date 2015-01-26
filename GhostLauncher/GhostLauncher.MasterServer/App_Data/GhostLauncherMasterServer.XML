@@ -481,41 +481,5 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
-        <member name="T:GhostLauncher.MasterServer.Controllers.MinecraftVersionController">
-            <summary>
-            The MinecraftVersionController Class
-            </summary>
-        </member>
-        <member name="M:GhostLauncher.MasterServer.Controllers.MinecraftVersionController.#ctor">
-            <summary>
-            Constructor of MinecraftVersionController
-            </summary>
-        </member>
-        <member name="M:GhostLauncher.MasterServer.Controllers.MinecraftVersionController.Get">
-            <summary>
-            Get all the different minecraft versions
-            </summary>
-            <param name="type">The type of instance (Server, Client, ...)</param>
-            <returns>Minecraft versions data</returns>
-        </member>
-        <member name="M:GhostLauncher.MasterServer.Controllers.MinecraftVersionController.GetClients">
-            <summary>
-            Get all the different minecraft client versions
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:GhostLauncher.MasterServer.Controllers.MinecraftVersionController.GetServers">
-            <summary>
-            Get all the different minecraft server versions
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:GhostLauncher.MasterServer.Controllers.MinecraftVersionController.Get(System.Int32)">
-            <summary>
-            Get one minecraft version
-            </summary>
-            <param name="id">The id of the version that you want</param>
-            <returns>Minecraft version data</returns>
-        </member>
     </members>
 </doc>

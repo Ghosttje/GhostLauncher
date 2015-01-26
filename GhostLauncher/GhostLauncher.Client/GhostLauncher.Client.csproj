@@ -56,10 +56,6 @@
     <StartupObject>GhostLauncher.Client.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -69,17 +65,15 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -90,7 +84,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="App.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ResourceDictionaries\InstanceResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -102,9 +95,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProgramResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Services\DirectoryService.cs" />
-    <Compile Include="Services\JsonService.cs" />
-    <Compile Include="Services\XmlService.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\AddInstanceViewModel.cs" />
     <Compile Include="ViewModels\Commands\RelayCommand.cs" />
@@ -242,12 +232,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GhostLauncher.Client.Database\GhostLauncher.Client.Database.csproj">
-      <Project>{02a7943d-8910-446f-8087-360571c539ec}</Project>
-      <Name>GhostLauncher.Client.Database</Name>
+    <ProjectReference Include="..\GhostLauncher.Client.BL\GhostLauncher.Client.BL.csproj">
+      <Project>{BC81F6EF-7611-4096-A76E-41858BF648D4}</Project>
+      <Name>GhostLauncher.Client.BL</Name>
     </ProjectReference>
     <ProjectReference Include="..\GhostLauncher.Core\GhostLauncher.Core.csproj">
-      <Project>{dba9608b-f53b-45ed-98d0-51ddc81f18ab}</Project>
+      <Project>{DBA9608B-F53B-45ED-98D0-51DDC81F18AB}</Project>
       <Name>GhostLauncher.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\GhostLauncher.Entities\GhostLauncher.Entities.csproj">

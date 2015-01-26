@@ -169,5 +169,7 @@ D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.csproj.GenerateResource.Cache
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.exe
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.pdb
-D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\GhostLauncher.Client.Database.dll
-D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\GhostLauncher.Client.Database.pdb
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\GhostLauncher.Client.BL.dll
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\GhostLauncher.Client.Entities.dll
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\GhostLauncher.Client.BL.pdb
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\GhostLauncher.Client.Entities.pdb

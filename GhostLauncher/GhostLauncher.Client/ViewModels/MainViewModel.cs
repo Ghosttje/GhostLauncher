@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Windows;
+using GhostLauncher.Client.BL;
 using GhostLauncher.Client.Models;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views.Windows;
@@ -12,10 +13,11 @@ namespace GhostLauncher.Client.ViewModels
         private ObservableCollection<MinecraftInstanceModel> _instanceCollection = new ObservableCollection<MinecraftInstanceModel>();
         private RelayCommand _command;
         private readonly Window _window;
-
+        
         public MainViewModel(Window window)
         {
             _window = window;
+            ConfigurationManager.Init();
 
             var resourceDictionary = new ResourceDictionary
             {
