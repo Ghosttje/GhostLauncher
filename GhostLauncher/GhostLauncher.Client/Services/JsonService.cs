@@ -16,14 +16,14 @@ namespace GhostLauncher.Client.Services
 
         public static List<MinecraftVersion> ParseMinecraftVersions()
         {
+            JsonVersionRoot root;
             using (StreamReader r = new StreamReader("config/versions.json"))
             {
                 var json = r.ReadToEnd();
-                var item = JsonConvert.DeserializeObject<JsonVersionRoot>(json);
+                root = JsonConvert.DeserializeObject<JsonVersionRoot>(json);
             }
-            
 
-            return null;
+            return root.Versions;
         }
 
         public static List<T> RequestList<T>(string requestUrl, bool buildUrlFromBase = true)

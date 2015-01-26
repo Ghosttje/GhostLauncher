@@ -12,7 +12,7 @@
 
     <StackPanel Margin="5,10,5,5">
         <Grid>
-            <ListView ItemsSource="{Binding InstanceCollection}" SelectedItem="{Binding SelectedInstance}">
+            <ListView ItemsSource="{Binding InstanceCollection}" SelectedItem="{Binding SelectedInstance}" MaxHeight="200">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Width="200" DisplayMemberBinding="{Binding Version}">
@@ -20,9 +20,9 @@
                                 <GridViewColumnHeader Tag="Version">Version</GridViewColumnHeader>
                             </GridViewColumn.Header>
                         </GridViewColumn>
-                        <GridViewColumn Width="70" DisplayMemberBinding="{Binding IsSnapshot}">
+                        <GridViewColumn Width="70" DisplayMemberBinding="{Binding ReleaseType}">
                             <GridViewColumn.Header>
-                                <GridViewColumnHeader Tag="IsSnapshot">IsSnapshot</GridViewColumnHeader>
+                                <GridViewColumnHeader Tag="ReleaseType">Release type</GridViewColumnHeader>
                             </GridViewColumn.Header>
                         </GridViewColumn>
                     </GridView>
@@ -31,7 +31,7 @@
         </Grid>
         
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Width="75" Content="Cancel" Margin="5" Command="ApplicationCommands.Close" />
+            <Button Width="75" Content="Cancel" Margin="5" Command="{Binding CloseCommand}" />
             <Button Width="75" Content="OK" Margin="5" Command="{Binding SelectCommand}" />
         </StackPanel>
     </StackPanel>

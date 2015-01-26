@@ -18,7 +18,7 @@ namespace GhostLauncher.Client.ViewModels
         {
             _window = window;
             var results = JsonService.ParseMinecraftVersions();
-            
+
             foreach (var result in results) 
             {
                 _instanceCollection.Add(result);
@@ -50,11 +50,20 @@ namespace GhostLauncher.Client.ViewModels
 
         #region Commands
 
-        public RelayCommand CreateInstanceCommand
+        public RelayCommand SelectCommand
         {
             get
             {
-                _command = new RelayCommand(SelectCommand);
+                _command = new RelayCommand(Select);
+                return _command;
+            }
+        }
+
+        public RelayCommand CloseCommand
+        {
+            get
+            {
+                _command = new RelayCommand(Close);
                 return _command;
             }
         }
@@ -63,9 +72,15 @@ namespace GhostLauncher.Client.ViewModels
 
         #region CommandHandlers
 
-        private void SelectCommand()
+        private void Select()
         {
             _window.DialogResult = true;
+            _window.Close();
+        }
+
+        private void Close()
+        {
+            _window.DialogResult = false;
             _window.Close();
         }
 
