@@ -18,6 +18,8 @@ namespace GhostLauncher.Client.ViewModels
         {
             _window = window;
             ConfigurationManager.Init();
+            InstanceManager instanceManager = new InstanceManager();
+            instanceManager.FindInstances();
 
             var resourceDictionary = new ResourceDictionary
             {

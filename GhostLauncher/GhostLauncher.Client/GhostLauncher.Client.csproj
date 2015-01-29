@@ -122,7 +122,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\MinecraftInstanceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -148,7 +147,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ProgramResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Config\versions.json" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -235,6 +233,10 @@
     <ProjectReference Include="..\GhostLauncher.Client.BL\GhostLauncher.Client.BL.csproj">
       <Project>{BC81F6EF-7611-4096-A76E-41858BF648D4}</Project>
       <Name>GhostLauncher.Client.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GhostLauncher.Client.Entities\GhostLauncher.Client.Entities.csproj">
+      <Project>{8DBC1530-BFD0-49E0-8273-9464FF1827ED}</Project>
+      <Name>GhostLauncher.Client.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\GhostLauncher.Core\GhostLauncher.Core.csproj">
       <Project>{DBA9608B-F53B-45ED-98D0-51DDC81F18AB}</Project>

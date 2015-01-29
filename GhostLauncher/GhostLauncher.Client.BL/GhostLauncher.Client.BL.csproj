@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigurationManager.cs" />
+    <Compile Include="InstanceManager.cs" />
     <Compile Include="Services\DirectoryService.cs" />
     <Compile Include="Services\JsonService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
