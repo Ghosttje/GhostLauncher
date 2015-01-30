@@ -1,41 +1,28 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using GhostLauncher.Client.BL.Properties;
-using GhostLauncher.Entities;
+﻿using System.IO;
 using Newtonsoft.Json;
 
-namespace GhostLauncher.Client.BL.Services
+namespace GhostLauncher.Client.BL.Helpers
 {
-    public class JsonService
+    public static class JsonHelper
     {
-        public JsonService()
+        public static T ReadJson<T>(string path)
+            where T : class
         {
-            DirectoryService.CreateConfigDir();
-            if (File.Exists(Settings.Default.VersionsFileName))
-            {
-                DownloadVersionFile();
-            }
-        }
-
-        private static void DownloadVersionFile()
-        {
-            using (var myWebClient = new WebClient())
-            {
-                myWebClient.DownloadFile(Settings.Default.VersionsDownloadUrl, DirectoryService.GetFullConfigUrl(Settings.Default.VersionsFileName));
-            }
-        }
-
-        public IEnumerable<MinecraftVersion> ParseMinecraftVersions()
-        {
-            JsonVersionRoot root;
-            using (var r = new StreamReader("config/versions.json"))
+            using (var r = new StreamReader(path))
             {
                 var json = r.ReadToEnd();
-                root = JsonConvert.DeserializeObject<JsonVersionRoot>(json);
+                return JsonConvert.DeserializeObject<T>(json);
             }
+        }
 
-            return root.Versions;
+        public static void WriteJson<T>(string path, T item)
+            where T : class
+        {
+            using (var w = new StreamWriter(path))
+            {
+                var json = JsonConvert.SerializeObject(item);
+                w.Write(json);
+            }
         }
     }
 }

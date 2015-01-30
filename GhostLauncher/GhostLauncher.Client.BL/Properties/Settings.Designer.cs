@@ -25,7 +25,7 @@ namespace GhostLauncher.Client.BL.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Config")]
+        [global::System.Configuration.DefaultSettingValueAttribute("config")]
         public string ConfigDirectory {
             get {
                 return ((string)(this["ConfigDirectory"]));
@@ -47,27 +47,33 @@ namespace GhostLauncher.Client.BL.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("versions.json")]
         public string VersionsFileName {
             get {
                 return ((string)(this["VersionsFileName"]));
             }
-            set {
-                this["VersionsFileName"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://s3.amazonaws.com/Minecraft.Download/versions/versions.json")]
         public string VersionsDownloadUrl {
             get {
                 return ((string)(this["VersionsDownloadUrl"]));
             }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/instance.xml")]
+        public string InstanceFileName {
+            get {
+                return ((string)(this["InstanceFileName"]));
+            }
             set {
-                this["VersionsDownloadUrl"] = value;
+                this["InstanceFileName"] = value;
             }
         }
     }

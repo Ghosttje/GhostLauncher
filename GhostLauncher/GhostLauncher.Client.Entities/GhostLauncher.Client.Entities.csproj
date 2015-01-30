@@ -30,8 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ConfigurationFile.cs" />
+    <Compile Include="Configurations\AppConfiguration.cs" />
     <Compile Include="ClientInstance.cs" />
+    <Compile Include="Configurations\InstanceConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

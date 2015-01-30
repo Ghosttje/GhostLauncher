@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
 using GhostLauncher.Client.BL;
-using GhostLauncher.Client.BL.Services;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Core;
 using GhostLauncher.Entities;
@@ -14,25 +13,23 @@ namespace GhostLauncher.Client.ViewModels
         private MinecraftVersion _selectedInstance;
         private readonly Window _window;
         private RelayCommand _command;
-        private readonly JsonService _jsonService;
 
         public VersionSelectorViewModel(Window window)
         {
             _window = window;
-            _jsonService = new JsonService();
             ParseVersions();
         }
 
         private void ParseVersions()
         {
-            var results = _jsonService.ParseMinecraftVersions();
             _instanceCollection.Clear();
             _selectedInstance = null;
 
-            foreach (var result in results)
+            MasterManager.GetSingleton.VersionManager.Init();
+            foreach (var result in MasterManager.GetSingleton.VersionManager.MinecraftVersions)
             {
                 _instanceCollection.Add(result);
-            } 
+            }
         }
 
         #region Setters / Getters
