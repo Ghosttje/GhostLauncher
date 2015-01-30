@@ -11,23 +11,23 @@ namespace GhostLauncher.Client.BL.Managers
     {
         public List<MinecraftVersion> MinecraftVersions { get; set; } 
 
-        private static string GetConfigUrl()
+        private static string GetVersionUrl()
         {
             return Settings.Default.ConfigDirectory + "/" + Settings.Default.VersionsFileName;
         }
 
-        private void DownloadVersionFile()
+        private static void DownloadVersionFile()
         {
             using (var myWebClient = new WebClient())
             {
-                myWebClient.DownloadFile(Settings.Default.VersionsDownloadUrl, GetConfigUrl());
+                myWebClient.DownloadFile(Settings.Default.VersionsDownloadUrl, GetVersionUrl());
             }
         }
 
         public void Init()
         {
             Directory.CreateDirectory(Settings.Default.ConfigDirectory);
-            if (File.Exists(Settings.Default.VersionsFileName))
+            if (!File.Exists(Settings.Default.VersionsFileName))
             {
                 DownloadVersionFile();
             }
@@ -37,7 +37,7 @@ namespace GhostLauncher.Client.BL.Managers
 
         public void LoadVersions()
         {
-            MinecraftVersions = JsonHelper.ReadJson<JsonVersionRoot>(GetConfigUrl()).Versions;
+            MinecraftVersions = JsonHelper.ReadJson<JsonVersionRoot>(GetVersionUrl()).Versions;
         }
     }
 }
