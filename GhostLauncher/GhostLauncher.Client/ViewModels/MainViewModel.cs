@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using GhostLauncher.Client.BL;
 using GhostLauncher.Client.Entities;
+using GhostLauncher.Client.Entities.Configurations;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views.Windows;
 
@@ -18,18 +19,24 @@ namespace GhostLauncher.Client.ViewModels
         {
             _window = window;
 
+
+            //var temp = new InstanceConfiguration {Name = "Instance 1", Icon = "InstanceLogo"};
+
             MasterManager.GetSingleton.StartApp();
+            //MasterManager.GetSingleton.InstanceManager.CreateInstance(temp);
+            
+            //MasterManager.GetSingleton.InstanceManager.
 
-            var resourceDictionary = new ResourceDictionary
-            {
-                Source = new Uri("pack://application:,,,/ResourceDictionaries/ResourceDictionary.xaml")
-            };
+            //var resourceDictionary = new ResourceDictionary
+            //{
+            //    Source = new Uri("pack://application:,,,/ResourceDictionaries/ResourceDictionary.xaml")
+            //};
 
-            _instanceCollection.Add(new ClientInstance("Instance 1", (Style)resourceDictionary["InstanceLogo"], ""));
-            _instanceCollection.Add(new ClientInstance("Instance 2", (Style)resourceDictionary["InstanceLogo"], ""));
-            _instanceCollection.Add(new ClientInstance("Instance 3", (Style)resourceDictionary["InstanceLogo"], "qsdf"));
-            _instanceCollection.Add(new ClientInstance("Instance 4", (Style)resourceDictionary["InstanceLogo"], "qsdfqsdf"));
-            _instanceCollection.Add(new ClientInstance("Instance 5", (Style)resourceDictionary["InstanceLogo"], "qsdf"));
+            //_instanceCollection.Add(new ClientInstance("Instance 1", (Style)resourceDictionary["InstanceLogo"], ""));
+            //_instanceCollection.Add(new ClientInstance("Instance 2", (Style)resourceDictionary["InstanceLogo"], ""));
+            //_instanceCollection.Add(new ClientInstance("Instance 3", (Style)resourceDictionary["InstanceLogo"], "qsdf"));
+            //_instanceCollection.Add(new ClientInstance("Instance 4", (Style)resourceDictionary["InstanceLogo"], "qsdfqsdf"));
+            //_instanceCollection.Add(new ClientInstance("Instance 5", (Style)resourceDictionary["InstanceLogo"], "qsdf"));
         }
 
         #region Setters / Getters

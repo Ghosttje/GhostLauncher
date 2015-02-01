@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using GhostLauncher.Client.BL.Helpers;
@@ -20,7 +21,7 @@ namespace GhostLauncher.Client.BL.Managers
         {
             using (var myWebClient = new WebClient())
             {
-                myWebClient.DownloadFile(Settings.Default.VersionsDownloadUrl, GetVersionUrl());
+                myWebClient.DownloadFile(new Uri(Settings.Default.VersionsDownloadUrl), GetVersionUrl());
             }
         }
 

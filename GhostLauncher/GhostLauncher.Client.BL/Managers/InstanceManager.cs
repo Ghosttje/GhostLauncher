@@ -10,22 +10,24 @@ namespace GhostLauncher.Client.BL.Managers
 {
     public class InstanceManager
     {
-        private List<ClientInstance> _instances = new List<ClientInstance>();
+        private readonly List<ClientInstance> _instances = new List<ClientInstance>();
 
-        private string GetInstanceFolder()
+        private static string GetInstanceFolder()
         {
             return MasterManager.GetSingleton.ConfigurationManager.Configuration.InstanceFolderPath;
         }
 
-        public void CreateInstance(ClientInstance instance)
+        public void CreateInstance(InstanceConfiguration instance, string path = "")
         {
-            if (!Directory.Exists(instance.Path))
+            path = path == String.Empty ? GetInstanceFolder() + instance.Name + "/" : path;
+
+            if (!Directory.Exists(path))
             {
-                Directory.CreateDirectory(instance.Path);
+                Directory.CreateDirectory(path);
             }
-            if (File.Exists(instance.Path + Settings.Default.InstanceFileName))
+            if (!File.Exists(path + Settings.Default.InstanceFileName))
             {
-                XmlHelper.WriteConfig(instance.Path + Settings.Default.InstanceFileName, instance);
+                XmlHelper.WriteConfig(path + Settings.Default.InstanceFileName, instance);
             }
             else
             {
@@ -45,10 +47,9 @@ namespace GhostLauncher.Client.BL.Managers
 
                 foreach (var dir in dirs)
                 {
-                    if (Directory.Exists(dir + Settings.Default.InstanceFileName))
-                    {
-                        var instanceConfiguration = XmlHelper.ReadConfig<ClientInstance>(dir + Settings.Default.InstanceFileName);
-                    }
+                    if (!Directory.Exists(dir + Settings.Default.InstanceFileName)) continue;
+                    var instance = XmlHelper.ReadConfig<ClientInstance>(dir + Settings.Default.InstanceFileName);
+                    _instances.Add(instance);
                 }
             }
         }

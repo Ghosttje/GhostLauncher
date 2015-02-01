@@ -1,15 +1,13 @@
 ﻿using System.Windows;
-using System.Xml.Serialization;
 using GhostLauncher.Core;
 
 namespace GhostLauncher.Client.Entities
 {
     public class ClientInstance : NotifyPropertyChanged
     {
-        private string _name;
+        private string _name = "";
         private Style _icon;
-        [XmlIgnore]
-        private string _path;
+        private string _path = "";
 
         public ClientInstance(string name, Style icon, string path)
         {
