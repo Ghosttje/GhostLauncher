@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using GhostLauncher.Client.ViewModels.Commands;
-using GhostLauncher.Client.Views;
 using GhostLauncher.Client.Views.Windows;
 
 namespace GhostLauncher.Client.ViewModels

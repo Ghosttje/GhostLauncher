@@ -314,10 +314,6 @@
       <Project>{d5f35e9f-9000-4272-ae5b-f48f038a71c6}</Project>
       <Name>GhostLauncher.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GhostLauncher.MasterServer.Database\GhostLauncher.MasterServer.Database.csproj">
-      <Project>{A76E79A2-4D0D-4DFF-9571-11F8BEEB1DE6}</Project>
-      <Name>GhostLauncher.MasterServer.Database</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj">
       <Project>{f68a1d19-93fb-47c1-a22b-42bea3e4fd8c}</Project>
       <Name>Repository.Pattern.Ef6</Name>

@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using GhostLauncher.Client.ViewModels.Commands;
-using GhostLauncher.Client.Views;
 using GhostLauncher.Client.Views.Windows;
 using GhostLauncher.Entities;
 
@@ -65,6 +64,11 @@ namespace GhostLauncher.Client.ViewModels
         {
             var versionSelector = new VersionSelectorWindow {Owner = _window};
             versionSelector.ShowDialog();
+
+            if (versionSelector.DialogResult.HasValue && versionSelector.DialogResult.Value)
+            {
+                
+            }
         }
 
         #endregion
