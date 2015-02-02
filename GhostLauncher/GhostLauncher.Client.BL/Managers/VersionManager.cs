@@ -28,7 +28,7 @@ namespace GhostLauncher.Client.BL.Managers
         public void Init()
         {
             Directory.CreateDirectory(Settings.Default.ConfigDirectory);
-            if (!File.Exists(Settings.Default.VersionsFileName))
+            if (!File.Exists(Settings.Default.ConfigDirectory + Settings.Default.VersionsFileName))
             {
                 DownloadVersionFile();
             }

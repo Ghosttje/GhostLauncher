@@ -151,14 +151,12 @@ D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\zh-Hant\System
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.csprojResolveAssemblyReference.cache
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\ResourceDictionaries\ResourceDictionary.baml
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\AboutWindow.baml
-D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\AddInstanceWindow.baml
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\CreateInstanceWindow.baml
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\MainWindow.baml
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\SettingsWindow.baml
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\VersionSelectorWindow.baml
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\App.baml
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\AboutWindow.g.cs
-D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\AddInstanceWindow.g.cs
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\CreateInstanceWindow.g.cs
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\MainWindow.g.cs
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\SettingsWindow.g.cs
@@ -173,3 +171,5 @@ D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.csproj.GenerateResource.Cache
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.exe
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.pdb
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\SelectInstanceWindow.baml
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\SelectInstanceWindow.g.cs

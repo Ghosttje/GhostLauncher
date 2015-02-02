@@ -1,4 +1,4 @@
-﻿<Window x:Class="GhostLauncher.Client.Views.Windows.AddInstanceWindow"
+﻿<Window x:Class="GhostLauncher.Client.Views.Windows.SelectInstanceWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Add New Instance" WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow" ShowInTaskbar="False" ResizeMode="NoResize" SizeToContent="WidthAndHeight">

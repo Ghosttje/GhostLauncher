@@ -96,7 +96,7 @@
       <DependentUpon>ProgramResources.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AboutViewModel.cs" />
-    <Compile Include="ViewModels\AddInstanceViewModel.cs" />
+    <Compile Include="ViewModels\SelectInstanceViewModel.cs" />
     <Compile Include="ViewModels\Commands\RelayCommand.cs" />
     <Compile Include="ViewModels\CreateInstanceViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -105,8 +105,8 @@
     <Compile Include="Views\Windows\AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Windows\AddInstanceWindow.xaml.cs">
-      <DependentUpon>AddInstanceWindow.xaml</DependentUpon>
+    <Compile Include="Views\Windows\SelectInstanceWindow.xaml.cs">
+      <DependentUpon>SelectInstanceWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\CreateInstanceWindow.xaml.cs">
       <DependentUpon>CreateInstanceWindow.xaml</DependentUpon>
@@ -165,7 +165,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Windows\AddInstanceWindow.xaml">
+    <Page Include="Views\Windows\SelectInstanceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

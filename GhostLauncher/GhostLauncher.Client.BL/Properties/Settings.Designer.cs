@@ -25,7 +25,7 @@ namespace GhostLauncher.Client.BL.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("config")]
+        [global::System.Configuration.DefaultSettingValueAttribute("config/")]
         public string ConfigDirectory {
             get {
                 return ((string)(this["ConfigDirectory"]));
@@ -67,7 +67,7 @@ namespace GhostLauncher.Client.BL.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("/instance.xml")]
+        [global::System.Configuration.DefaultSettingValueAttribute("instance.xml")]
         public string InstanceFileName {
             get {
                 return ((string)(this["InstanceFileName"]));

@@ -6,13 +6,13 @@ namespace GhostLauncher.Client.Views.Windows
     /// <summary>
     /// Interaction logic for AddInstanceWindow.xaml
     /// </summary>
-    public partial class AddInstanceWindow : Window
+    public partial class SelectInstanceWindow : Window
     {
-        public AddInstanceWindow()
+        public SelectInstanceWindow()
         {
             InitializeComponent();
 
-            DataContext = new AddInstanceViewModel(this);
+            DataContext = new SelectInstanceViewModel(this);
         }
     }
 }

@@ -4,12 +4,12 @@ using GhostLauncher.Client.Views.Windows;
 
 namespace GhostLauncher.Client.ViewModels
 {
-    public class AddInstanceViewModel
+    public class SelectInstanceViewModel
     {
         private RelayCommand _command;
         private readonly Window _window;
 
-        public AddInstanceViewModel(Window window)
+        public SelectInstanceViewModel(Window window)
         {
             _window = window;
         }

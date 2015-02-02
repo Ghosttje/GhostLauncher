@@ -88,7 +88,7 @@ namespace GhostLauncher.Client.ViewModels
 
         private void NewInstance()
         {
-            var addInstanceWindow = new AddInstanceWindow { Owner = _window };
+            var addInstanceWindow = new SelectInstanceWindow { Owner = _window };
             addInstanceWindow.Show();
         }
 

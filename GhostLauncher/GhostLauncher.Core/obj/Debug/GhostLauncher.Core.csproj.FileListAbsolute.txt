@@ -21,7 +21,6 @@ D:\TeamFoundation\Ghosttje\GhostLauncher\Development\GhostLauncher\GhostLauncher
 D:\TeamFoundation\Ghosttje\GhostLauncher\Development\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.pdb
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\GhostLauncher.Core.dll
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\GhostLauncher.Core.pdb
-D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\GhostLauncher.Entities.dll
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\Repository.Pattern.dll
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\System.Web.Http.OData.dll
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\Newtonsoft.Json.dll
