@@ -9,47 +9,47 @@ namespace GhostLauncher.Client.ViewModels
 {
     public class VersionSelectorViewModel : NotifyPropertyChanged
     {
-        private ObservableCollection<MinecraftVersion> _instanceCollection = new ObservableCollection<MinecraftVersion>();
-        private MinecraftVersion _selectedInstance;
+        public ObservableCollection<MinecraftVersion> VersionCollection
+        {
+            get { return _versionCollection; }
+        }
+
+        private MinecraftVersion _selectedVersion;
         private readonly Window _window;
         private RelayCommand _command;
+        private readonly ObservableCollection<MinecraftVersion> _versionCollection;
 
         public VersionSelectorViewModel(Window window)
         {
             _window = window;
+            _versionCollection = new ObservableCollection<MinecraftVersion>();
             ParseVersions();
         }
 
         private void ParseVersions()
         {
-            _instanceCollection.Clear();
-            _selectedInstance = null;
+            VersionCollection.Clear();
+            _selectedVersion = null;
 
             MasterManager.GetSingleton.VersionManager.Init();
 
             foreach (var result in MasterManager.GetSingleton.VersionManager.MinecraftVersions)
             {
-                _instanceCollection.Add(result);
+                VersionCollection.Add(result);
             }
         }
 
         #region Setters / Getters
 
-        public ObservableCollection<MinecraftVersion> InstanceCollection
-        {
-            set { _instanceCollection = value; }
-            get { return _instanceCollection; }
-        }
-
-        public MinecraftVersion SelectedInstance
+        public MinecraftVersion SelectedVersion
         {
             get
             {
-                return _selectedInstance;
+                return _selectedVersion;
             }
             set
             {
-                _selectedInstance = value;
+                _selectedVersion = value;
                 OnPropertyChanged();
             }
         }

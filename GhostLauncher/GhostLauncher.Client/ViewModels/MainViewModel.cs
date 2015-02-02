@@ -37,22 +37,6 @@ namespace GhostLauncher.Client.ViewModels
             //_instanceCollection.Add(new ClientInstance("Instance 5", (Style)resourceDictionary["InstanceLogo"], "qsdf"));
         }
 
-        #region Setters / Getters
-
-        public ObservableCollection<ClientInstance> InstanceCollection
-        {
-            get
-            {
-                return _instanceCollection;
-            }
-            set
-            {
-                _instanceCollection = value;
-            }
-        }
-
-        #endregion
-
         #region Commands
 
         public RelayCommand AddInstanceCommand
