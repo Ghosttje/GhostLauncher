@@ -9,11 +9,6 @@ namespace GhostLauncher.Client.ViewModels
 {
     public class VersionSelectorViewModel : NotifyPropertyChanged
     {
-        public ObservableCollection<MinecraftVersion> VersionCollection
-        {
-            get { return _versionCollection; }
-        }
-
         private MinecraftVersion _selectedVersion;
         private readonly Window _window;
         private RelayCommand _command;
@@ -40,6 +35,11 @@ namespace GhostLauncher.Client.ViewModels
         }
 
         #region Setters / Getters
+
+        public ObservableCollection<MinecraftVersion> VersionCollection
+        {
+            get { return _versionCollection; }
+        }
 
         public MinecraftVersion SelectedVersion
         {
