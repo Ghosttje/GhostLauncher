@@ -17,7 +17,7 @@ namespace GhostLauncher.Client.BL.Managers
             return MasterManager.GetSingleton.ConfigurationManager.Configuration.InstanceFolderPath;
         }
 
-        public void CreateInstance(InstanceConfiguration instance, string path = "")
+        public void CreateInstance(ClientInstance instance, string path = "")
         {
             path = path == String.Empty ? GetInstanceFolder() + instance.Name + "/" : path;
 
@@ -33,6 +33,11 @@ namespace GhostLauncher.Client.BL.Managers
             {
                 Console.WriteLine("Er bestaat al een instance in deze folder.");
             }
+        }
+
+        public void CreateInstance(ServerInstance instance, string path = "")
+        {
+            
         }
 
         public void FindInstances()

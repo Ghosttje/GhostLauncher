@@ -1,6 +1,8 @@
 ﻿using System.Activities.Expressions;
 using System.Windows;
+using System.Windows.Forms;
 using GhostLauncher.Client.BL;
+using GhostLauncher.Client.Entities;
 using GhostLauncher.Client.Entities.Configurations;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views.Windows;
@@ -16,6 +18,7 @@ namespace GhostLauncher.Client.ViewModels
         private readonly Window _window;
 
         private string _name;
+        private string _instancePath;
         private MinecraftVersion _selectedVersion;
 
         public CreateInstanceViewModel(Window window)
@@ -34,6 +37,19 @@ namespace GhostLauncher.Client.ViewModels
             set
             {
                 _name = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string InstancePath
+        {
+            get
+            {
+                return _instancePath;
+            }
+            set
+            {
+                _instancePath = value;
                 OnPropertyChanged();
             }
         }
@@ -64,6 +80,15 @@ namespace GhostLauncher.Client.ViewModels
             }
         }
 
+        public RelayCommand CloseCommand
+        {
+            get
+            {
+                _command = new RelayCommand(Close);
+                return _command;
+            }
+        }
+
         public RelayCommand SelectPathCommand
         {
             get
@@ -88,14 +113,24 @@ namespace GhostLauncher.Client.ViewModels
 
         private void CreateInstance()
         {
-            var configInstance = new InstanceConfiguration {Name = _name};
+            var configInstance = new ClientInstance() {Name = _name, Path = _instancePath};
             MasterManager.GetSingleton.InstanceManager.CreateInstance(configInstance);
+            _window.Close();
+        }
+
+        private void Close()
+        {
+            _window.Close();
         }
 
         private void SelectPath()
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            
+            var dialog = new FolderBrowserDialog();
+            var result = dialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                _instancePath = dialog.SelectedPath;
+            }
         }
 
         private void SelectVersion()

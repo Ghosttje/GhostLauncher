@@ -34,7 +34,7 @@
             <Label Grid.Row="1" Grid.Column="0" Content="Server url: " Margin="0,5,5,5" HorizontalAlignment="Right" Width="109" Visibility="Collapsed"  />
             <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Visibility="Collapsed" />
             <Label Grid.Row="2" Grid.Column="0" Content="Location: " Margin="5" />
-            <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" />
+            <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="{Binding InstancePath}" />
             <Button Grid.Row="2" Grid.Column="3" Content="..." VerticalAlignment="Center" Command="{Binding SelectPathCommand}" />
             <Label Grid.Row="3" Grid.Column="0" Content="Minecraft Version: " Margin="5" />
             <TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" IsEnabled="false" Text="{Binding SelectedVersion.Version}" />
@@ -42,7 +42,7 @@
         </Grid>
         
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Width="75" Content="Cancel" Margin="5" Command="ApplicationCommands.Close" />
+            <Button Width="75" Content="Cancel" Margin="5" Command="{Binding CloseCommand}" />
             <Button Width="75" Content="OK" Margin="5" Command="{Binding CreateInstanceCommand}" />
         </StackPanel>
     </StackPanel>

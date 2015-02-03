@@ -68,6 +68,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -122,6 +123,7 @@
     <Compile Include="Views\Windows\VersionSelectorWindow.xaml.cs">
       <DependentUpon>VersionSelectorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Wizards\CreateInstanceWizard.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
