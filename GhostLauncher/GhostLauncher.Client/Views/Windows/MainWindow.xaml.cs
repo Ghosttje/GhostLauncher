@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using GhostLauncher.Client.ResourceDictionaries;
 using GhostLauncher.Client.ViewModels;
 
 namespace GhostLauncher.Client.Views.Windows
@@ -10,8 +11,8 @@ namespace GhostLauncher.Client.Views.Windows
     {
         public MainWindow()
         {
+            Resources.MergedDictionaries.Add(SharedDictionaryManager.SharedDictionary);
             InitializeComponent();
-
             DataContext = new MainViewModel(this);
         }
     }

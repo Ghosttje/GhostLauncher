@@ -3,11 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Add New Instance" WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow" ShowInTaskbar="False" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
     <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/ResourceDictionaries/ResourceDictionary.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        
     </Window.Resources>
     <StackPanel Orientation="Horizontal">
         <Button Command="{Binding AddInstanceCommand}">

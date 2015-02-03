@@ -173,3 +173,5 @@ D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.pdb
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\SelectInstanceWindow.baml
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\SelectInstanceWindow.g.cs
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client_MarkupCompile.lref
