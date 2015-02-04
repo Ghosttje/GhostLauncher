@@ -1,13 +1,15 @@
 ﻿using System.Windows;
+using GhostLauncher.Client.Entities.Enums;
 using GhostLauncher.Client.ViewModels.Commands;
-using GhostLauncher.Client.Views.Windows;
 
 namespace GhostLauncher.Client.ViewModels
 {
     public class SelectTypeViewModel
     {
         private RelayCommand _command;
-        private readonly Window _window;
+        private Window _window;
+
+        public InstanceType InstanceType { get; set; }
 
         public SelectTypeViewModel(Window window)
         {
@@ -40,14 +42,16 @@ namespace GhostLauncher.Client.ViewModels
 
         private void NewInstance()
         {
-            var createInstanceWindow = new CreateClientWindow { Owner = _window.Owner };
-            createInstanceWindow.Show();
+            InstanceType = InstanceType.Client;
+            _window.DialogResult = true;
             _window.Close();
         }
 
         private void NewServer()
         {
-
+            InstanceType = InstanceType.Server;
+            _window.DialogResult = true;
+            _window.Close();
         }
 
         #endregion

@@ -5,6 +5,7 @@ using GhostLauncher.Client.BL;
 using GhostLauncher.Client.Entities;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views.Windows;
+using GhostLauncher.Client.Wizards;
 
 namespace GhostLauncher.Client.ViewModels
 {
@@ -23,15 +24,8 @@ namespace GhostLauncher.Client.ViewModels
 
             MasterManager.GetSingleton.StartApp();
             //MasterManager.GetSingleton.InstanceManager.CreateInstance(temp);
-            
-            //MasterManager.GetSingleton.InstanceManager.
 
             InstanceCollection.Add(new ClientInstance {Name = "Instance 1", Icon = "InstanceLogo", Path = ""});
-            //InstanceCollection.Add(new ClientInstance("Instance 1", , ""));
-            //InstanceCollection.Add(new ClientInstance("Instance 2", (Style)resourceDictionary["InstanceLogo"], ""));
-            //InstanceCollection.Add(new ClientInstance("Instance 3", (Style)resourceDictionary["InstanceLogo"], "qsdf"));
-            //InstanceCollection.Add(new ClientInstance("Instance 4", (Style)resourceDictionary["InstanceLogo"], "qsdfqsdf"));
-            //InstanceCollection.Add(new ClientInstance("Instance 5", (Style)resourceDictionary["InstanceLogo"], "qsdf"));
         }
 
         #region Setters / Getters
@@ -78,8 +72,11 @@ namespace GhostLauncher.Client.ViewModels
 
         private void NewInstance()
         {
-            var addInstanceWindow = new SelectTypeWindow { Owner = _window };
-            addInstanceWindow.Show();
+            var wizard = new NewInstanceWizard();
+            if (wizard.Start(_window))
+            {
+                
+            }
         }
 
         private void Settings()

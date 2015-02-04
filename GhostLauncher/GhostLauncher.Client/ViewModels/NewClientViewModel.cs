@@ -9,7 +9,7 @@ using GhostLauncher.Entities;
 
 namespace GhostLauncher.Client.ViewModels
 {
-    public class CreateClientViewModel : NotifyPropertyChanged
+    public class NewClientViewModel : NotifyPropertyChanged
     {
         private RelayCommand _command;
         private readonly Window _window;
@@ -18,7 +18,7 @@ namespace GhostLauncher.Client.ViewModels
         private string _instancePath;
         private MinecraftVersion _selectedVersion;
 
-        public CreateClientViewModel(Window window)
+        public NewClientViewModel(Window window)
         {
             _window = window;
         }
