@@ -1,18 +1,15 @@
-﻿using System.Activities.Expressions;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Forms;
 using GhostLauncher.Client.BL;
 using GhostLauncher.Client.Entities;
-using GhostLauncher.Client.Entities.Configurations;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views.Windows;
 using GhostLauncher.Core;
 using GhostLauncher.Entities;
-using Microsoft.Win32;
 
 namespace GhostLauncher.Client.ViewModels
 {
-    public class CreateInstanceViewModel : NotifyPropertyChanged
+    public class CreateClientViewModel : NotifyPropertyChanged
     {
         private RelayCommand _command;
         private readonly Window _window;
@@ -21,7 +18,7 @@ namespace GhostLauncher.Client.ViewModels
         private string _instancePath;
         private MinecraftVersion _selectedVersion;
 
-        public CreateInstanceViewModel(Window window)
+        public CreateClientViewModel(Window window)
         {
             _window = window;
         }

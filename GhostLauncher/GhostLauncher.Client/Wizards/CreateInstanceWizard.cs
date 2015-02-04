@@ -4,13 +4,15 @@ namespace GhostLauncher.Client.Wizards
 {
     public class CreateInstanceWizard
     {
-        public void Start()
+        public bool Start()
         {
-            var addInstanceWindow = new SelectInstanceWindow();
+            var addInstanceWindow = new SelectTypeWindow();
             addInstanceWindow.ShowDialog();
 
-            var createInstanceWindow = new CreateInstanceWindow();
+            var createInstanceWindow = new CreateClientWindow();
             createInstanceWindow.ShowDialog();
+
+            return true;
         }
     }
 }

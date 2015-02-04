@@ -99,20 +99,20 @@
     </Compile>
     <Compile Include="ResourceDictionaries\SharedDictionaryManager.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
-    <Compile Include="ViewModels\SelectInstanceViewModel.cs" />
+    <Compile Include="ViewModels\SelectTypeViewModel.cs" />
     <Compile Include="ViewModels\Commands\RelayCommand.cs" />
-    <Compile Include="ViewModels\CreateInstanceViewModel.cs" />
+    <Compile Include="ViewModels\CreateClientViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\VersionSelectorViewModel.cs" />
     <Compile Include="Views\Windows\AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Windows\SelectInstanceWindow.xaml.cs">
-      <DependentUpon>SelectInstanceWindow.xaml</DependentUpon>
+    <Compile Include="Views\Windows\SelectTypeWindow.xaml.cs">
+      <DependentUpon>SelectTypeWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Windows\CreateInstanceWindow.xaml.cs">
-      <DependentUpon>CreateInstanceWindow.xaml</DependentUpon>
+    <Compile Include="Views\Windows\CreateClientWindow.xaml.cs">
+      <DependentUpon>CreateClientWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -169,11 +169,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Windows\SelectInstanceWindow.xaml">
+    <Page Include="Views\Windows\SelectTypeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Windows\CreateInstanceWindow.xaml">
+    <Page Include="Views\Windows\CreateClientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
