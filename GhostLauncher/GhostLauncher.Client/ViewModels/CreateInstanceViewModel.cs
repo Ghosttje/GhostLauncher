@@ -129,7 +129,7 @@ namespace GhostLauncher.Client.ViewModels
             var result = dialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                _instancePath = dialog.SelectedPath;
+                InstancePath = dialog.SelectedPath;
             }
         }
 
