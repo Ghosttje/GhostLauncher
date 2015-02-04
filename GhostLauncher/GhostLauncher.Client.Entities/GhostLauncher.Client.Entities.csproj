@@ -31,11 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Configurations\AppConfiguration.cs" />
-    <Compile Include="ClientInstance.cs" />
+    <Compile Include="MinecraftInstances\ClientInstance.cs" />
     <Compile Include="Enums\InstanceType.cs" />
-    <Compile Include="Instance.cs" />
+    <Compile Include="MinecraftInstances\Instance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServerInstance.cs" />
+    <Compile Include="MinecraftInstances\ServerInstance.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -49,6 +49,10 @@
     <ProjectReference Include="..\GhostLauncher.Core\GhostLauncher.Core.csproj">
       <Project>{DBA9608B-F53B-45ED-98D0-51DDC81F18AB}</Project>
       <Name>GhostLauncher.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GhostLauncher.Entities\GhostLauncher.Entities.csproj">
+      <Project>{D5F35E9F-9000-4272-AE5B-F48F038A71C6}</Project>
+      <Name>GhostLauncher.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

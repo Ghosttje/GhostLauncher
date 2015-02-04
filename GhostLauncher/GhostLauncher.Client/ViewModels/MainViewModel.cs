@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
 using GhostLauncher.Client.BL;
-using GhostLauncher.Client.Entities;
+using GhostLauncher.Client.Entities.MinecraftInstances;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views.Windows;
 using GhostLauncher.Client.Wizards;
@@ -19,20 +18,28 @@ namespace GhostLauncher.Client.ViewModels
         {
             _window = window;
             _instanceCollection = new ObservableCollection<Instance>();
-            
-            //var temp = new InstanceConfiguration {Name = "Instance 1", Icon = "InstanceLogo"};
 
             MasterManager.GetSingleton.StartApp();
-            //MasterManager.GetSingleton.InstanceManager.CreateInstance(temp);
+            RefreshInstances();
+        }
 
-            InstanceCollection.Add(new ClientInstance {Name = "Instance 1", Icon = "InstanceLogo", Path = ""});
+        private void RefreshInstances()
+        {
+            InstanceCollection.Clear();
+            foreach (var instance in MasterManager.GetSingleton.InstanceManager.Instances)
+            {
+                InstanceCollection.Add(instance);
+            } 
         }
 
         #region Setters / Getters
 
         public ObservableCollection<Instance> InstanceCollection
         {
-            get { return _instanceCollection; }
+            get
+            {
+                return _instanceCollection;
+            }
         }
 
         #endregion
@@ -75,7 +82,7 @@ namespace GhostLauncher.Client.ViewModels
             var wizard = new NewInstanceWizard();
             if (wizard.Start(_window))
             {
-                
+                RefreshInstances();
             }
         }
 

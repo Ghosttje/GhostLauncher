@@ -1,7 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Forms;
-using GhostLauncher.Client.BL;
-using GhostLauncher.Client.Entities;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views.Windows;
 using GhostLauncher.Core;
@@ -9,7 +7,7 @@ using GhostLauncher.Entities;
 
 namespace GhostLauncher.Client.ViewModels
 {
-    public class NewClientViewModel : NotifyPropertyChanged
+    public class NewLocalViewModel : NotifyPropertyChanged
     {
         private RelayCommand _command;
         private readonly Window _window;
@@ -18,7 +16,7 @@ namespace GhostLauncher.Client.ViewModels
         private string _instancePath;
         private MinecraftVersion _selectedVersion;
 
-        public NewClientViewModel(Window window)
+        public NewLocalViewModel(Window window)
         {
             _window = window;
         }
@@ -110,13 +108,13 @@ namespace GhostLauncher.Client.ViewModels
 
         private void CreateInstance()
         {
-            var configInstance = new ClientInstance() {Name = _name, Path = _instancePath};
-            MasterManager.GetSingleton.InstanceManager.CreateInstance(configInstance);
+            _window.DialogResult = true;
             _window.Close();
         }
 
         private void Close()
         {
+            _window.DialogResult = false;
             _window.Close();
         }
 

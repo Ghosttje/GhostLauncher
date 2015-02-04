@@ -1,11 +1,13 @@
 ﻿using GhostLauncher.Core;
+using GhostLauncher.Entities;
 
-namespace GhostLauncher.Client.Entities
+namespace GhostLauncher.Client.Entities.MinecraftInstances
 {
     public class Instance : NotifyPropertyChanged
     {
         private string _name;
-        private string _icon;
+        private string _icon = "InstanceLogo";
+        private MinecraftVersion _version;
 
         #region Setters/Getters
 
@@ -31,6 +33,19 @@ namespace GhostLauncher.Client.Entities
             set
             {
                 _icon = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public MinecraftVersion Version
+        {
+            get
+            {
+                return _version;
+            }
+            set
+            {
+                _version = value;
                 OnPropertyChanged();
             }
         }

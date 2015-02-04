@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using System.Xml.Serialization;
-using GhostLauncher.Client.Entities.Configurations;
 
 namespace GhostLauncher.Client.BL.Helpers
 {
@@ -10,7 +9,7 @@ namespace GhostLauncher.Client.BL.Helpers
             where T : class
         {
             var reader = new StreamReader(new FileStream(path, FileMode.Open));
-            var xmlWriter = new XmlSerializer(typeof(AppConfiguration));
+            var xmlWriter = new XmlSerializer(typeof(T));
 
             var config = (T)xmlWriter.Deserialize(reader);
             reader.Close();

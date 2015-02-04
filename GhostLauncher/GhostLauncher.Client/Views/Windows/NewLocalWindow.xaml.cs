@@ -8,13 +8,13 @@ namespace GhostLauncher.Client.Views.Windows
     /// <summary>
     /// Interaction logic for CreateInstanceWindow.xaml
     /// </summary>
-    public partial class NewClientWindow : Window
+    public partial class NewLocalWindow : Window
     {
-        public NewClientWindow()
+        public NewLocalWindow()
         {
             Resources.MergedDictionaries.Add(SharedDictionaryManager.SharedDictionary);
             InitializeComponent();
-            DataContext = new NewClientViewModel(this);
+            DataContext = new NewLocalViewModel(this);
         }
 
         private void CloseCommandHandler(object sender, ExecutedRoutedEventArgs e)

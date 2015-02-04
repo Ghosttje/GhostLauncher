@@ -3,23 +3,31 @@ using System.Collections.Generic;
 using System.IO;
 using GhostLauncher.Client.BL.Helpers;
 using GhostLauncher.Client.BL.Properties;
-using GhostLauncher.Client.Entities;
-using GhostLauncher.Client.Entities.Configurations;
+using GhostLauncher.Client.Entities.MinecraftInstances;
 
 namespace GhostLauncher.Client.BL.Managers
 {
     public class InstanceManager
     {
-        private readonly List<ClientInstance> _instances = new List<ClientInstance>();
+        private readonly List<LocalInstance> _instances = new List<LocalInstance>();
+
+        #region Setters / Getters
+
+        public List<LocalInstance> Instances
+        {
+            get { return _instances; }
+        }
+
+        #endregion
 
         private static string GetInstanceFolder()
         {
             return MasterManager.GetSingleton.ConfigurationManager.Configuration.InstanceFolderPath;
         }
 
-        public void CreateInstance(ClientInstance instance, string path = "")
+        public void AddInstance(LocalInstance instance)
         {
-            path = path == String.Empty ? GetInstanceFolder() + instance.Name + "/" : path;
+            var path = String.IsNullOrEmpty(instance.Path) ? GetInstanceFolder() + instance.Name + "/" : instance.Path;
 
             if (!Directory.Exists(path))
             {
@@ -28,6 +36,7 @@ namespace GhostLauncher.Client.BL.Managers
             if (!File.Exists(path + Settings.Default.InstanceFileName))
             {
                 XmlHelper.WriteConfig(path + Settings.Default.InstanceFileName, instance);
+                _instances.Add(instance);
             }
             else
             {
@@ -35,7 +44,7 @@ namespace GhostLauncher.Client.BL.Managers
             }
         }
 
-        public void CreateInstance(ServerInstance instance, string path = "")
+        public void AddInstance(RemoteInstance instance)
         {
             
         }
@@ -52,8 +61,9 @@ namespace GhostLauncher.Client.BL.Managers
 
                 foreach (var dir in dirs)
                 {
-                    if (!Directory.Exists(dir + Settings.Default.InstanceFileName)) continue;
-                    var instance = XmlHelper.ReadConfig<ClientInstance>(dir + Settings.Default.InstanceFileName);
+                    var xmlFile = dir + "/" + Settings.Default.InstanceFileName;
+                    if (!File.Exists(xmlFile)) continue;
+                    var instance = XmlHelper.ReadConfig<LocalInstance>(xmlFile);
                     _instances.Add(instance);
                 }
             }

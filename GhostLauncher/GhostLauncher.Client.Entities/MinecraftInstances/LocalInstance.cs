@@ -1,6 +1,6 @@
-﻿namespace GhostLauncher.Client.Entities
+﻿namespace GhostLauncher.Client.Entities.MinecraftInstances
 {
-    public class ClientInstance : Instance
+    public class LocalInstance : Instance
     {
         private string _path;
 

@@ -21,3 +21,5 @@ D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client.Entities\obj\Debug\Ghost
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client.Entities\obj\Debug\GhostLauncher.Client.Entities.dll
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client.Entities\obj\Debug\GhostLauncher.Client.Entities.pdb
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client.Entities\bin\Debug\Newtonsoft.Json.xml
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client.Entities\bin\Debug\GhostLauncher.Entities.dll
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client.Entities\bin\Debug\GhostLauncher.Entities.pdb
