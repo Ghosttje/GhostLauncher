@@ -29,13 +29,12 @@ namespace GhostLauncher.Client.BL.Managers
         {
             var path = String.IsNullOrEmpty(instance.Path) ? GetInstanceFolder() + instance.Name + "/" : instance.Path;
 
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
+            Directory.CreateDirectory(path);
             if (!File.Exists(path + Settings.Default.InstanceFileName))
             {
                 XmlHelper.WriteConfig(path + Settings.Default.InstanceFileName, instance);
+                
+
                 _instances.Add(instance);
             }
             else
@@ -46,7 +45,19 @@ namespace GhostLauncher.Client.BL.Managers
 
         public void AddInstance(RemoteInstance instance)
         {
-            
+
+        }
+
+        public void DeleteInstance(LocalInstance instance)
+        {
+            var path = String.IsNullOrEmpty(instance.Path) ? GetInstanceFolder() + instance.Name + "/" : instance.Path;
+            Directory.Delete(path, true);
+            _instances.Remove(instance);
+        }
+
+        public void DeleteInstance(RemoteInstance instance)
+        {
+
         }
 
         public void FindInstances()
@@ -62,7 +73,8 @@ namespace GhostLauncher.Client.BL.Managers
                 foreach (var dir in dirs)
                 {
                     var xmlFile = dir + "/" + Settings.Default.InstanceFileName;
-                    if (!File.Exists(xmlFile)) continue;
+                    if (!File.Exists(xmlFile))
+                        continue;
                     var instance = XmlHelper.ReadConfig<LocalInstance>(xmlFile);
                     _instances.Add(instance);
                 }

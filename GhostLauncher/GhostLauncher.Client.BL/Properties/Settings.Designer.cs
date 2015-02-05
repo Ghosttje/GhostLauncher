@@ -76,5 +76,17 @@ namespace GhostLauncher.Client.BL.Properties {
                 this["InstanceFileName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("cache/")]
+        public string Cache {
+            get {
+                return ((string)(this["Cache"]));
+            }
+            set {
+                this["Cache"] = value;
+            }
+        }
     }
 }

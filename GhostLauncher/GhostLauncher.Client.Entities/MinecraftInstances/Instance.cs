@@ -1,4 +1,5 @@
-﻿using GhostLauncher.Core;
+﻿using GhostLauncher.Client.Entities.Enums;
+using GhostLauncher.Core;
 using GhostLauncher.Entities;
 
 namespace GhostLauncher.Client.Entities.MinecraftInstances
@@ -8,6 +9,7 @@ namespace GhostLauncher.Client.Entities.MinecraftInstances
         private string _name;
         private string _icon = "InstanceLogo";
         private MinecraftVersion _version;
+        private InstanceType _instanceType;
 
         #region Setters/Getters
 
@@ -46,7 +48,18 @@ namespace GhostLauncher.Client.Entities.MinecraftInstances
             set
             {
                 _version = value;
-                OnPropertyChanged();
+            }
+        }
+
+        public InstanceType InstanceType
+        {
+            get
+            {
+                return _instanceType;
+            }
+            set
+            {
+                _instanceType = value;
             }
         }
 

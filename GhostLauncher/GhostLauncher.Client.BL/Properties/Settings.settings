@@ -17,5 +17,8 @@
     <Setting Name="InstanceFileName" Type="System.String" Scope="User">
       <Value Profile="(Default)">instance.xml</Value>
     </Setting>
+    <Setting Name="Cache" Type="System.String" Scope="User">
+      <Value Profile="(Default)">cache/</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

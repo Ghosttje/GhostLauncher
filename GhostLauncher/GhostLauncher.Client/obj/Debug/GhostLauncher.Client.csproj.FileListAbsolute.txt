@@ -173,5 +173,5 @@ D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GeneratedInter
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client_MarkupCompile.lref
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\SelectTypeWindow.baml
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\SelectTypeWindow.g.cs
-D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\NewClientWindow.baml
-D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\NewClientWindow.g.cs
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\NewLocalWindow.baml
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\NewLocalWindow.g.cs

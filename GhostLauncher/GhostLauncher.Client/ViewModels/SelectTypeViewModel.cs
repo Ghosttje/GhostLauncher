@@ -42,14 +42,14 @@ namespace GhostLauncher.Client.ViewModels
 
         private void NewInstance()
         {
-            InstanceType = InstanceType.Client;
+            InstanceType = InstanceType.Local;
             _window.DialogResult = true;
             _window.Close();
         }
 
         private void NewServer()
         {
-            InstanceType = InstanceType.Server;
+            InstanceType = InstanceType.Remote;
             _window.DialogResult = true;
             _window.Close();
         }

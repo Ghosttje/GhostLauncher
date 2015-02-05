@@ -64,12 +64,12 @@ namespace GhostLauncher.Entities
 
         #endregion
 
-        public string CreateClientUrl()
+        public string GetClientUrl()
         {
             return Settings.Default.MinecraftVersionBaseUrl + _version + "/" + _version + ".jar";
         }
 
-        public string CreateServerUrl()
+        public string GetServerUrl()
         {
             return Settings.Default.MinecraftVersionBaseUrl + _version + "/minecraft_server." + _version + ".jar";
         }

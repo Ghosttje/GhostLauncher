@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\FileDownloader.cs" />
+    <Compile Include="Helpers\JarHelper.cs" />
     <Compile Include="Managers\ConfigurationManager.cs" />
     <Compile Include="Managers\InstanceManager.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />

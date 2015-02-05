@@ -2,7 +2,7 @@
 {
     public enum InstanceType
     {
-        Client,
-        Server
+        Local,
+        Remote
     }
 }

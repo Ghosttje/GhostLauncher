@@ -101,7 +101,7 @@
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\SelectTypeViewModel.cs" />
     <Compile Include="ViewModels\Commands\RelayCommand.cs" />
-    <Compile Include="ViewModels\NewClientViewModel.cs" />
+    <Compile Include="ViewModels\NewLocalViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\VersionSelectorViewModel.cs" />
@@ -111,8 +111,8 @@
     <Compile Include="Views\Windows\SelectTypeWindow.xaml.cs">
       <DependentUpon>SelectTypeWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Windows\NewClientWindow.xaml.cs">
-      <DependentUpon>NewClientWindow.xaml</DependentUpon>
+    <Compile Include="Views\Windows\NewLocalWindow.xaml.cs">
+      <DependentUpon>NewLocalWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -173,7 +173,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Windows\NewClientWindow.xaml">
+    <Page Include="Views\Windows\NewLocalWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

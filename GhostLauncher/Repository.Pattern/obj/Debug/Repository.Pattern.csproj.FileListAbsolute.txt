@@ -91,3 +91,4 @@ D:\Git\ghostlauncher\GhostLauncher\Repository.Pattern\bin\Debug\zh-Hans\System.S
 D:\Git\ghostlauncher\GhostLauncher\Repository.Pattern\bin\Debug\zh-Hant\System.Spatial.resources.dll
 D:\Git\ghostlauncher\GhostLauncher\Repository.Pattern\obj\Debug\Repository.Pattern.dll
 D:\Git\ghostlauncher\GhostLauncher\Repository.Pattern\obj\Debug\Repository.Pattern.pdb
+D:\git\ghostlauncher\GhostLauncher\Repository.Pattern\obj\Debug\Repository.Pattern.csprojResolveAssemblyReference.cache

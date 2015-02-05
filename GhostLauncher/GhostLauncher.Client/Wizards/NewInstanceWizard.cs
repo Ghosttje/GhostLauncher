@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using GhostLauncher.Client.BL;
-using GhostLauncher.Client.Entities;
 using GhostLauncher.Client.Entities.Enums;
 using GhostLauncher.Client.Entities.MinecraftInstances;
 using GhostLauncher.Client.ViewModels;
@@ -19,7 +18,7 @@ namespace GhostLauncher.Client.Wizards
             {
                 var selectTypeViewModel = (SelectTypeViewModel)selectTypeWindow.DataContext;
 
-                if (selectTypeViewModel.InstanceType == InstanceType.Server)
+                if (selectTypeViewModel.InstanceType == InstanceType.Remote)
                 {
 
                 }
@@ -32,8 +31,9 @@ namespace GhostLauncher.Client.Wizards
                     {
                         var newClientViewModel = (NewLocalViewModel)newClientWindow.DataContext;
 
-                        var client = new LocalInstance() { Name = newClientViewModel.Name, Path = newClientViewModel.InstancePath };
+                        var client = new LocalInstance() { Name = newClientViewModel.Name, Path = newClientViewModel.InstancePath, Version = newClientViewModel.SelectedVersion };
                         MasterManager.GetSingleton.InstanceManager.AddInstance(client);
+                        MasterManager.GetSingleton.JarAsyncHelper.GetFile(client.Version);
 
                         return true;
                     }

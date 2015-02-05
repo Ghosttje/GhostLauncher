@@ -1,18 +1,21 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
 using GhostLauncher.Client.BL;
+using GhostLauncher.Client.Entities.Enums;
 using GhostLauncher.Client.Entities.MinecraftInstances;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views.Windows;
 using GhostLauncher.Client.Wizards;
+using GhostLauncher.Core;
 
 namespace GhostLauncher.Client.ViewModels
 {
-    public class MainViewModel
+    public class MainViewModel : NotifyPropertyChanged
     {
         private RelayCommand _command;
         private readonly Window _window;
         private readonly ObservableCollection<Instance> _instanceCollection;
+        private Instance _selectedInstance;
         
         public MainViewModel(Window window)
         {
@@ -42,6 +45,15 @@ namespace GhostLauncher.Client.ViewModels
             }
         }
 
+        public Instance SelectedInstance
+        {
+            set
+            {
+                _selectedInstance = value;
+
+            }
+        }
+
         #endregion
 
         #region Commands
@@ -50,7 +62,16 @@ namespace GhostLauncher.Client.ViewModels
         {
             get
             {
-                _command = new RelayCommand(NewInstance);
+                _command = new RelayCommand(AddInstance);
+                return _command;
+            }
+        }
+
+        public RelayCommand DeleteInstanceCommand
+        {
+            get
+            {
+                _command = new RelayCommand(DeleteInstance);
                 return _command;
             }
         }
@@ -77,12 +98,29 @@ namespace GhostLauncher.Client.ViewModels
 
         #region CommandHandlers
 
-        private void NewInstance()
+        private void AddInstance()
         {
             var wizard = new NewInstanceWizard();
             if (wizard.Start(_window))
             {
                 RefreshInstances();
+            }
+        }
+
+        private void DeleteInstance()
+        {
+            var result = MessageBox.Show("Do you want to delete this instance?", "Delete instance", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                if (_selectedInstance.InstanceType == InstanceType.Remote)
+                {
+                    MasterManager.GetSingleton.InstanceManager.DeleteInstance((RemoteInstance)_selectedInstance);
+                }
+                else
+                {
+                    MasterManager.GetSingleton.InstanceManager.DeleteInstance((LocalInstance)_selectedInstance);
+                }
+                _instanceCollection.Remove(_selectedInstance);
             }
         }
 

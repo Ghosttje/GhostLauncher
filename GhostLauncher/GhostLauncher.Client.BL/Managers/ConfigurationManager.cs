@@ -31,7 +31,7 @@ namespace GhostLauncher.Client.BL.Managers
             Configuration = XmlHelper.ReadConfig<AppConfiguration>(GetConfigUrl());
         }
 
-        public void WriteConfig()
+        public void SaveConfig()
         {
             XmlHelper.WriteConfig(GetConfigUrl(), Configuration);
         }

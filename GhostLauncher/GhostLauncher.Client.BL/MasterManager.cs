@@ -1,4 +1,5 @@
-﻿using GhostLauncher.Client.BL.Managers;
+﻿using GhostLauncher.Client.BL.Helpers;
+using GhostLauncher.Client.BL.Managers;
 
 namespace GhostLauncher.Client.BL
 {
@@ -7,6 +8,8 @@ namespace GhostLauncher.Client.BL
         public ConfigurationManager ConfigurationManager { get; set; }
         public InstanceManager InstanceManager { get; set; }
         public VersionManager VersionManager { get; set; }
+        public JarHelper JarAsyncHelper { get; set; }
+
         private static MasterManager _singleton;
         
         public static MasterManager GetSingleton
@@ -19,6 +22,7 @@ namespace GhostLauncher.Client.BL
             ConfigurationManager = new ConfigurationManager();
             InstanceManager = new InstanceManager();
             VersionManager = new VersionManager();
+            JarAsyncHelper = new JarHelper();
         }
 
         public void StartApp()

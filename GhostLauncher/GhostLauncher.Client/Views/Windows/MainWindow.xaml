@@ -22,7 +22,7 @@
                 </Button>
             </ToolBar>
         </ToolBarTray>
-        <ListView DockPanel.Dock="Left" ItemsSource="{Binding InstanceCollection}">
+        <ListView DockPanel.Dock="Left" ItemsSource="{Binding InstanceCollection}" SelectedItem="{Binding SelectedInstance}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
@@ -31,6 +31,9 @@
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
+            <ListView.InputBindings>
+                <KeyBinding Key="Delete" Command="{Binding DeleteInstanceCommand}" />
+            </ListView.InputBindings>
         </ListView>
         <StackPanel DockPanel.Dock="Right">
 
