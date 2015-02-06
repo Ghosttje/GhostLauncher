@@ -12,7 +12,7 @@ namespace GhostLauncher.Client.Views.Windows
         {
             InitializeComponent();
 
-            DataContext = new SettingsViewModel();
+            DataContext = new SettingsViewModel(this);
         }
     }
 }

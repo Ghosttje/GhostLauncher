@@ -1,0 +1,10 @@
+﻿<Window x:Class="GhostLauncher.Client.Views.Windows.SplashWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SplashWindow" Height="300" Width="300">
+    <Grid>
+        <TextBox>
+            <TextBox.Text>Splashscreen</TextBox.Text>
+        </TextBox>
+    </Grid>
+</Window>

@@ -4,15 +4,15 @@ using GhostLauncher.Client.ViewModels;
 namespace GhostLauncher.Client.Views.Windows
 {
     /// <summary>
-    /// Interaction logic for AboutWindow.xaml
+    /// Interaction logic for SplashWindow.xaml
     /// </summary>
-    public partial class AboutWindow : Window
+    public partial class SplashWindow : Window
     {
-        public AboutWindow()
+        public SplashWindow()
         {
             InitializeComponent();
 
-            DataContext = new AboutViewModel(this);
+            DataContext = new SplashViewModel(this);
         }
     }
 }

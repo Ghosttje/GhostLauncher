@@ -98,12 +98,14 @@
       <DependentUpon>ProgramResources.resx</DependentUpon>
     </Compile>
     <Compile Include="ResourceDictionaries\SharedDictionaryManager.cs" />
+    <Compile Include="Validators\NameValidator.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\SelectTypeViewModel.cs" />
     <Compile Include="ViewModels\Commands\RelayCommand.cs" />
     <Compile Include="ViewModels\NewLocalViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\SplashViewModel.cs" />
     <Compile Include="ViewModels\VersionSelectorViewModel.cs" />
     <Compile Include="Views\Windows\AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
@@ -119,6 +121,9 @@
     </Compile>
     <Compile Include="Views\Windows\SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\SplashWindow.xaml.cs">
+      <DependentUpon>SplashWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\VersionSelectorWindow.xaml.cs">
       <DependentUpon>VersionSelectorWindow.xaml</DependentUpon>
@@ -182,6 +187,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Windows\SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\SplashWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

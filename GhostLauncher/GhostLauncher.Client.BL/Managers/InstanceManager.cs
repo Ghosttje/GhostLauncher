@@ -1,41 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using GhostLauncher.Client.BL.Helpers;
-using GhostLauncher.Client.BL.Properties;
-using GhostLauncher.Client.Entities.MinecraftInstances;
+using GhostLauncher.Client.Entities.Configurations;
+using GhostLauncher.Client.Entities.Instances;
 
 namespace GhostLauncher.Client.BL.Managers
 {
     public class InstanceManager
     {
-        private readonly List<LocalInstance> _instances = new List<LocalInstance>();
-
-        #region Setters / Getters
-
-        public List<LocalInstance> Instances
+        private string GetInstanceConfigFile()
         {
-            get { return _instances; }
-        }
-
-        #endregion
-
-        private static string GetInstanceFolder()
-        {
-            return MasterManager.GetSingleton.ConfigurationManager.Configuration.InstanceFolderPath;
+            return MasterManager.GetSingleton.GetConfig().InstanceConfigFile;
         }
 
         public void AddInstance(LocalInstance instance)
         {
-            var path = String.IsNullOrEmpty(instance.Path) ? GetInstanceFolder() + instance.Name + "/" : instance.Path;
-
-            Directory.CreateDirectory(path);
-            if (!File.Exists(path + Settings.Default.InstanceFileName))
+            Directory.CreateDirectory(instance.Path);
+            if (!File.Exists(instance.Path + GetInstanceConfigFile()))
             {
-                XmlHelper.WriteConfig(path + Settings.Default.InstanceFileName, instance);
+                XmlHelper.WriteConfig(instance.Path + GetInstanceConfigFile(), instance);
                 
-
-                _instances.Add(instance);
+                //TODO: Fix instances
+                //_instances.Add(instance);
             }
             else
             {
@@ -50,9 +38,9 @@ namespace GhostLauncher.Client.BL.Managers
 
         public void DeleteInstance(LocalInstance instance)
         {
-            var path = String.IsNullOrEmpty(instance.Path) ? GetInstanceFolder() + instance.Name + "/" : instance.Path;
-            Directory.Delete(path, true);
-            _instances.Remove(instance);
+            Directory.Delete(instance.Path, true);
+            //TODO: Fix instances
+            //_instances.Remove(instance);
         }
 
         public void DeleteInstance(RemoteInstance instance)
@@ -60,25 +48,38 @@ namespace GhostLauncher.Client.BL.Managers
 
         }
 
-        public void FindInstances()
+        public void FindInstances(InstanceFolderConfig folder)
         {
-            if (!Directory.Exists(GetInstanceFolder()))
+            if (!Directory.Exists(folder.Path))
             {
-                Directory.CreateDirectory(GetInstanceFolder());
+                Directory.CreateDirectory(folder.Path);
             }
             else
             {
-                var dirs = Directory.GetDirectories(GetInstanceFolder());
+                var dirs = Directory.GetDirectories(folder.Path);
 
                 foreach (var dir in dirs)
                 {
-                    var xmlFile = dir + "/" + Settings.Default.InstanceFileName;
+                    var xmlFile = dir + "/" + MasterManager.GetSingleton.ConfigurationManager.Configuration.InstanceConfigFile;
                     if (!File.Exists(xmlFile))
                         continue;
                     var instance = XmlHelper.ReadConfig<LocalInstance>(xmlFile);
-                    _instances.Add(instance);
+                    //TODO: Fix instances
+                    //_instances.Add(instance);
                 }
             }
+        }
+
+        public List<Instance> GetAllInstances()
+        {
+            var instances = new List<Instance>();
+
+            foreach (var instanceFolder in MasterManager.GetSingleton.GetConfig().InstanceFolders.Where(x => x.Instances.Count != 0))
+            {
+                instances.AddRange(instanceFolder.Instances);
+            }
+
+            return instances;
         }
     }
 }

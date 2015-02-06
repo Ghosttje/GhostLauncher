@@ -2,12 +2,13 @@
 using GhostLauncher.Core;
 using GhostLauncher.Entities;
 
-namespace GhostLauncher.Client.Entities.MinecraftInstances
+namespace GhostLauncher.Client.Entities.Instances
 {
     public class Instance : NotifyPropertyChanged
     {
         private string _name;
         private string _icon = "InstanceLogo";
+        private string _path;
         private MinecraftVersion _version;
         private InstanceType _instanceType;
 
@@ -35,6 +36,19 @@ namespace GhostLauncher.Client.Entities.MinecraftInstances
             set
             {
                 _icon = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Path
+        {
+            get
+            {
+                return _path;
+            }
+            set
+            {
+                _path = value;
                 OnPropertyChanged();
             }
         }

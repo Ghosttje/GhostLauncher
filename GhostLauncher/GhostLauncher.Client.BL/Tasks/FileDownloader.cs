@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Net;
 
-namespace GhostLauncher.Client.BL.Helpers
+namespace GhostLauncher.Client.BL.Tasks
 {
     public class FileDownloader
     {

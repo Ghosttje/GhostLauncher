@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AppConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <InstanceFolderPath>instances/</InstanceFolderPath>
-</AppConfiguration>
+<AppConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <InstanceConfigFile>instances.xml</InstanceConfigFile>
+  <MinecraftFolderPath>minecraft/</MinecraftFolderPath>
+  <Cache>cache/</Cache>
+  <IsFirstTime>false</IsFirstTime>
+  <InstanceFolders>
+    <InstanceFolderConfig>
+      <Name>DefaultInstance</Name>
+      <Path>instances/</Path>
+    </InstanceFolderConfig>
+  </InstanceFolders>
+</AppConfig>

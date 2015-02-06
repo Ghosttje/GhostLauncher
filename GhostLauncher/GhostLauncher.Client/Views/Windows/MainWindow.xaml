@@ -9,8 +9,8 @@
     </Window.Resources>
 
     <DockPanel>
-        <ToolBarTray DockPanel.Dock="Top">
-            <ToolBar>
+        <ToolBarTray DockPanel.Dock="Top" IsLocked="True">
+            <ToolBar ToolBar.OverflowMode="Never">
                 <Button Command="{Binding AddInstanceCommand}">
                     <Image Style="{StaticResource NewInstance}" />
                 </Button>
@@ -35,8 +35,5 @@
                 <KeyBinding Key="Delete" Command="{Binding DeleteInstanceCommand}" />
             </ListView.InputBindings>
         </ListView>
-        <StackPanel DockPanel.Dock="Right">
-
-        </StackPanel>
     </DockPanel>
 </Window>

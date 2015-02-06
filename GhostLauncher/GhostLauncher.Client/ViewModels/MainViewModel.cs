@@ -2,7 +2,7 @@
 using System.Windows;
 using GhostLauncher.Client.BL;
 using GhostLauncher.Client.Entities.Enums;
-using GhostLauncher.Client.Entities.MinecraftInstances;
+using GhostLauncher.Client.Entities.Instances;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views.Windows;
 using GhostLauncher.Client.Wizards;
@@ -22,16 +22,15 @@ namespace GhostLauncher.Client.ViewModels
             _window = window;
             _instanceCollection = new ObservableCollection<Instance>();
 
-            MasterManager.GetSingleton.StartApp();
             RefreshInstances();
         }
 
         private void RefreshInstances()
         {
-            InstanceCollection.Clear();
-            foreach (var instance in MasterManager.GetSingleton.InstanceManager.Instances)
+            _instanceCollection.Clear();
+            foreach (var instance in MasterManager.GetSingleton.InstanceManager.GetAllInstances())
             {
-                InstanceCollection.Add(instance);
+                _instanceCollection.Add(instance);
             } 
         }
 
@@ -126,14 +125,12 @@ namespace GhostLauncher.Client.ViewModels
 
         private void Settings()
         {
-            var settingsWindow = new SettingsWindow() { Owner = _window };
-            settingsWindow.Show();
+            new SettingsWindow() { Owner = _window }.Show();
         }
 
         private void About()
         {
-            var aboutWindow = new AboutWindow() { Owner = _window };
-            aboutWindow.Show();
+            new AboutWindow() { Owner = _window }.Show();
         }
 
         #endregion

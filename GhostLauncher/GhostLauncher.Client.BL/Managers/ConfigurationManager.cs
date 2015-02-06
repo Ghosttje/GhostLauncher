@@ -7,7 +7,7 @@ namespace GhostLauncher.Client.BL.Managers
 {
     public class ConfigurationManager
     {
-        public AppConfiguration Configuration { get; set; }
+        public AppConfig Configuration { get; set; }
 
         private static string GetConfigUrl()
         {
@@ -19,8 +19,8 @@ namespace GhostLauncher.Client.BL.Managers
             Directory.CreateDirectory(Settings.Default.ConfigDirectory);
             if (!File.Exists(GetConfigUrl()))
             {
-                var config = new AppConfiguration { InstanceFolderPath = "instances/" };
-                XmlHelper.WriteConfig(GetConfigUrl(), config);
+                Configuration = new AppConfig();
+                SaveConfig();
             }
 
             LoadConfig();
@@ -28,7 +28,7 @@ namespace GhostLauncher.Client.BL.Managers
 
         public void LoadConfig()
         {
-            Configuration = XmlHelper.ReadConfig<AppConfiguration>(GetConfigUrl());
+            Configuration = XmlHelper.ReadConfig<AppConfig>(GetConfigUrl());
         }
 
         public void SaveConfig()

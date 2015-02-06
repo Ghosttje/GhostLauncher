@@ -1,5 +1,5 @@
-﻿using GhostLauncher.Client.BL.Helpers;
-using GhostLauncher.Client.BL.Managers;
+﻿using GhostLauncher.Client.BL.Managers;
+using GhostLauncher.Client.Entities.Configurations;
 
 namespace GhostLauncher.Client.BL
 {
@@ -8,7 +8,6 @@ namespace GhostLauncher.Client.BL
         public ConfigurationManager ConfigurationManager { get; set; }
         public InstanceManager InstanceManager { get; set; }
         public VersionManager VersionManager { get; set; }
-        public JarHelper JarAsyncHelper { get; set; }
 
         private static MasterManager _singleton;
         
@@ -17,18 +16,33 @@ namespace GhostLauncher.Client.BL
             get { return _singleton ?? (_singleton = new MasterManager()); }
         }
 
-        public MasterManager()
+        private MasterManager()
         {
             ConfigurationManager = new ConfigurationManager();
             InstanceManager = new InstanceManager();
             VersionManager = new VersionManager();
-            JarAsyncHelper = new JarHelper();
         }
 
         public void StartApp()
         {
             ConfigurationManager.Init();
-            InstanceManager.FindInstances();
+
+            if (GetConfig().IsFirstTime)
+            {
+                GetConfig().InstanceFolders.Add(new InstanceFolderConfig() { Name = "DefaultInstance", Path = "instances/"});
+                GetConfig().IsFirstTime = false;
+                ConfigurationManager.SaveConfig();
+            }
+
+            foreach (var instanceFolder in GetConfig().InstanceFolders)
+            {
+                InstanceManager.FindInstances(instanceFolder);
+            }
+        }
+
+        public AppConfig GetConfig()
+        {
+            return ConfigurationManager.Configuration;
         }
     }
 }

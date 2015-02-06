@@ -1,32 +1,27 @@
-﻿using System;
-using System.ComponentModel;
-using System.IO;
-using System.Net;
-using GhostLauncher.Client.BL.Properties;
-using GhostLauncher.Entities;
+﻿using System.IO;
+using GhostLauncher.Client.BL.Tasks;
+using GhostLauncher.Client.Entities.Instances;
 
 namespace GhostLauncher.Client.BL.Helpers
 {
-    public class JarHelper
+    public static class JarHelper
     {
-        public JarHelper()
-        {
-            Directory.CreateDirectory(GetCachePath());
-        }
-
         private static string GetCachePath()
         {
-            return Settings.Default.Cache;
+            return MasterManager.GetSingleton.GetConfig().Cache;
         }
 
-        public void GetFile(MinecraftVersion version)
+        public static void GetFile(Instance instance)
         {
-            var file = GetCachePath() + version.Version + ".jar";
+            Directory.CreateDirectory(GetCachePath());
+
+            var file = GetCachePath() + instance.Version.Version + ".jar";
             if (!File.Exists(file))
             {
-                var fileDownloader = new FileDownloader(version.GetClientUrl(), GetCachePath() + version.Version + ".jar");
+                var fileDownloader = new FileDownloader(instance.Version.GetClientUrl(), GetCachePath() + instance.Version.Version + ".jar");
                 fileDownloader.DownloadFile();
             }
+            File.Copy(file, instance.Path);
         }
     }
 }

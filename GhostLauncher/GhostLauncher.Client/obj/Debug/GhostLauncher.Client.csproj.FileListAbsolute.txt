@@ -175,3 +175,5 @@ D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\SelectTypeWindow.g.cs
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\NewLocalWindow.baml
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\NewLocalWindow.g.cs
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\SplashWindow.baml
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\SplashWindow.g.cs
