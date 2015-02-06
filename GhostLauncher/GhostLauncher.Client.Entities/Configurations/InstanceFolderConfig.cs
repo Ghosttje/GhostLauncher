@@ -12,6 +12,10 @@ namespace GhostLauncher.Client.Entities.Configurations
         private List<Instance> _instances = new List<Instance>();
 
         [XmlIgnore]
-        public List<Instance> Instances { get; set; }
+        public List<Instance> Instances
+        {
+            get { return _instances; }
+            set { _instances = value; }
+        }
     }
 }
