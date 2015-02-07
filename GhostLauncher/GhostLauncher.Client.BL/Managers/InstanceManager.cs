@@ -70,7 +70,7 @@ namespace GhostLauncher.Client.BL.Managers
             }
         }
 
-        public List<Instance> GetAllInstances()
+        public IEnumerable<Instance> GetAllInstances()
         {
             var instances = new List<Instance>();
 
