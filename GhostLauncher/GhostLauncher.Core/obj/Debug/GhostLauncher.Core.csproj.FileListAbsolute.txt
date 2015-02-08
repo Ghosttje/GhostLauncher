@@ -39,5 +39,4 @@ D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\System.Spatial.x
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.csprojResolveAssemblyReference.cache
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.dll
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.pdb
-D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\GhostLauncher.Entities.pdb
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\Newtonsoft.Json.xml

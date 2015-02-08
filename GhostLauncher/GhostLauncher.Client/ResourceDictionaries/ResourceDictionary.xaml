@@ -20,5 +20,8 @@
     <Style TargetType="Image" x:Key="AddServer">
         <Setter Property="Source" Value="../Resources/Add-Server.png" />
     </Style>
+    <Style TargetType="Image" x:Key="SplashBackground">
+        <Setter Property="Source" Value="../Resources/Dirt-Background.png" />
+    </Style>
     
 </ResourceDictionary>

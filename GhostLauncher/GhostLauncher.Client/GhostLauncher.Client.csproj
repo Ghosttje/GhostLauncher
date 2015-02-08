@@ -233,6 +233,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\Dirt-Background.png" />
     <Content Include="Resources\Settings.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

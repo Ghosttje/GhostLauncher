@@ -15,7 +15,6 @@ D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client.BL\bin\Debug\System.Spat
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client.BL\bin\Debug\GhostLauncher.Client.Entities.pdb
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client.BL\bin\Debug\GhostLauncher.Core.pdb
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client.BL\bin\Debug\GhostLauncher.Entities.pdb
-D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client.BL\bin\Debug\Newtonsoft.Json.xml
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client.BL\bin\Debug\Repository.Pattern.pdb
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client.BL\bin\Debug\System.Web.Http.OData.xml
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client.BL\bin\Debug\System.Web.Http.xml

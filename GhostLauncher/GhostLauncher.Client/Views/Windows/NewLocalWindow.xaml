@@ -27,22 +27,19 @@
                 <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
-                <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="0" Grid.Column="0" Content="Name: " Margin="5" />
+            <Label Grid.Row="0" Grid.Column="0" Content="Name: " Margin="0,5,0,5" />
             <TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Name}" />
-            <Label Grid.Row="1" Grid.Column="0" Content="Server url: " Margin="0,5,5,5" HorizontalAlignment="Right" Width="109" Visibility="Collapsed"  />
-            <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Visibility="Collapsed" />
-            <Label Grid.Row="2" Grid.Column="0" Content="Location: " Margin="5, 0, 0, 0" />
-            <RadioButton Grid.Row="2" Grid.Column="1"  Margin="5, 0, 0, 0">Instance Folder</RadioButton>
-            <ComboBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Text="{Binding InstancePath}" />
-            <RadioButton Grid.Row="4" Grid.Column="1">Other location</RadioButton>
-            <TextBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Text="{Binding InstancePath}" />
-            <Button Grid.Row="5" Grid.Column="3" Content="..." VerticalAlignment="Center" Command="{Binding SelectPathCommand}" />
-            <Label Grid.Row="6" Grid.Column="0" Content="Minecraft Version: " Margin="5" />
-            <TextBox Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" IsEnabled="false" Text="{Binding SelectedVersion.Version}" />
-            <Button Grid.Row="6" Grid.Column="3" Content="..." VerticalAlignment="Center" Command="{Binding SelectVersionCommand}" />
+            <Label Grid.Row="1" Grid.Column="0" Content="Location: " />
+            <RadioButton Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" IsChecked="True" Checked="RadioButton_FolderLocation">Instance Folder</RadioButton>
+            <ComboBox Grid.Row="2" Grid.Column="1" Name="FolderLocationComboBox" VerticalAlignment="Center" Text="{Binding InstancePath}" />
+            <RadioButton Grid.Row="3" Grid.Column="1" Margin="0, 5, 0, 5" Checked="RadioButton_PathLocation">Other location</RadioButton>
+            <TextBox Grid.Row="4" Grid.Column="1" Name="PathLocationTextBox" VerticalAlignment="Center" IsEnabled="False" Text="{Binding InstancePath}" />
+            <Button Grid.Row="4" Grid.Column="3" Name="PathLocationButton" Content="..." VerticalAlignment="Center" IsEnabled="False" Command="{Binding SelectPathCommand}" />
+            <Label Grid.Row="5" Grid.Column="0" Content="Minecraft Version: " Margin="0,5,0,5" />
+            <TextBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" IsEnabled="false" Text="{Binding SelectedVersion.Version}" />
+            <Button Grid.Row="5" Grid.Column="3" Content="..." VerticalAlignment="Center" Command="{Binding SelectVersionCommand}" />
         </Grid>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
