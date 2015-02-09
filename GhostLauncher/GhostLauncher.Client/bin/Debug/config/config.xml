@@ -3,11 +3,6 @@
   <InstanceConfigFile>instances.xml</InstanceConfigFile>
   <MinecraftFolderPath>minecraft/</MinecraftFolderPath>
   <Cache>cache/</Cache>
-  <IsFirstTime>false</IsFirstTime>
-  <InstanceFolders>
-    <InstanceFolderConfig>
-      <Name>DefaultInstance</Name>
-      <Path>instances/</Path>
-    </InstanceFolderConfig>
-  </InstanceFolders>
+  <IsFirstTime>true</IsFirstTime>
+  <InstanceFolders />
 </AppConfig>

@@ -9,7 +9,7 @@ namespace GhostLauncher.Client.Entities.Configurations
         private string _minecraftFolderPath = "minecraft/";
         private string _cache = "cache/";
         private bool _isFirstTime = true;
-        private List<InstanceFolderConfig> _instanceFolders = new List<InstanceFolderConfig>();
+        private List<InstanceFolder> _instanceFolders = new List<InstanceFolder>();
 
         #region Setters/Getters
 
@@ -37,7 +37,7 @@ namespace GhostLauncher.Client.Entities.Configurations
             set { _isFirstTime = value; }
         }
 
-        public List<InstanceFolderConfig> InstanceFolders
+        public List<InstanceFolder> InstanceFolders
         {
             get { return _instanceFolders; }
             set { _instanceFolders = value; }

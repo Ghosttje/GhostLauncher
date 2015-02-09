@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Configurations\AppConfig.cs" />
-    <Compile Include="Configurations\InstanceFolderConfig.cs" />
+    <Compile Include="Configurations\InstanceFolder.cs" />
     <Compile Include="Instances\LocalInstance.cs" />
     <Compile Include="Enums\InstanceType.cs" />
     <Compile Include="Instances\Instance.cs" />

@@ -48,7 +48,7 @@ namespace GhostLauncher.Client.BL.Managers
 
         }
 
-        public void FindInstances(InstanceFolderConfig folder)
+        public void FindInstances(InstanceFolder folder)
         {
             if (!Directory.Exists(folder.Path))
             {

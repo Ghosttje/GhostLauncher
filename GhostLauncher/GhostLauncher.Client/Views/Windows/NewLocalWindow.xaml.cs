@@ -24,6 +24,8 @@ namespace GhostLauncher.Client.Views.Windows
 
         private void RadioButton_FolderLocation(object sender, RoutedEventArgs e)
         {
+            if (FolderLocationComboBox == null || PathLocationTextBox == null || PathLocationButton == null)
+                return;
             FolderLocationComboBox.IsEnabled = true;
             PathLocationTextBox.IsEnabled = false;
             PathLocationButton.IsEnabled = false;
@@ -31,6 +33,8 @@ namespace GhostLauncher.Client.Views.Windows
 
         private void RadioButton_PathLocation(object sender, RoutedEventArgs e)
         {
+            if (FolderLocationComboBox == null || PathLocationTextBox == null || PathLocationButton == null)
+                return;
             FolderLocationComboBox.IsEnabled = false;
             PathLocationTextBox.IsEnabled = true;
             PathLocationButton.IsEnabled = true;

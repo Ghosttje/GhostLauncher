@@ -22,8 +22,10 @@ namespace GhostLauncher.Client.BL.Managers
                 Configuration = new AppConfig();
                 SaveConfig();
             }
-
-            LoadConfig();
+            else
+            {
+                LoadConfig();
+            }
         }
 
         public void LoadConfig()
