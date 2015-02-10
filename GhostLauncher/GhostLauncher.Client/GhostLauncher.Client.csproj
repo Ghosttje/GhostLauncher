@@ -86,6 +86,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Converters\ResourceConverter.cs" />
+    <Compile Include="ViewModels\Pages\MainPage.cs" />
+    <Compile Include="Events\CreateInstanceArgs.cs" />
+    <Compile Include="Events\SelectedTypeArgs.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ResourceDictionaries\InstanceResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -99,25 +102,29 @@
     </Compile>
     <Compile Include="ResourceDictionaries\SharedDictionaryManager.cs" />
     <Compile Include="Validators\NameValidator.cs" />
-    <Compile Include="ViewModels\AboutViewModel.cs" />
-    <Compile Include="ViewModels\SelectTypeViewModel.cs" />
+    <Compile Include="ViewModels\Windows\AboutViewModel.cs" />
+    <Compile Include="ViewModels\Pages\SelectTypeViewModel.cs" />
     <Compile Include="ViewModels\Commands\RelayCommand.cs" />
-    <Compile Include="ViewModels\NewLocalViewModel.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\SettingsViewModel.cs" />
-    <Compile Include="ViewModels\SplashViewModel.cs" />
-    <Compile Include="ViewModels\VersionSelectorViewModel.cs" />
+    <Compile Include="ViewModels\Pages\NewLocalViewModel.cs" />
+    <Compile Include="ViewModels\Windows\MainViewModel.cs" />
+    <Compile Include="ViewModels\Windows\NewInstanceViewModel.cs" />
+    <Compile Include="ViewModels\Windows\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\Windows\SplashViewModel.cs" />
+    <Compile Include="ViewModels\Windows\VersionSelectorViewModel.cs" />
     <Compile Include="Views\Windows\AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Windows\SelectTypeWindow.xaml.cs">
-      <DependentUpon>SelectTypeWindow.xaml</DependentUpon>
+    <Compile Include="Views\Pages\SelectTypePage.xaml.cs">
+      <DependentUpon>SelectTypePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Windows\NewLocalWindow.xaml.cs">
-      <DependentUpon>NewLocalWindow.xaml</DependentUpon>
+    <Compile Include="Views\Pages\NewLocalPage.xaml.cs">
+      <DependentUpon>NewLocalPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\NewInstanceWindow.xaml.cs">
+      <DependentUpon>NewInstanceWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
@@ -128,7 +135,6 @@
     <Compile Include="Views\Windows\VersionSelectorWindow.xaml.cs">
       <DependentUpon>VersionSelectorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Wizards\NewInstanceWizard.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -174,15 +180,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Windows\SelectTypeWindow.xaml">
+    <Page Include="Views\Pages\SelectTypePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Windows\NewLocalWindow.xaml">
+    <Page Include="Views\Pages\NewLocalPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Windows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\NewInstanceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -261,9 +271,7 @@
       <Name>GhostLauncher.Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Pages\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,0 +1,16 @@
+LocalInstance:
+	- Instance that is only client side.
+	- Folder structure:
+		- [Name]/
+			- Minecraft/
+				- mods/
+				- config/
+			- instance.xml
+RemoteInstance:
+	- Instance that is copied from the server.
+	- Folder structure:
+		- [Name]/
+			- Minecraft/
+				- mods/
+				- config/
+			- instance.xml

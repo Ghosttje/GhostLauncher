@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using GhostLauncher.Client.ResourceDictionaries;
 using GhostLauncher.Client.ViewModels;
+using GhostLauncher.Client.ViewModels.Windows;
 
 namespace GhostLauncher.Client.Views.Windows
 {

@@ -124,9 +124,11 @@ D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.
 D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.pdb
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client_MarkupCompile.lref
-D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\SelectTypeWindow.baml
-D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\SelectTypeWindow.g.cs
-D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\NewLocalWindow.baml
-D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\NewLocalWindow.g.cs
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\SplashWindow.baml
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\SplashWindow.g.cs
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Pages\SelectTypePage.baml
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Pages\NewLocalPage.baml
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\NewInstanceWindow.baml
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Pages\SelectTypePage.g.cs
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Pages\NewLocalPage.g.cs
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\NewInstanceWindow.g.cs

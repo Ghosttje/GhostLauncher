@@ -1,20 +1,15 @@
-﻿using System.Windows;
-using GhostLauncher.Client.Entities.Enums;
+﻿using GhostLauncher.Client.Entities.Enums;
+using GhostLauncher.Client.Events;
 using GhostLauncher.Client.ViewModels.Commands;
 
-namespace GhostLauncher.Client.ViewModels
+namespace GhostLauncher.Client.ViewModels.Pages
 {
     public class SelectTypeViewModel
     {
         private RelayCommand _command;
-        private Window _window;
 
-        public InstanceType InstanceType { get; set; }
-
-        public SelectTypeViewModel(Window window)
-        {
-            _window = window;
-        }
+        public delegate void RaiseSelectedType(SelectTypeViewModel m, SelectedTypeArgs e);
+        public event RaiseSelectedType SelectedTypeHandler;
 
         #region Commands
 
@@ -42,16 +37,18 @@ namespace GhostLauncher.Client.ViewModels
 
         private void NewInstance()
         {
-            InstanceType = InstanceType.Local;
-            _window.DialogResult = true;
-            _window.Close();
+            if (SelectedTypeHandler == null)
+                return;
+            var args = new SelectedTypeArgs() { InstanceType = InstanceType.Local };
+            SelectedTypeHandler(this, args);
         }
 
         private void NewServer()
         {
-            InstanceType = InstanceType.Remote;
-            _window.DialogResult = true;
-            _window.Close();
+            if (SelectedTypeHandler == null)
+                return;
+            var args = new SelectedTypeArgs() { InstanceType = InstanceType.Remote };
+            SelectedTypeHandler(this, args);
         }
 
         #endregion

@@ -10,18 +10,18 @@ namespace GhostLauncher.Client.BL.Managers
 {
     public class InstanceManager
     {
-        private string GetInstanceConfigFile()
+        private static string GetInstanceConfigFile()
         {
             return MasterManager.GetSingleton.GetConfig().InstanceConfigFile;
         }
 
-        public void AddInstance(LocalInstance instance)
+        public void AddInstance(Instance instance)
         {
             Directory.CreateDirectory(instance.Path);
             if (!File.Exists(instance.Path + GetInstanceConfigFile()))
             {
                 XmlHelper.WriteConfig(instance.Path + GetInstanceConfigFile(), instance);
-                
+
                 //TODO: Fix instances
                 //_instances.Add(instance);
             }
@@ -31,21 +31,11 @@ namespace GhostLauncher.Client.BL.Managers
             }
         }
 
-        public void AddInstance(RemoteInstance instance)
-        {
-
-        }
-
-        public void DeleteInstance(LocalInstance instance)
+        public void DeleteInstance(Instance instance)
         {
             Directory.Delete(instance.Path, true);
             //TODO: Fix instances
             //_instances.Remove(instance);
-        }
-
-        public void DeleteInstance(RemoteInstance instance)
-        {
-
         }
 
         public void FindInstances(InstanceFolder folder)

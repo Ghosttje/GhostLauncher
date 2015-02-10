@@ -1,25 +1,20 @@
 ﻿using System.Windows;
-using System.Windows.Input;
+using System.Windows.Controls;
 using GhostLauncher.Client.ResourceDictionaries;
-using GhostLauncher.Client.ViewModels;
+using GhostLauncher.Client.ViewModels.Pages;
 
-namespace GhostLauncher.Client.Views.Windows
+namespace GhostLauncher.Client.Views.Pages
 {
     /// <summary>
     /// Interaction logic for CreateInstanceWindow.xaml
     /// </summary>
-    public partial class NewLocalWindow : Window
+    public partial class NewLocalPage : Page
     {
-        public NewLocalWindow()
+        public NewLocalPage()
         {
             Resources.MergedDictionaries.Add(SharedDictionaryManager.SharedDictionary);
             InitializeComponent();
-            DataContext = new NewLocalViewModel(this);
-        }
-
-        private void CloseCommandHandler(object sender, ExecutedRoutedEventArgs e)
-        {
-            Close();
+            DataContext = new NewLocalViewModel();
         }
 
         private void RadioButton_FolderLocation(object sender, RoutedEventArgs e)

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace GhostLauncher.Client.ViewModels
+namespace GhostLauncher.Client.ViewModels.Windows
 {
     public class AboutViewModel
     {

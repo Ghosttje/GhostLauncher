@@ -5,10 +5,9 @@ using GhostLauncher.Client.Entities.Enums;
 using GhostLauncher.Client.Entities.Instances;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views.Windows;
-using GhostLauncher.Client.Wizards;
 using GhostLauncher.Core;
 
-namespace GhostLauncher.Client.ViewModels
+namespace GhostLauncher.Client.ViewModels.Windows
 {
     public class MainViewModel : NotifyPropertyChanged
     {
@@ -99,8 +98,9 @@ namespace GhostLauncher.Client.ViewModels
 
         private void AddInstance()
         {
-            var wizard = new NewInstanceWizard();
-            if (wizard.Start(_window))
+            var newInstance = new NewInstanceWindow();
+            newInstance.ShowDialog();
+            if (newInstance.DialogResult.HasValue && newInstance.DialogResult.Value)
             {
                 RefreshInstances();
             }

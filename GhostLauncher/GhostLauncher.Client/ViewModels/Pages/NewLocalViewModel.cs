@@ -1,19 +1,19 @@
-﻿using System.Collections.ObjectModel;
-using System.Windows;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows.Forms;
 using GhostLauncher.Client.BL;
 using GhostLauncher.Client.Entities.Configurations;
+using GhostLauncher.Client.Entities.Instances;
+using GhostLauncher.Client.Events;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views.Windows;
-using GhostLauncher.Core;
 using GhostLauncher.Entities;
 
-namespace GhostLauncher.Client.ViewModels
+namespace GhostLauncher.Client.ViewModels.Pages
 {
-    public class NewLocalViewModel : NotifyPropertyChanged
+    public class NewLocalViewModel : MainPage
     {
         private RelayCommand _command;
-        private readonly Window _window;
 
         private string _name;
         private string _instancePath;
@@ -25,10 +25,11 @@ namespace GhostLauncher.Client.ViewModels
         private bool _isFolderLocation = true;
         private bool _isPathLocation;
 
-        public NewLocalViewModel(Window window)
-        {
-            _window = window;
+        public delegate void RaiseCreated(NewLocalViewModel m, CreateInstanceArgs e);
+        public event RaiseCreated CreatedHandler;
 
+        public NewLocalViewModel()
+        {
             foreach (var instanceFolder in MasterManager.GetSingleton.GetConfig().InstanceFolders)
             {
                 _instanceFolders.Add(instanceFolder);
@@ -153,14 +154,11 @@ namespace GhostLauncher.Client.ViewModels
 
         private void CreateInstance()
         {
-            _window.DialogResult = true;
-            _window.Close();
-        }
-
-        private void Close()
-        {
-            _window.DialogResult = false;
-            _window.Close();
+            if (CreatedHandler != null)
+                return;
+            var instance = new LocalInstance() {Name = _name, Path = _instancePath, Version = _selectedVersion};
+            var args = new CreateInstanceArgs() { Instance = instance};
+            CreatedHandler(this, args);
         }
 
         private void SelectPath()
@@ -175,7 +173,7 @@ namespace GhostLauncher.Client.ViewModels
 
         private void SelectVersion()
         {
-            var versionSelector = new VersionSelectorWindow { Owner = _window };
+            var versionSelector = new VersionSelectorWindow();
             versionSelector.ShowDialog();
 
             if (versionSelector.DialogResult.HasValue && versionSelector.DialogResult.Value)
