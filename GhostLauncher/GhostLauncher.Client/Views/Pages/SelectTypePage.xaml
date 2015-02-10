@@ -9,13 +9,13 @@
         <Button Command="{Binding AddInstanceCommand}">
             <StackPanel Orientation="Vertical">
                 <Image Height="256" Style="{StaticResource AddInstance}" />
-                <Button Content="Add instance" />
+                <Button Content="Add instance" FontSize="16" />
             </StackPanel>
         </Button>
         <Button Command="{Binding AddServerCommand}" IsEnabled="False">
             <StackPanel Orientation="Vertical">
                 <Image Height="256" Style="{StaticResource AddServer}" />
-                <Button Content="Add server instance" />
+                <Button Content="Add server instance" FontSize="16" />
             </StackPanel>
         </Button>
     </StackPanel>

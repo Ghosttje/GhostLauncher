@@ -98,7 +98,7 @@ namespace GhostLauncher.Client.ViewModels.Windows
 
         private void AddInstance()
         {
-            var newInstance = new NewInstanceWindow();
+            var newInstance = new NewInstanceWindow() {Owner = _window};
             newInstance.ShowDialog();
             if (newInstance.DialogResult.HasValue && newInstance.DialogResult.Value)
             {
