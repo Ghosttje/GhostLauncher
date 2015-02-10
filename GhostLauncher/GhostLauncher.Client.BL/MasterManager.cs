@@ -29,7 +29,7 @@ namespace GhostLauncher.Client.BL
 
             if (GetConfig().IsFirstTime)
             {
-                GetConfig().InstanceFolders.Add(new InstanceFolder() { Name = "DefaultInstance", Path = "instances/"});
+                GetConfig().InstanceFolders.Add(new InstanceFolder() { Name = "DefaultInstance", IsDefault = true, Path = "instances/"});
                 GetConfig().IsFirstTime = false;
                 ConfigurationManager.SaveConfig();
             }

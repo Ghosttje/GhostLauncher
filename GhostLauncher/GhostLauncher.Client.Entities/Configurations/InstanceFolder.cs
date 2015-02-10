@@ -9,6 +9,7 @@ namespace GhostLauncher.Client.Entities.Configurations
     {
         private string _name;
         public string Path { get; set; }
+        public bool IsDefault { get; set; }
 
         private List<Instance> _instances = new List<Instance>();
 

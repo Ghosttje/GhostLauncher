@@ -20,6 +20,7 @@ namespace GhostLauncher.Client.BL.Managers
             if (!File.Exists(GetConfigUrl()))
             {
                 Configuration = new AppConfig();
+
                 SaveConfig();
             }
             else
