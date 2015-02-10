@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" d:DesignWidth="189.64"
-	Title="New local instance" Height="250">
+	Title="New instance">
     <StackPanel Orientation="Horizontal">
         <Button Command="{Binding AddInstanceCommand}">
             <StackPanel Orientation="Vertical">
