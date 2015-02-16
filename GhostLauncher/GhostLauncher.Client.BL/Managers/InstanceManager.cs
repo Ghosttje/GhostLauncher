@@ -38,6 +38,11 @@ namespace GhostLauncher.Client.BL.Managers
             //_instances.Remove(instance);
         }
 
+        public void SetupStructure(Instance instance)
+        {
+            Directory.CreateDirectory(instance.Path + MasterManager.GetSingleton.ConfigurationManager.Configuration.MinecraftFolderPath);
+        }
+
         public void FindInstances(InstanceFolder folder)
         {
             if (!Directory.Exists(folder.Path))

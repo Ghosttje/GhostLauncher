@@ -1,16 +1,20 @@
-﻿using GhostLauncher.Client.Entities.Enums;
+﻿using System.Xml.Serialization;
+using GhostLauncher.Client.Entities.Enums;
 using GhostLauncher.Core;
 using GhostLauncher.Entities;
 
 namespace GhostLauncher.Client.Entities.Instances
 {
+    [XmlInclude(typeof(LocalInstance))]
+    [XmlInclude(typeof(RemoteInstance))]
     public class Instance : NotifyPropertyChanged
     {
         private string _name;
         private string _icon = "InstanceLogo";
         private string _path;
-        private MinecraftVersion _version;
-        private InstanceType _instanceType;
+        public MinecraftVersion Version { get; set; }
+        public InstanceType InstanceType { get; set; }
+        public bool UsesFolderLocation { get; set; }
 
         #region Setters/Getters
 
@@ -50,30 +54,6 @@ namespace GhostLauncher.Client.Entities.Instances
             {
                 _path = value;
                 OnPropertyChanged();
-            }
-        }
-
-        public MinecraftVersion Version
-        {
-            get
-            {
-                return _version;
-            }
-            set
-            {
-                _version = value;
-            }
-        }
-
-        public InstanceType InstanceType
-        {
-            get
-            {
-                return _instanceType;
-            }
-            set
-            {
-                _instanceType = value;
             }
         }
 

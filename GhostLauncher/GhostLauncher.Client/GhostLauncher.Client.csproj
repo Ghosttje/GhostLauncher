@@ -56,10 +56,6 @@
     <StartupObject>GhostLauncher.Client.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Data" />
@@ -107,6 +103,7 @@
     <Compile Include="ViewModels\Commands\RelayCommand.cs" />
     <Compile Include="ViewModels\Pages\NewLocalViewModel.cs" />
     <Compile Include="ViewModels\Windows\MainViewModel.cs" />
+    <Compile Include="ViewModels\Windows\NewInstanceFolderViewModel.cs" />
     <Compile Include="ViewModels\Windows\NewInstanceViewModel.cs" />
     <Compile Include="ViewModels\Windows\SettingsViewModel.cs" />
     <Compile Include="ViewModels\Windows\SplashViewModel.cs" />
@@ -122,6 +119,9 @@
     </Compile>
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\NewInstanceFolderWindow.xaml.cs">
+      <DependentUpon>NewInstanceFolderWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\NewInstanceWindow.xaml.cs">
       <DependentUpon>NewInstanceWindow.xaml</DependentUpon>
@@ -189,6 +189,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Windows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\NewInstanceFolderWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -5,7 +5,7 @@ namespace GhostLauncher.Client.Entities.Configurations
 {
     public class AppConfig
     {
-        private string _instanceConfigFile = "instances.xml";
+        private string _instanceConfigFile = "instance.xml";
         private string _minecraftFolderPath = "minecraft/";
         private string _cache = "cache/";
         private bool _isFirstTime = true;

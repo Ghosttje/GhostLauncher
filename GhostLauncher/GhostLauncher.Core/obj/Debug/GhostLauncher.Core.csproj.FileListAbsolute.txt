@@ -19,8 +19,7 @@ D:\TeamFoundation\Ghosttje\GhostLauncher\Development\GhostLauncher\GhostLauncher
 D:\TeamFoundation\Ghosttje\GhostLauncher\Development\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.csprojResolveAssemblyReference.cache
 D:\TeamFoundation\Ghosttje\GhostLauncher\Development\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.dll
 D:\TeamFoundation\Ghosttje\GhostLauncher\Development\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.pdb
-D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\GhostLauncher.Core.dll
-D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\GhostLauncher.Core.pdb
-D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.csprojResolveAssemblyReference.cache
-D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.dll
-D:\Git\ghostlauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.pdb
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\GhostLauncher.Core.dll
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\GhostLauncher.Core.pdb
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.dll
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.pdb
