@@ -133,3 +133,5 @@ D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.csproj.GenerateResource.Cache
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.exe
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.pdb
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\NewInstanceFolderWindow.baml
+D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Windows\NewInstanceFolderWindow.g.cs
