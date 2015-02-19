@@ -30,7 +30,7 @@ namespace GhostLauncher.Client.ViewModels.Pages
 
         public NewLocalViewModel()
         {
-            foreach (var instanceFolder in MasterManager.GetSingleton.GetConfig().InstanceFolders)
+            foreach (var instanceFolder in Manager.GetSingleton.GetConfig().InstanceFolders)
             {
                 _instanceFolders.Add(instanceFolder);
             }
@@ -157,7 +157,7 @@ namespace GhostLauncher.Client.ViewModels.Pages
             if (CreatedHandler == null)
                 return;
             var path = _isFolderLocation ? _selectedFolder.Path + _name + "/" : _instancePath;
-            var instance = new LocalInstance() {Name = _name, Path = path, Version = _selectedVersion, UsesFolderLocation = _isFolderLocation};
+            var instance = new LocalInstance() {Name = _name, Path = path, Version = _selectedVersion, UsesInstanceFolder = _isFolderLocation};
             var args = new CreateInstanceArgs() { Instance = instance};
             CreatedHandler(this, args);
         }

@@ -27,7 +27,7 @@ namespace GhostLauncher.Client.ViewModels.Windows
         private void RefreshInstances()
         {
             _instanceCollection.Clear();
-            foreach (var instance in MasterManager.GetSingleton.InstanceManager.GetAllInstances())
+            foreach (var instance in Manager.GetSingleton.InstanceManager.GetAllInstances())
             {
                 _instanceCollection.Add(instance);
             } 
@@ -113,11 +113,11 @@ namespace GhostLauncher.Client.ViewModels.Windows
             {
                 if (_selectedInstance.InstanceType == InstanceType.Remote)
                 {
-                    MasterManager.GetSingleton.InstanceManager.DeleteInstance((RemoteInstance)_selectedInstance);
+                    Manager.GetSingleton.InstanceManager.DeleteInstance((RemoteInstance)_selectedInstance);
                 }
                 else
                 {
-                    MasterManager.GetSingleton.InstanceManager.DeleteInstance((LocalInstance)_selectedInstance);
+                    Manager.GetSingleton.InstanceManager.DeleteInstance((LocalInstance)_selectedInstance);
                 }
                 _instanceCollection.Remove(_selectedInstance);
             }

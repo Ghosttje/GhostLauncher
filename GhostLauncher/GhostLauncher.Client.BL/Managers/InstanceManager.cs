@@ -12,7 +12,7 @@ namespace GhostLauncher.Client.BL.Managers
     {
         private static string GetInstanceConfigFile()
         {
-            return MasterManager.GetSingleton.GetConfig().InstanceConfigFile;
+            return Manager.GetSingleton.GetConfig().InstanceConfigFile;
         }
 
         public void AddInstance(Instance instance)
@@ -40,7 +40,7 @@ namespace GhostLauncher.Client.BL.Managers
 
         public void SetupStructure(Instance instance)
         {
-            Directory.CreateDirectory(instance.Path + MasterManager.GetSingleton.ConfigurationManager.Configuration.MinecraftFolderPath);
+            Directory.CreateDirectory(instance.Path + Manager.GetSingleton.ConfigurationManager.Configuration.MinecraftFolderPath);
         }
 
         public void FindInstances(InstanceFolder folder)
@@ -55,7 +55,7 @@ namespace GhostLauncher.Client.BL.Managers
 
                 foreach (var dir in dirs)
                 {
-                    var xmlFile = dir + "/" + MasterManager.GetSingleton.ConfigurationManager.Configuration.InstanceConfigFile;
+                    var xmlFile = dir + "/" + Manager.GetSingleton.ConfigurationManager.Configuration.InstanceConfigFile;
                     if (!File.Exists(xmlFile))
                         continue;
                     var instance = XmlHelper.ReadConfig<LocalInstance>(xmlFile);
@@ -69,7 +69,7 @@ namespace GhostLauncher.Client.BL.Managers
         {
             var instances = new List<Instance>();
 
-            foreach (var instanceFolder in MasterManager.GetSingleton.GetConfig().InstanceFolders.Where(x => x.Instances.Count != 0))
+            foreach (var instanceFolder in Manager.GetSingleton.GetConfig().InstanceFolders.Where(x => x.Instances.Count != 0))
             {
                 instances.AddRange(instanceFolder.Instances);
             }

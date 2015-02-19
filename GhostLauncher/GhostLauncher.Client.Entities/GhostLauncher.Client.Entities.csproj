@@ -35,6 +35,7 @@
     <Compile Include="Instances\LocalInstance.cs" />
     <Compile Include="Enums\InstanceType.cs" />
     <Compile Include="Instances\Instance.cs" />
+    <Compile Include="Managers\FileDownload.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Instances\RemoteInstance.cs" />
   </ItemGroup>

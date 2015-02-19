@@ -14,7 +14,7 @@ namespace GhostLauncher.Client.Entities.Instances
         private string _path;
         public MinecraftVersion Version { get; set; }
         public InstanceType InstanceType { get; set; }
-        public bool UsesFolderLocation { get; set; }
+        public bool UsesInstanceFolder { get; set; }
 
         #region Setters/Getters
 

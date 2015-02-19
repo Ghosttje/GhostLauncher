@@ -62,8 +62,8 @@ namespace GhostLauncher.Client.ViewModels.Windows
 
         private void CreateNewInstance(object m, CreateInstanceArgs e)
         {
-            MasterManager.GetSingleton.InstanceManager.AddInstance(e.Instance);
-            MasterManager.GetSingleton.InstanceManager.SetupStructure(e.Instance);
+            Manager.GetSingleton.InstanceManager.AddInstance(e.Instance);
+            Manager.GetSingleton.InstanceManager.SetupStructure(e.Instance);
             JarHelper.GetFile(e.Instance);
 
             _window.DialogResult = true;

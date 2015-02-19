@@ -28,7 +28,7 @@ namespace GhostLauncher.Client.ViewModels
 
         private void InitApp()
         {
-            MasterManager.GetSingleton.StartApp();
+            Manager.GetSingleton.StartApp();
             Application.Current.Dispatcher.Invoke(Done);
        
         }

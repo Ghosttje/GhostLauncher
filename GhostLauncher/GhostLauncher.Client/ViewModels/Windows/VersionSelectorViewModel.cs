@@ -26,9 +26,9 @@ namespace GhostLauncher.Client.ViewModels
             VersionCollection.Clear();
             _selectedVersion = null;
 
-            MasterManager.GetSingleton.VersionManager.Init();
+            Manager.GetSingleton.VersionManager.Init();
 
-            foreach (var result in MasterManager.GetSingleton.VersionManager.MinecraftVersions)
+            foreach (var result in Manager.GetSingleton.VersionManager.MinecraftVersions)
             {
                 VersionCollection.Add(result);
             }

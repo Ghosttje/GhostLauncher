@@ -1,6 +1,8 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Ghostlauncher is a new minecraft launcher that replaces the original launcher. It will not only add the capability to run
+multiple instances. But it will also open the possible to work with modded servers. If you install the server instance
+manager on the server, the client will be capable to download the mods from the server when you connect.
 
 ### What is this repository for? ###
 

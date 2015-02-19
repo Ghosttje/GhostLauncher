@@ -1,3 +1,14 @@
+--- SCENARIO ---
+-- Starting the application
+	1. Load the instances
+-- Create new instances
+	1. Choose between local or remote instance
+	2. Choose the name and path
+	3. Create the folders
+	4. Download the jar file into the cache (if not ready in the cache)
+	5. Copy it to the correct folder
+
+--- FOLDER STRUCTURE ---
 LocalInstance:
 	- Instance that is only client side.
 	- Folder structure:

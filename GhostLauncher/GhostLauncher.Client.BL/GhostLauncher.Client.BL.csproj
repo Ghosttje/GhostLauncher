@@ -43,13 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Elements\BlockingCollection.cs" />
+    <Compile Include="Managers\DownloadManager.cs" />
     <Compile Include="Tasks\FileDownloader.cs" />
     <Compile Include="Helpers\JarHelper.cs" />
     <Compile Include="Managers\ConfigurationManager.cs" />
     <Compile Include="Managers\InstanceManager.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Managers\VersionManager.cs" />
-    <Compile Include="MasterManager.cs" />
+    <Compile Include="Manager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
