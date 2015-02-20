@@ -14,7 +14,7 @@ namespace GhostLauncher.Client.Views.Windows
             Resources.MergedDictionaries.Add(SharedDictionaryManager.SharedDictionary);
             InitializeComponent();
             var viewmodel = new MainViewModel(this);
-            Closed += (sender, e) => viewmodel.Close();
+            Closed += (sender, e) => MainViewModel.Close();
             DataContext = viewmodel;
         }
     }
