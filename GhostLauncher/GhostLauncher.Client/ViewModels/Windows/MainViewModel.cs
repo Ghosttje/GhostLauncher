@@ -27,7 +27,7 @@ namespace GhostLauncher.Client.ViewModels.Windows
         private void RefreshInstances()
         {
             _instanceCollection.Clear();
-            foreach (var instance in Manager.GetSingleton.InstanceManager.GetAllInstances())
+            foreach (var instance in Manager.GetSingleton.InstanceManager.Instances)
             {
                 _instanceCollection.Add(instance);
             } 

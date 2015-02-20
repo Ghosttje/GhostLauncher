@@ -42,7 +42,7 @@ namespace GhostLauncher.Client.BL.Helpers
             var instances = DownloadInProgress[fileDownload];
             foreach (var instance in instances)
             {
-                File.Copy(fileDownload.Url, instance.Path + Manager.GetSingleton.GetConfig().MinecraftFolderPath + fileDownload.Name + ".jar");
+                File.Copy(fileDownload.Url, instance.InstanceLocation.Path + Manager.GetSingleton.GetConfig().MinecraftFolderPath + fileDownload.Name + ".jar");
             }
         }
     }

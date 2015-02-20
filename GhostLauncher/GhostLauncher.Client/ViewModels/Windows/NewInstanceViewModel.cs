@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using GhostLauncher.Client.BL;
 using GhostLauncher.Client.BL.Helpers;
+using GhostLauncher.Client.BL.Managers;
 using GhostLauncher.Client.Entities.Enums;
 using GhostLauncher.Client.Events;
 using GhostLauncher.Client.ViewModels.Pages;
@@ -63,7 +64,7 @@ namespace GhostLauncher.Client.ViewModels.Windows
         private void CreateNewInstance(object m, CreateInstanceArgs e)
         {
             Manager.GetSingleton.InstanceManager.AddInstance(e.Instance);
-            Manager.GetSingleton.InstanceManager.SetupStructure(e.Instance);
+            InstanceManager.SetupStructure(e.Instance);
             JarHelper.GetFile(e.Instance);
 
             _window.DialogResult = true;

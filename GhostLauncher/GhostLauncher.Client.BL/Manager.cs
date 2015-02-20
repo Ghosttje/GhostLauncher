@@ -1,5 +1,6 @@
 ﻿using GhostLauncher.Client.BL.Managers;
 using GhostLauncher.Client.Entities.Configurations;
+using GhostLauncher.Client.Entities.Locations;
 
 namespace GhostLauncher.Client.BL
 {
@@ -31,7 +32,7 @@ namespace GhostLauncher.Client.BL
 
             if (GetConfig().IsFirstTime)
             {
-                GetConfig().InstanceFolders.Add(new InstanceFolder() { Name = "DefaultInstance", IsDefault = true, Path = "instances/"});
+                GetConfig().InstanceLocations.Add(new InstanceFolder() { Name = "DefaultInstance", IsDefault = true, Path = "instances/"});
                 GetConfig().IsFirstTime = false;
                 ConfigurationManager.SaveConfig();
             }
@@ -39,7 +40,7 @@ namespace GhostLauncher.Client.BL
             DownloadManager.ThreadCount = GetConfig().DownloadThreadCount;
             DownloadManager.Start();
 
-            foreach (var instanceFolder in GetConfig().InstanceFolders)
+            foreach (var instanceFolder in GetConfig().InstanceLocations)
             {
                 InstanceManager.FindInstances(instanceFolder);
             }

@@ -1,5 +1,6 @@
 ﻿using System.Xml.Serialization;
 using GhostLauncher.Client.Entities.Enums;
+using GhostLauncher.Client.Entities.Locations;
 using GhostLauncher.Core;
 using GhostLauncher.Entities;
 
@@ -11,11 +12,12 @@ namespace GhostLauncher.Client.Entities.Instances
     {
         private string _name;
         private string _icon = "InstanceLogo";
-        private string _path;
         public MinecraftVersion Version { get; set; }
         public InstanceType InstanceType { get; set; }
-        public bool UsesInstanceFolder { get; set; }
 
+        [XmlIgnore]
+        public InstanceLocation InstanceLocation { get; set; }
+        
         #region Setters/Getters
 
         public string Name
@@ -40,19 +42,6 @@ namespace GhostLauncher.Client.Entities.Instances
             set
             {
                 _icon = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string Path
-        {
-            get
-            {
-                return _path;
-            }
-            set
-            {
-                _path = value;
                 OnPropertyChanged();
             }
         }

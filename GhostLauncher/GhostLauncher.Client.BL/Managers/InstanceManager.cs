@@ -1,15 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using GhostLauncher.Client.BL.Helpers;
-using GhostLauncher.Client.Entities.Configurations;
 using GhostLauncher.Client.Entities.Instances;
+using GhostLauncher.Client.Entities.Locations;
 
 namespace GhostLauncher.Client.BL.Managers
 {
     public class InstanceManager
     {
+        private readonly List<Instance> _instances = new List<Instance>();
+
+        public IEnumerable<Instance> Instances
+        {
+            get { return _instances; }
+        }
+
         private static string GetInstanceConfigFile()
         {
             return Manager.GetSingleton.GetConfig().InstanceConfigFile;
@@ -17,13 +23,11 @@ namespace GhostLauncher.Client.BL.Managers
 
         public void AddInstance(Instance instance)
         {
-            Directory.CreateDirectory(instance.Path);
-            if (!File.Exists(instance.Path + GetInstanceConfigFile()))
+            Directory.CreateDirectory(instance.InstanceLocation.Path);
+            if (!File.Exists(instance.InstanceLocation.Path + GetInstanceConfigFile()))
             {
-                XmlHelper.WriteConfig(instance.Path + GetInstanceConfigFile(), instance);
-
-                //TODO: Fix instances
-                //_instances.Add(instance);
+                XmlHelper.WriteConfig(instance.InstanceLocation.Path + GetInstanceConfigFile(), instance);
+                _instances.Add(instance);
             }
             else
             {
@@ -33,17 +37,16 @@ namespace GhostLauncher.Client.BL.Managers
 
         public void DeleteInstance(Instance instance)
         {
-            Directory.Delete(instance.Path, true);
-            //TODO: Fix instances
-            //_instances.Remove(instance);
+            Directory.Delete(instance.InstanceLocation.Path, true);
+            _instances.Remove(instance);
         }
 
-        public void SetupStructure(Instance instance)
+        public static void SetupStructure(Instance instance)
         {
-            Directory.CreateDirectory(instance.Path + Manager.GetSingleton.ConfigurationManager.Configuration.MinecraftFolderPath);
+            Directory.CreateDirectory(instance.InstanceLocation.Path + Manager.GetSingleton.ConfigurationManager.Configuration.MinecraftFolderPath);
         }
 
-        public void FindInstances(InstanceFolder folder)
+        public void FindInstances(InstanceLocation folder)
         {
             if (!Directory.Exists(folder.Path))
             {
@@ -51,29 +54,33 @@ namespace GhostLauncher.Client.BL.Managers
             }
             else
             {
-                var dirs = Directory.GetDirectories(folder.Path);
-
-                foreach (var dir in dirs)
+                if (folder.GetType() == typeof (InstanceFolder))
                 {
-                    var xmlFile = dir + "/" + Manager.GetSingleton.ConfigurationManager.Configuration.InstanceConfigFile;
-                    if (!File.Exists(xmlFile))
-                        continue;
-                    var instance = XmlHelper.ReadConfig<Instance>(xmlFile);
-                    folder.Instances.Add(instance);
+                    var dirs = Directory.GetDirectories(folder.Path);
+
+                    foreach (var dir in dirs)
+                    {
+                        var xmlFile = GetInstanceXmlPath(dir);
+                        if (!File.Exists(xmlFile))
+                            continue;
+                        var instance = XmlHelper.ReadConfig<Instance>(xmlFile);
+                        _instances.Add(instance);
+                    }
                 }
+                else
+                {
+                    var xmlFile = GetInstanceXmlPath(folder.Path);
+                    if (!File.Exists(xmlFile)) return;
+                    var instance = XmlHelper.ReadConfig<Instance>(xmlFile);
+                    _instances.Add(instance);
+                }
+
             }
         }
 
-        public IEnumerable<Instance> GetAllInstances()
+        private static string GetInstanceXmlPath(string dir)
         {
-            var instances = new List<Instance>();
-
-            foreach (var instanceFolder in Manager.GetSingleton.GetConfig().InstanceFolders.Where(x => x.Instances.Count != 0))
-            {
-                instances.AddRange(instanceFolder.Instances);
-            }
-
-            return instances;
+            return dir + "/" + Manager.GetSingleton.ConfigurationManager.Configuration.InstanceConfigFile;
         }
     }
 }

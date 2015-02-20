@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Forms;
 using GhostLauncher.Client.BL;
 using GhostLauncher.Client.Entities.Configurations;
 using GhostLauncher.Client.Entities.Instances;
+using GhostLauncher.Client.Entities.Locations;
 using GhostLauncher.Client.Events;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views.Windows;
@@ -30,9 +32,9 @@ namespace GhostLauncher.Client.ViewModels.Pages
 
         public NewLocalViewModel()
         {
-            foreach (var instanceFolder in Manager.GetSingleton.GetConfig().InstanceFolders)
+            foreach (var instanceFolder in Manager.GetSingleton.GetConfig().InstanceLocations.Where(instanceFolder => instanceFolder.GetType() == typeof (InstanceFolder)))
             {
-                _instanceFolders.Add(instanceFolder);
+                _instanceFolders.Add((InstanceFolder)instanceFolder);
             }
         }
 
@@ -156,9 +158,19 @@ namespace GhostLauncher.Client.ViewModels.Pages
         {
             if (CreatedHandler == null)
                 return;
-            var path = _isFolderLocation ? _selectedFolder.Path + _name + "/" : _instancePath;
-            var instance = new LocalInstance() {Name = _name, Path = path, Version = _selectedVersion, UsesInstanceFolder = _isFolderLocation};
-            var args = new CreateInstanceArgs() { Instance = instance};
+
+            InstanceLocation location;
+            if (_isFolderLocation)
+            {
+                location = _selectedFolder;
+            }
+            else
+            {
+                location = new InstancePath { Path = _instancePath };
+            }
+                
+            var instance = new LocalInstance() { Name = _name, Version = _selectedVersion, InstanceLocation = location };
+            var args = new CreateInstanceArgs() { Instance = instance };
             CreatedHandler(this, args);
         }
 

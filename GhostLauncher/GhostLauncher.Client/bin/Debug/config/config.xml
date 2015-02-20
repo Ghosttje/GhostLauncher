@@ -4,11 +4,12 @@
   <MinecraftFolderPath>minecraft/</MinecraftFolderPath>
   <Cache>cache/</Cache>
   <IsFirstTime>false</IsFirstTime>
-  <InstanceFolders>
-    <InstanceFolder>
+  <DownloadThreadCount>2</DownloadThreadCount>
+  <InstanceLocations>
+    <InstanceLocation xsi:type="InstanceFolder">
       <Path>instances/</Path>
       <IsDefault>true</IsDefault>
       <Name>DefaultInstance</Name>
-    </InstanceFolder>
-  </InstanceFolders>
+    </InstanceLocation>
+  </InstanceLocations>
 </AppConfig>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using GhostLauncher.Client.Entities.Locations;
 
 namespace GhostLauncher.Client.Entities.Configurations
 {
@@ -10,7 +11,7 @@ namespace GhostLauncher.Client.Entities.Configurations
         private string _cache = "cache/";
         private bool _isFirstTime = true;
         private int _downloadThreadCount = 2;
-        private List<InstanceFolder> _instanceFolders = new List<InstanceFolder>();
+        private List<InstanceLocation> _instanceLocations = new List<InstanceLocation>();
 
         #region Setters/Getters
 
@@ -44,10 +45,10 @@ namespace GhostLauncher.Client.Entities.Configurations
             set { _downloadThreadCount = value; }
         }
 
-        public List<InstanceFolder> InstanceFolders
+        public List<InstanceLocation> InstanceLocations
         {
-            get { return _instanceFolders; }
-            set { _instanceFolders = value; }
+            get { return _instanceLocations; }
+            set { _instanceLocations = value; }
         }
 
         #endregion
