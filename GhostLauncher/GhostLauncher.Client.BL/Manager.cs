@@ -36,12 +36,18 @@ namespace GhostLauncher.Client.BL
                 ConfigurationManager.SaveConfig();
             }
 
-            DownloadManager.StartProcessing();
+            DownloadManager.ThreadCount = GetConfig().DownloadThreadCount;
+            DownloadManager.Start();
 
             foreach (var instanceFolder in GetConfig().InstanceFolders)
             {
                 InstanceManager.FindInstances(instanceFolder);
             }
+        }
+
+        public void CloseApp()
+        {
+            DownloadManager.Stop();
         }
 
         public AppConfig GetConfig()

@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using GhostLauncher.Client.ResourceDictionaries;
-using GhostLauncher.Client.ViewModels;
 using GhostLauncher.Client.ViewModels.Windows;
 
 namespace GhostLauncher.Client.Views.Windows
@@ -14,7 +13,9 @@ namespace GhostLauncher.Client.Views.Windows
         {
             Resources.MergedDictionaries.Add(SharedDictionaryManager.SharedDictionary);
             InitializeComponent();
-            DataContext = new MainViewModel(this);
+            var viewmodel = new MainViewModel(this);
+            Closed += (sender, e) => viewmodel.Close();
+            DataContext = viewmodel;
         }
     }
 }

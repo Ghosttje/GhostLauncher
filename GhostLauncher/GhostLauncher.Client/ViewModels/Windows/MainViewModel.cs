@@ -133,6 +133,11 @@ namespace GhostLauncher.Client.ViewModels.Windows
             new AboutWindow() { Owner = _window }.Show();
         }
 
+        public static void Close()
+        {
+            Manager.GetSingleton.CloseApp();
+        }
+
         #endregion
     }
 }

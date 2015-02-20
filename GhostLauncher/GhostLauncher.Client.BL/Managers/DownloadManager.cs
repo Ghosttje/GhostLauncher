@@ -1,57 +1,71 @@
-﻿using System.ComponentModel;
-using System.Net;
-using System.Threading;
+﻿using System.Collections.Generic;
 using GhostLauncher.Client.BL.Elements;
+using GhostLauncher.Client.BL.Threads;
 using GhostLauncher.Client.Entities.Managers;
 
 namespace GhostLauncher.Client.BL.Managers
 {
     public class DownloadManager
     {
-        public BlockingCollection<FileDownload> Files { get; set; }
+        public BlockingQueue<FileDownload> Files { get; set; }
+        public readonly List<DownloadThread> DownloadThreads = new List<DownloadThread>();
+        private int _threadCount;
 
-        private FileDownload _currentFile;
+        private bool _isStarted;
 
-        private readonly Thread _thread;
-        private readonly WebClient _client;
-
-        private bool _running = true;
-
-        public DownloadManager()
+        public DownloadManager(int threadCount = 1)
         {
-            Files = new BlockingCollection<FileDownload>();
-            _thread = new Thread(RunThread);
-            _client = new WebClient();
-            _client.DownloadProgressChanged += DownloadProgressChanged;
-            _client.DownloadFileCompleted += DownloadFileCompleted;
+            _threadCount = threadCount;
+            Files = new BlockingQueue<FileDownload>();
         }
 
-        public void StartProcessing()
+        public int ThreadCount
         {
-            _thread.Start();
-        }
-
-        private static string GetCachePath()
-        {
-            return Manager.GetSingleton.GetConfig().Cache;
-        }
-
-        private void DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
-        {
-
-        }
-
-        private void DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
-        {
-            _currentFile.DownloadFileCompleted(_currentFile);
-        }
-
-        private void RunThread()
-        {
-            while (_running)
+            get { return _threadCount; }
+            set
             {
-                _currentFile = Files.Take();
-                _client.DownloadFile(_currentFile.Url, GetCachePath() + _currentFile.Name);
+                if (_isStarted)
+                {
+                    if (value == 0)
+                    {
+                        Stop();
+                    }
+                    else if (value > _threadCount)
+                    {
+                        var difference = _threadCount - value;
+
+                        for (var i = 0; i < difference; i++)
+                        {
+                            DownloadThreads.Add(new DownloadThread(this));
+                        }
+                    }
+                    else if (value < _threadCount)
+                    {
+                        for (var i = _threadCount - 1; i >= value; i--)
+                        {
+                            DownloadThreads[i].IsRunning = false;
+                        }
+                    }
+                }
+                _threadCount = value;
+            }
+        }
+
+        public void Start()
+        {
+            for (var i = 0; i < _threadCount; i++)
+            {
+                DownloadThreads.Add(new DownloadThread(this));
+            }
+            _isStarted = true;
+        }
+
+        public void Stop()
+        {
+            foreach (var thread in DownloadThreads)
+            {
+                thread.IsRunning = false;
+                Files.Close();
             }
         }
     }

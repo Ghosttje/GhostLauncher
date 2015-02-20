@@ -3,43 +3,50 @@ using System.Threading;
 
 namespace GhostLauncher.Client.BL.Elements
 {
-    public class BlockingCollection<T>
+    public class BlockingQueue<T>
     {
         private readonly Queue<T> _queue = new Queue<T>();
 
-        public void Add(T item)
+        private bool _isClosing = false;
+
+        public void Enqueue(T item)
         {
             lock (_queue)
             {
                 _queue.Enqueue(item);
-                Monitor.Pulse(_queue);
+                if (_queue.Count == 1)
+                {
+                    // wake up any blocked dequeue
+                    Monitor.PulseAll(_queue);
+                }
             }
         }
 
-        public T Take()
+        public T Dequeue()
         {
             lock (_queue)
             {
                 while (_queue.Count == 0)
                 {
+                    if (_isClosing)
+                    {
+                        return default(T);
+                    }
+
+                    // Start blocking
                     Monitor.Wait(_queue);
                 }
                 return _queue.Dequeue();
             }
         }
 
-        public bool TryTake(out T item)
+        public void Close()
         {
-            item = default(T);
             lock (_queue)
             {
-                if (_queue.Count > 0)
-                {
-                    item = _queue.Dequeue();
-                }
+                _isClosing = true;
+                Monitor.PulseAll(_queue);
             }
-            return item != null;
         }
-
     }
 }

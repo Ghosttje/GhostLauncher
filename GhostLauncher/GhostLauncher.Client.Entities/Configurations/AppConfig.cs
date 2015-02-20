@@ -9,6 +9,7 @@ namespace GhostLauncher.Client.Entities.Configurations
         private string _minecraftFolderPath = "minecraft/";
         private string _cache = "cache/";
         private bool _isFirstTime = true;
+        private int _downloadThreadCount = 2;
         private List<InstanceFolder> _instanceFolders = new List<InstanceFolder>();
 
         #region Setters/Getters
@@ -35,6 +36,12 @@ namespace GhostLauncher.Client.Entities.Configurations
         {
             get { return _isFirstTime; }
             set { _isFirstTime = value; }
+        }
+
+        public int DownloadThreadCount
+        {
+            get { return _downloadThreadCount; }
+            set { _downloadThreadCount = value; }
         }
 
         public List<InstanceFolder> InstanceFolders

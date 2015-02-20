@@ -32,7 +32,7 @@ namespace GhostLauncher.Client.BL.Helpers
                 {
                     var instances = new List<Instance> {instance};
                     DownloadInProgress.Add(fileStruct, instances);
-                    Manager.GetSingleton.DownloadManager.Files.Add(fileStruct);
+                    Manager.GetSingleton.DownloadManager.Files.Enqueue(fileStruct);
                 }                
             }
         }

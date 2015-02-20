@@ -58,9 +58,8 @@ namespace GhostLauncher.Client.BL.Managers
                     var xmlFile = dir + "/" + Manager.GetSingleton.ConfigurationManager.Configuration.InstanceConfigFile;
                     if (!File.Exists(xmlFile))
                         continue;
-                    var instance = XmlHelper.ReadConfig<LocalInstance>(xmlFile);
-                    //TODO: Fix instances
-                    //_instances.Add(instance);
+                    var instance = XmlHelper.ReadConfig<Instance>(xmlFile);
+                    folder.Instances.Add(instance);
                 }
             }
         }

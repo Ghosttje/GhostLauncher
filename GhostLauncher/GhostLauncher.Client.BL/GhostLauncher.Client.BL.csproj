@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Elements\BlockingCollection.cs" />
+    <Compile Include="Elements\BlockingQueue.cs" />
     <Compile Include="Managers\DownloadManager.cs" />
     <Compile Include="Tasks\FileDownloader.cs" />
     <Compile Include="Helpers\JarHelper.cs" />
@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Helpers\XmlHelper.cs" />
+    <Compile Include="Threads\DownloadThread.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
