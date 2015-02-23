@@ -1,1 +1,4 @@
 GhostLauncher/packages/
+GhostLauncher/GhostLauncher.Client/obj/
+GhostLauncher/GhostLauncher.Client/bin/
+GhostLauncher/GhostLauncher.Client.BL/bin/
