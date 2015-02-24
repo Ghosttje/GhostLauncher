@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Forms;
 using GhostLauncher.Client.BL;
-using GhostLauncher.Client.Entities.Configurations;
 using GhostLauncher.Client.Entities.Instances;
 using GhostLauncher.Client.Entities.Locations;
 using GhostLauncher.Client.Events;

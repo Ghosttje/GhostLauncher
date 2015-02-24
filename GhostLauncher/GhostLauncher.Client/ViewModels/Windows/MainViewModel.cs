@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
 using GhostLauncher.Client.BL;
-using GhostLauncher.Client.Entities.Enums;
 using GhostLauncher.Client.Entities.Instances;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views.Windows;
@@ -109,18 +108,9 @@ namespace GhostLauncher.Client.ViewModels.Windows
         private void DeleteInstance()
         {
             var result = MessageBox.Show("Do you want to delete this instance?", "Delete instance", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            if (result == MessageBoxResult.Yes)
-            {
-                if (_selectedInstance.InstanceType == InstanceType.Remote)
-                {
-                    Manager.GetSingleton.InstanceManager.DeleteInstance((RemoteInstance)_selectedInstance);
-                }
-                else
-                {
-                    Manager.GetSingleton.InstanceManager.DeleteInstance((LocalInstance)_selectedInstance);
-                }
-                _instanceCollection.Remove(_selectedInstance);
-            }
+            if (result != MessageBoxResult.Yes) return;
+            Manager.GetSingleton.InstanceManager.DeleteInstance(_selectedInstance);
+            _instanceCollection.Remove(_selectedInstance);
         }
 
         private void Settings()

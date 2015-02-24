@@ -33,6 +33,7 @@
             </ListView.ItemTemplate>
             <ListView.InputBindings>
                 <KeyBinding Key="Delete" Command="{Binding DeleteInstanceCommand}" />
+                <MouseBinding Command="{Binding MouseClickCommand}" />
             </ListView.InputBindings>
         </ListView>
     </DockPanel>

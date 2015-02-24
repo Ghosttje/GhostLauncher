@@ -21,12 +21,18 @@ namespace GhostLauncher.Client.BL.Managers
             return Manager.GetSingleton.GetConfig().InstanceConfigFile;
         }
 
+        private static string GetInstancePath(Instance instance)
+        {
+            return instance.InstanceLocation.Path + instance.Name + "/";
+        }
+
         public void AddInstance(Instance instance)
         {
-            Directory.CreateDirectory(instance.InstanceLocation.Path);
-            if (!File.Exists(instance.InstanceLocation.Path + GetInstanceConfigFile()))
+            Directory.CreateDirectory(GetInstancePath(instance));
+            var instanceXml = GetInstancePath(instance) + GetInstanceConfigFile();
+            if (!File.Exists(instanceXml))
             {
-                XmlHelper.WriteConfig(instance.InstanceLocation.Path + GetInstanceConfigFile(), instance);
+                XmlHelper.WriteConfig(instanceXml, instance);
                 _instances.Add(instance);
             }
             else
@@ -37,13 +43,13 @@ namespace GhostLauncher.Client.BL.Managers
 
         public void DeleteInstance(Instance instance)
         {
-            Directory.Delete(instance.InstanceLocation.Path, true);
+            Directory.Delete(GetInstancePath(instance), true);
             _instances.Remove(instance);
         }
 
         public static void SetupStructure(Instance instance)
         {
-            Directory.CreateDirectory(instance.InstanceLocation.Path + Manager.GetSingleton.ConfigurationManager.Configuration.MinecraftFolderPath);
+            Directory.CreateDirectory(GetInstancePath(instance) + Manager.GetSingleton.ConfigurationManager.Configuration.MinecraftFolderPath);
         }
 
         public void FindInstances(InstanceLocation folder)
@@ -64,6 +70,7 @@ namespace GhostLauncher.Client.BL.Managers
                         if (!File.Exists(xmlFile))
                             continue;
                         var instance = XmlHelper.ReadConfig<Instance>(xmlFile);
+                        instance.InstanceLocation = folder;
                         _instances.Add(instance);
                     }
                 }
@@ -72,6 +79,7 @@ namespace GhostLauncher.Client.BL.Managers
                     var xmlFile = GetInstanceXmlPath(folder.Path);
                     if (!File.Exists(xmlFile)) return;
                     var instance = XmlHelper.ReadConfig<Instance>(xmlFile);
+                    instance.InstanceLocation = folder;
                     _instances.Add(instance);
                 }
 
