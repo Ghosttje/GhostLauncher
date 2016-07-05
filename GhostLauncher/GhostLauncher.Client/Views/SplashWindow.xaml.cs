@@ -13,7 +13,7 @@ namespace GhostLauncher.Client.Views
         {
             Resources.MergedDictionaries.Add(SharedDictionaryManager.SharedDictionary);
             InitializeComponent();
-            DataContext = new SplashViewModel(this);
+            new SplashViewModel(this);
         }
     }
 }

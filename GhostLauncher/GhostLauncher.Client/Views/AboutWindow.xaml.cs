@@ -1,18 +1,13 @@
-﻿using System.Windows;
-using GhostLauncher.Client.ViewModels;
-
-namespace GhostLauncher.Client.Views
+﻿namespace GhostLauncher.Client.Views
 {
     /// <summary>
     /// Interaction logic for AboutWindow.xaml
     /// </summary>
-    public partial class AboutWindow : Window
+    public partial class AboutWindow
     {
         public AboutWindow()
         {
             InitializeComponent();
-
-            DataContext = new AboutViewModel(this);
         }
     }
 }

@@ -1,14 +1,14 @@
 ﻿using System.Windows;
+using GhostLauncher.Client.ViewModels.BaseViewModels;
+using GhostLauncher.Client.Views;
 
 namespace GhostLauncher.Client.ViewModels
 {
-    public class AboutViewModel
+    public class AboutViewModel : BaseViewModel
     {
-        private Window _window;
-
-        public AboutViewModel(Window window)
+        public AboutViewModel() : base(new AboutWindow())
         {
-            _window = window;
+
         }
     }
 }

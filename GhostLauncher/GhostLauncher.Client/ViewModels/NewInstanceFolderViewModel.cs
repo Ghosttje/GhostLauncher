@@ -1,14 +1,13 @@
-﻿using System.Windows;
+﻿using GhostLauncher.Client.ViewModels.BaseViewModels;
+using GhostLauncher.Client.Views;
 
 namespace GhostLauncher.Client.ViewModels
 {
-    public class NewInstanceFolderViewModel
+    public class NewInstanceFolderViewModel : BaseViewModel
     {
-        private Window _window;
-
-        public NewInstanceFolderViewModel(Window window)
+        public NewInstanceFolderViewModel() : base(new NewInstanceFolderWindow())
         {
-            _window = window;
+
         }
     }
 }

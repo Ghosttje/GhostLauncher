@@ -6,13 +6,15 @@ using GhostLauncher.Client.BL.Helpers;
 using GhostLauncher.Client.BL.Managers;
 using GhostLauncher.Client.Entities.Enums;
 using GhostLauncher.Client.Events;
+using GhostLauncher.Client.ViewModels.BaseViewModels;
 using GhostLauncher.Client.ViewModels.Pages;
+using GhostLauncher.Client.Views;
 using GhostLauncher.Client.Views.Pages;
 using GhostLauncher.Core;
 
 namespace GhostLauncher.Client.ViewModels
 {
-    public class NewInstanceViewModel : NotifyPropertyChanged
+    public class NewInstanceViewModel : BaseViewModel
     {
         public Page CurrentPage
         {
@@ -20,11 +22,8 @@ namespace GhostLauncher.Client.ViewModels
             set { SetPropertyValue(value); }
         }
 
-        private Window _window;
-
-        public NewInstanceViewModel(Window window)
+        public NewInstanceViewModel() : base(new NewInstanceWindow())
         {
-            _window = window;
             SetSelectTypePage();
         }
 
@@ -58,8 +57,8 @@ namespace GhostLauncher.Client.ViewModels
             InstanceManager.SetupStructure(e.Instance);
             JarHelper.GetFile(e.Instance);
 
-            _window.DialogResult = true;
-            _window.Close();
+            GetWindow().DialogResult = true;
+            GetWindow().Close();
         }
 
         private void Close(object m, EventArgs e)

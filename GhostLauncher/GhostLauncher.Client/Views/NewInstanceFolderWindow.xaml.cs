@@ -6,7 +6,7 @@ namespace GhostLauncher.Client.Views
     /// <summary>
     /// Interaction logic for NewFolderWindow.xaml
     /// </summary>
-    public partial class NewInstanceFolderWindow : Window
+    public partial class NewInstanceFolderWindow
     {
         public NewInstanceFolderWindow()
         {

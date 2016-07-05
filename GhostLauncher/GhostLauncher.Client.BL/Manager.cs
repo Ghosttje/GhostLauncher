@@ -13,10 +13,7 @@ namespace GhostLauncher.Client.BL
 
         private static Manager _singleton;
         
-        public static Manager GetSingleton
-        {
-            get { return _singleton ?? (_singleton = new Manager()); }
-        }
+        public static Manager GetSingleton => _singleton ?? (_singleton = new Manager());
 
         private Manager()
         {

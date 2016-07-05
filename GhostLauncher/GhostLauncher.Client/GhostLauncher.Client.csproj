@@ -90,8 +90,10 @@
       <DependentUpon>InstanceResources.resx</DependentUpon>
     </Compile>
     <Compile Include="ResourceDictionaries\SharedDictionaryManager.cs" />
+    <Compile Include="Tokens\MessagingTokens.cs" />
     <Compile Include="Validators\NameValidator.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\Commands\RelayCommand.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NewInstanceFolderViewModel.cs" />

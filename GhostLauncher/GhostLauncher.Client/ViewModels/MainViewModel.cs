@@ -2,22 +2,24 @@
 using System.Windows;
 using GhostLauncher.Client.BL;
 using GhostLauncher.Client.Entities.Instances;
+using GhostLauncher.Client.ViewModels.BaseViewModels;
 using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views;
-using GhostLauncher.Core;
 
 namespace GhostLauncher.Client.ViewModels
 {
-    public class MainViewModel : NotifyPropertyChanged
+    public class MainViewModel : BaseViewModel
     {
         private RelayCommand _command;
-        private readonly Window _window;
         private readonly ObservableCollection<Instance> _instanceCollection;
         private Instance _selectedInstance;
+
+        private NewInstanceViewModel _newInstanceViewModel;
+        private SettingsViewModel _settingsViewModel;
+        private AboutViewModel _aboutViewModel;
         
-        public MainViewModel(Window window)
+        public MainViewModel() : base(new MainWindow())
         {
-            _window = window;
             _instanceCollection = new ObservableCollection<Instance>();
 
             RefreshInstances();
@@ -97,9 +99,14 @@ namespace GhostLauncher.Client.ViewModels
 
         private void AddInstance()
         {
-            var newInstance = new NewInstanceWindow() {Owner = _window};
-            newInstance.ShowDialog();
-            if (newInstance.DialogResult.HasValue && newInstance.DialogResult.Value)
+            if (_newInstanceViewModel == null)
+            {
+                _newInstanceViewModel = new NewInstanceViewModel();
+                _newInstanceViewModel.GetWindow().Owner = GetWindow();
+            }
+            _newInstanceViewModel.GetWindow().ShowDialog();
+            var dialogResult = _newInstanceViewModel.GetWindow().DialogResult;
+            if (dialogResult != null && dialogResult.Value)
             {
                 RefreshInstances();
             }
@@ -115,12 +122,22 @@ namespace GhostLauncher.Client.ViewModels
 
         private void Settings()
         {
-            new SettingsWindow() { Owner = _window }.Show();
+            if (_settingsViewModel == null)
+            {
+                _settingsViewModel = new SettingsViewModel();
+                _settingsViewModel.GetWindow().Owner = GetWindow();
+            }
+            _settingsViewModel.GetWindow().Show();
         }
 
         private void About()
         {
-            new AboutWindow() { Owner = _window }.Show();
+            if (_aboutViewModel == null)
+            {
+                _aboutViewModel = new AboutViewModel();
+                _aboutViewModel.GetWindow().Owner = (Window)View;
+            }
+            _aboutViewModel.GetWindow().Show();
         }
 
         public static void Close()
