@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>b038d5ec-da48-4818-85a6-dde502033c24</ProjectGuid>
+    <ProjectGuid>{B038D5EC-DA48-4818-85A6-DDE502033C24}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GhostLauncher.Client.Entities</RootNamespace>
@@ -30,24 +30,36 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Configurations\AppConfig.cs" />
+    <Compile Include="Enums\InstanceType.cs" />
+    <Compile Include="Instances\Instance.cs" />
+    <Compile Include="Instances\LocalInstance.cs" />
+    <Compile Include="Instances\RemoteInstance.cs" />
+    <Compile Include="Locations\InstanceFolder.cs" />
+    <Compile Include="Locations\InstanceLocation.cs" />
+    <Compile Include="Locations\InstancePath.cs" />
+    <Compile Include="Managers\FileDownload.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GhostLauncher.Core\GhostLauncher.Core.csproj">
+      <Project>{9ea8738b-d57e-4cbb-93c0-38d0727b047a}</Project>
+      <Name>GhostLauncher.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GhostLauncher.Entities\GhostLauncher.Entities.csproj">
+      <Project>{db6101a5-1509-4086-a6cf-a26ff071446c}</Project>
+      <Name>GhostLauncher.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -57,5 +69,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>

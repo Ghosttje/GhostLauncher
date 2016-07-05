@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>GhostLauncher.Client.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
@@ -53,6 +56,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -75,20 +80,60 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="ResourceDictionaries\InstanceResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InstanceResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceDictionaries\SharedDictionaryManager.cs" />
+    <Compile Include="Validators\NameValidator.cs" />
+    <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\Commands\RelayCommand.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\NewInstanceFolderViewModel.cs" />
+    <Compile Include="ViewModels\NewInstanceViewModel.cs" />
+    <Compile Include="ViewModels\Pages\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\NewLocalViewModel.cs" />
+    <Compile Include="ViewModels\Pages\SelectTypeViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\SplashViewModel.cs" />
+    <Compile Include="ViewModels\VersionSelectorViewModel.cs" />
+    <Compile Include="Views\AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\NewInstanceFolderWindow.xaml.cs">
+      <DependentUpon>NewInstanceFolderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewInstanceWindow.xaml.cs">
+      <DependentUpon>NewInstanceWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\NewLocalPage.xaml.cs">
+      <DependentUpon>NewLocalPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\SelectTypePage.xaml.cs">
+      <DependentUpon>SelectTypePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SplashWindow.xaml.cs">
+      <DependentUpon>SplashWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VersionSelectorWindow.xaml.cs">
+      <DependentUpon>VersionSelectorWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\ResourceConverter.cs" />
+    <Compile Include="Events\CreateInstanceArgs.cs" />
+    <Compile Include="Events\SelectedTypeArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -106,6 +151,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ResourceDictionaries\InstanceResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InstanceResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -115,6 +164,78 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ResourceDictionaries\ResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AboutWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NewInstanceFolderWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NewInstanceWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\NewLocalPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\SelectTypePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SettingsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SplashWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\VersionSelectorWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\About.png" />
+    <Resource Include="Resources\Add-Instance.png" />
+    <Resource Include="Resources\Add-New.png" />
+    <Resource Include="Resources\Add-Server.png" />
+    <Resource Include="Resources\Dirt-Background.png" />
+    <Resource Include="Resources\mclogo.png" />
+    <Resource Include="Resources\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GhostLauncher.Client.BL\GhostLauncher.Client.BL.csproj">
+      <Project>{f7cec4d0-ffe7-4a3c-9be4-ec4c2ecd064d}</Project>
+      <Name>GhostLauncher.Client.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GhostLauncher.Client.Entities\GhostLauncher.Client.Entities.csproj">
+      <Project>{b038d5ec-da48-4818-85a6-dde502033c24}</Project>
+      <Name>GhostLauncher.Client.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GhostLauncher.Core\GhostLauncher.Core.csproj">
+      <Project>{9ea8738b-d57e-4cbb-93c0-38d0727b047a}</Project>
+      <Name>GhostLauncher.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GhostLauncher.Entities\GhostLauncher.Entities.csproj">
+      <Project>{db6101a5-1509-4086-a6cf-a26ff071446c}</Project>
+      <Name>GhostLauncher.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InstanceResources.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
