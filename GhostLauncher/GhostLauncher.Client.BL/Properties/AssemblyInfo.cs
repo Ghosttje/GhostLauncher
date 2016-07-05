@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("GhostLauncher.Client.BL")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Infrabel")]
 [assembly: AssemblyProduct("GhostLauncher.Client.BL")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCopyright("Copyright © Infrabel 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c03a2249-bef6-4931-a46a-0bd2be68159d")]
+[assembly: Guid("f7cec4d0-ffe7-4a3c-9be4-ec4c2ecd064d")]
 
 // Version information for an assembly consists of the following four values:
 //
