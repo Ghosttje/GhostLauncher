@@ -37,3 +37,13 @@ D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\Newtonsoft.J
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Entities\obj\Debug\GhostLauncher.Entities.csprojResolveAssemblyReference.cache
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Entities\obj\Debug\GhostLauncher.Entities.dll
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Entities\obj\Debug\GhostLauncher.Entities.pdb
+C:\Users\exj508\Downloads\GhostLauncher-master\GhostLauncher\GhostLauncher.Entities\bin\Debug\GhostLauncher.Entities.dll.config
+C:\Users\exj508\Downloads\GhostLauncher-master\GhostLauncher\GhostLauncher.Entities\bin\Debug\GhostLauncher.Entities.dll
+C:\Users\exj508\Downloads\GhostLauncher-master\GhostLauncher\GhostLauncher.Entities\bin\Debug\GhostLauncher.Entities.pdb
+C:\Users\exj508\Downloads\GhostLauncher-master\GhostLauncher\GhostLauncher.Entities\bin\Debug\GhostLauncher.Core.dll
+C:\Users\exj508\Downloads\GhostLauncher-master\GhostLauncher\GhostLauncher.Entities\bin\Debug\Newtonsoft.Json.dll
+C:\Users\exj508\Downloads\GhostLauncher-master\GhostLauncher\GhostLauncher.Entities\bin\Debug\GhostLauncher.Core.pdb
+C:\Users\exj508\Downloads\GhostLauncher-master\GhostLauncher\GhostLauncher.Entities\bin\Debug\Newtonsoft.Json.xml
+C:\Users\exj508\Downloads\GhostLauncher-master\GhostLauncher\GhostLauncher.Entities\obj\Debug\GhostLauncher.Entities.csprojResolveAssemblyReference.cache
+C:\Users\exj508\Downloads\GhostLauncher-master\GhostLauncher\GhostLauncher.Entities\obj\Debug\GhostLauncher.Entities.dll
+C:\Users\exj508\Downloads\GhostLauncher-master\GhostLauncher\GhostLauncher.Entities\obj\Debug\GhostLauncher.Entities.pdb

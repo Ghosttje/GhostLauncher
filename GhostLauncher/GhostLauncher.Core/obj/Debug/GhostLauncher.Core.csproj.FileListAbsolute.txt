@@ -24,3 +24,8 @@ D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\GhostLauncher.Co
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.dll
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.pdb
 D:\git\ghostlauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.csprojResolveAssemblyReference.cache
+C:\Users\exj508\Downloads\GhostLauncher-master\GhostLauncher\GhostLauncher.Core\bin\Debug\GhostLauncher.Core.dll
+C:\Users\exj508\Downloads\GhostLauncher-master\GhostLauncher\GhostLauncher.Core\bin\Debug\GhostLauncher.Core.pdb
+C:\Users\exj508\Downloads\GhostLauncher-master\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.csprojResolveAssemblyReference.cache
+C:\Users\exj508\Downloads\GhostLauncher-master\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.dll
+C:\Users\exj508\Downloads\GhostLauncher-master\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.pdb

@@ -7,11 +7,7 @@ namespace GhostLauncher.Client.Validators
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
-            if (value == null)
-            {
-                return new ValidationResult(false, "Name must be filled in!");
-            }
-            return ValidationResult.ValidResult;
+            return value == null ? new ValidationResult(false, "Name must be filled in!") : ValidationResult.ValidResult;
         }
     }
 }

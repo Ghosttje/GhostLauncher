@@ -11,7 +11,7 @@ using GhostLauncher.Entities;
 
 namespace GhostLauncher.Client.ViewModels.Pages
 {
-    public class NewLocalViewModel : MainPage
+    public class NewLocalViewModel : MainPageViewModel
     {
         private RelayCommand _command;
 

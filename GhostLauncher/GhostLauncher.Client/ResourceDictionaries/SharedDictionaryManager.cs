@@ -9,12 +9,10 @@ namespace GhostLauncher.Client.ResourceDictionaries
         {
             get
             {
-                if (_sharedDictionary == null)
-                {
-                    Uri resourceLocater = new Uri("/ResourceDictionaries/ResourceDictionary.xaml", UriKind.Relative);
+                if (_sharedDictionary != null) return _sharedDictionary;
+                var resourceLocater = new Uri("/ResourceDictionaries/ResourceDictionary.xaml", UriKind.Relative);
 
-                    _sharedDictionary = (ResourceDictionary)Application.LoadComponent(resourceLocater);
-                }
+                _sharedDictionary = (ResourceDictionary)Application.LoadComponent(resourceLocater);
 
                 return _sharedDictionary;
             }
