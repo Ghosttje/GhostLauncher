@@ -63,8 +63,8 @@ namespace GhostLauncher.Client.ViewModels
 
         private void Close(object m, EventArgs e)
         {
-            _window.DialogResult = false;
-            _window.Close();
+            GetWindow().DialogResult = false;
+            GetWindow().Close();
         }
 
         #endregion

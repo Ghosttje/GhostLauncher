@@ -1,5 +1,4 @@
 ﻿using GhostLauncher.Client.ResourceDictionaries;
-using GhostLauncher.Client.ViewModels;
 
 namespace GhostLauncher.Client.Views
 {

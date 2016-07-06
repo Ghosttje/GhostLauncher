@@ -1,19 +1,30 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Forms;
+using GalaSoft.MvvmLight.Command;
 using GhostLauncher.Client.BL;
 using GhostLauncher.Client.Entities.Instances;
 using GhostLauncher.Client.Entities.Locations;
 using GhostLauncher.Client.Events;
-using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views;
+using GhostLauncher.Client.Views.Pages;
 using GhostLauncher.Entities;
 
 namespace GhostLauncher.Client.ViewModels.Pages
 {
     public class NewLocalViewModel : MainPageViewModel
     {
-        private RelayCommand _command;
+        #region Commands
+
+        public RelayCommand CreateInstanceCommand => GetCommand(OnCreateInstance);
+
+        public RelayCommand CloseCommand => GetCommand(OnClose);
+
+        public RelayCommand SelectPathCommand => GetCommand(OnSelectPath);
+
+        public RelayCommand SelectVersionCommand => GetCommand(OnSelectVersion);
+
+        #endregion
 
         #region Properties
 
@@ -66,7 +77,7 @@ namespace GhostLauncher.Client.ViewModels.Pages
 
         #region Constructors
 
-        public NewLocalViewModel()
+        public NewLocalViewModel() : base(new NewLocalPage())
         {
             InstanceFolders = new ObservableCollection<InstanceFolder>();
             IsFolderLocation = true;
@@ -88,49 +99,9 @@ namespace GhostLauncher.Client.ViewModels.Pages
 
         #endregion
 
-        #region Commands
+        #region Command Events
 
-        public RelayCommand CreateInstanceCommand
-        {
-            get
-            {
-                _command = new RelayCommand(CreateInstance);
-                return _command;
-            }
-        }
-
-        public RelayCommand CloseCommand
-        {
-            get
-            {
-                _command = new RelayCommand(Close);
-                return _command;
-            }
-        }
-
-        public RelayCommand SelectPathCommand
-        {
-            get
-            {
-                _command = new RelayCommand(SelectPath);
-                return _command;
-            }
-        }
-
-        public RelayCommand SelectVersionCommand
-        {
-            get
-            {
-                _command = new RelayCommand(SelectVersion);
-                return _command;
-            }
-        }
-
-        #endregion
-
-        #region CommandHandlers
-
-        private void CreateInstance()
+        private void OnCreateInstance()
         {
             if (CreatedHandler == null)
                 return;
@@ -150,7 +121,7 @@ namespace GhostLauncher.Client.ViewModels.Pages
             CreatedHandler(this, args);
         }
 
-        private void SelectPath()
+        private void OnSelectPath()
         {
             var dialog = new FolderBrowserDialog();
             var result = dialog.ShowDialog();
@@ -160,7 +131,7 @@ namespace GhostLauncher.Client.ViewModels.Pages
             }
         }
 
-        private void SelectVersion()
+        private void OnSelectVersion()
         {
             var versionSelector = new VersionSelectorWindow();
             versionSelector.ShowDialog();

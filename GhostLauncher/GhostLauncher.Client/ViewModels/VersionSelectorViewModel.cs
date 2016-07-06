@@ -1,39 +1,19 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
 using GhostLauncher.Client.BL;
+using GhostLauncher.Client.ViewModels.BaseViewModels;
 using GhostLauncher.Client.ViewModels.Commands;
+using GhostLauncher.Client.Views;
 using GhostLauncher.Core;
 using GhostLauncher.Entities;
 
 namespace GhostLauncher.Client.ViewModels
 {
-    public class VersionSelectorViewModel : NotifyPropertyChanged
+    public class VersionSelectorViewModel : BaseViewModel
     {
-        private MinecraftVersion _selectedVersion;
-        private readonly Window _window;
         private RelayCommand _command;
 
-        public VersionSelectorViewModel(Window window)
-        {
-            _window = window;
-            VersionCollection = new ObservableCollection<MinecraftVersion>();
-            ParseVersions();
-        }
-
-        private void ParseVersions()
-        {
-            VersionCollection.Clear();
-            _selectedVersion = null;
-
-            Manager.GetSingleton.VersionManager.Init();
-
-            foreach (var result in Manager.GetSingleton.VersionManager.MinecraftVersions)
-            {
-                VersionCollection.Add(result);
-            }
-        }
-
-        #region Setters / Getters
+        #region Properties
 
         public ObservableCollection<MinecraftVersion> VersionCollection { get; private set; }
 
@@ -45,16 +25,32 @@ namespace GhostLauncher.Client.ViewModels
 
         #endregion
 
-        #region Commands
+        #region Constructors
 
-        public RelayCommand SelectCommand
+        public VersionSelectorViewModel() : base(new VersionSelectorWindow())
         {
-            get
+            VersionCollection = new ObservableCollection<MinecraftVersion>();
+            ParseVersions();
+        }
+
+        #endregion
+
+        private void ParseVersions()
+        {
+            VersionCollection.Clear();
+            SelectedVersion = null;
+
+            Manager.GetSingleton.VersionManager.Init();
+
+            foreach (var result in Manager.GetSingleton.VersionManager.MinecraftVersions)
             {
-                _command = new RelayCommand(Select);
-                return _command;
+                VersionCollection.Add(result);
             }
         }
+
+        #region Commands
+
+        public RelayCommand SelectCommand => GetCommand(Select);
 
         public RelayCommand CloseCommand
         {
@@ -71,14 +67,14 @@ namespace GhostLauncher.Client.ViewModels
 
         private void Select()
         {
-            _window.DialogResult = true;
-            _window.Close();
+            GetWindow().DialogResult = true;
+            GetWindow().Close();
         }
 
         private void Close()
         {
-            _window.DialogResult = false;
-            _window.Close();
+            GetWindow().DialogResult = false;
+            GetWindow().Close();
         }
 
         #endregion

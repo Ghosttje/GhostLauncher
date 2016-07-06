@@ -1,7 +1,4 @@
-﻿using System.Windows;
-using GhostLauncher.Client.ViewModels;
-
-namespace GhostLauncher.Client.Views
+﻿namespace GhostLauncher.Client.Views
 {
     /// <summary>
     /// Interaction logic for NewFolderWindow.xaml
@@ -11,7 +8,6 @@ namespace GhostLauncher.Client.Views
         public NewInstanceFolderWindow()
         {
             InitializeComponent();
-            DataContext = new NewInstanceFolderViewModel(this);
         }
     }
 }

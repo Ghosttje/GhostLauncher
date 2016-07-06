@@ -1,7 +1,4 @@
-﻿using System.Windows;
-using GhostLauncher.Client.ViewModels;
-
-namespace GhostLauncher.Client.Views
+﻿namespace GhostLauncher.Client.Views
 {
     /// <summary>
     /// Interaction logic for SettingsWindow.xaml
@@ -11,8 +8,6 @@ namespace GhostLauncher.Client.Views
         public SettingsWindow()
         {
             InitializeComponent();
-
-            DataContext = new SettingsViewModel(this);
         }
     }
 }

@@ -1,15 +1,22 @@
 ﻿using GhostLauncher.Client.Entities.Enums;
 using GhostLauncher.Client.Events;
+using GhostLauncher.Client.ViewModels.BaseViewModels;
 using GhostLauncher.Client.ViewModels.Commands;
+using GhostLauncher.Client.Views.Pages;
 
 namespace GhostLauncher.Client.ViewModels.Pages
 {
-    public class SelectTypeViewModel
+    public class SelectTypeViewModel : BaseViewModel
     {
         private RelayCommand _command;
 
         public delegate void RaiseSelectedType(SelectTypeViewModel m, SelectedTypeArgs e);
         public event RaiseSelectedType SelectedTypeHandler;
+
+        public SelectTypeViewModel() : base(new SelectTypePage())
+        {
+
+        }
 
         #region Commands
 
