@@ -1,48 +1,36 @@
-﻿using GhostLauncher.Client.Entities.Enums;
+﻿using GalaSoft.MvvmLight.Command;
+using GhostLauncher.Client.Entities.Enums;
 using GhostLauncher.Client.Events;
 using GhostLauncher.Client.ViewModels.BaseViewModels;
-using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views.Pages;
 
 namespace GhostLauncher.Client.ViewModels.Pages
 {
     public class SelectTypeViewModel : BaseViewModel
     {
-        private RelayCommand _command;
+        #region Commands
+
+        public RelayCommand AddInstanceCommand => GetCommand(OnNewInstance);
+
+        public RelayCommand AddServerCommand => GetCommand(OnNewServer);
+
+        #endregion
 
         public delegate void RaiseSelectedType(SelectTypeViewModel m, SelectedTypeArgs e);
         public event RaiseSelectedType SelectedTypeHandler;
+
+        #region Constructors
 
         public SelectTypeViewModel() : base(new SelectTypePage())
         {
 
         }
 
-        #region Commands
-
-        public RelayCommand AddInstanceCommand
-        {
-            get
-            {
-                _command = new RelayCommand(NewInstance);
-                return _command;
-            }
-        }
-
-        public RelayCommand AddServerCommand
-        {
-            get
-            {
-                _command = new RelayCommand(NewServer);
-                return _command;
-            }
-        }
-
         #endregion
 
-        #region CommandHandlers
+        #region Command Events
 
-        private void NewInstance()
+        private void OnNewInstance()
         {
             if (SelectedTypeHandler == null)
                 return;
@@ -50,7 +38,7 @@ namespace GhostLauncher.Client.ViewModels.Pages
             SelectedTypeHandler(this, args);
         }
 
-        private void NewServer()
+        private void OnNewServer()
         {
             if (SelectedTypeHandler == null)
                 return;

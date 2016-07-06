@@ -1,8 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
+using GalaSoft.MvvmLight.Command;
 using GhostLauncher.Client.BL;
 using GhostLauncher.Client.ViewModels.BaseViewModels;
-using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views;
 using GhostLauncher.Core;
 using GhostLauncher.Entities;
@@ -11,7 +11,13 @@ namespace GhostLauncher.Client.ViewModels
 {
     public class VersionSelectorViewModel : BaseViewModel
     {
-        private RelayCommand _command;
+        #region Commands
+
+        public RelayCommand SelectCommand => GetCommand(OnSelect);
+
+        public RelayCommand CloseCommand => GetCommand(OnClose);
+
+        #endregion
 
         #region Properties
 
@@ -48,30 +54,15 @@ namespace GhostLauncher.Client.ViewModels
             }
         }
 
-        #region Commands
+        #region Command Events
 
-        public RelayCommand SelectCommand => GetCommand(Select);
-
-        public RelayCommand CloseCommand
-        {
-            get
-            {
-                _command = new RelayCommand(Close);
-                return _command;
-            }
-        }
-
-        #endregion
-
-        #region CommandHandlers
-
-        private void Select()
+        private void OnSelect()
         {
             GetWindow().DialogResult = true;
             GetWindow().Close();
         }
 
-        private void Close()
+        private void OnClose()
         {
             GetWindow().DialogResult = false;
             GetWindow().Close();

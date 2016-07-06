@@ -1,23 +1,40 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
+using GalaSoft.MvvmLight.Command;
 using GhostLauncher.Client.BL;
 using GhostLauncher.Client.Entities.Instances;
 using GhostLauncher.Client.ViewModels.BaseViewModels;
-using GhostLauncher.Client.ViewModels.Commands;
 using GhostLauncher.Client.Views;
 
 namespace GhostLauncher.Client.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        private RelayCommand _command;
+        #region Commands
+
+        public RelayCommand AddInstanceCommand => GetCommand(OnAddInstance);
+
+        public RelayCommand DeleteInstanceCommand => GetCommand(OnDeleteInstance);
+
+        public RelayCommand SettingsCommand => GetCommand(OnSettings);
+
+        public RelayCommand AboutCommand => GetCommand(OnAbout);
+
+        #endregion
+
+        #region Private Properties
+
         private readonly ObservableCollection<Instance> _instanceCollection;
         private Instance _selectedInstance;
 
         private NewInstanceViewModel _newInstanceViewModel;
         private SettingsViewModel _settingsViewModel;
         private AboutViewModel _aboutViewModel;
-        
+
+        #endregion
+
+        #region Constructors
+
         public MainViewModel() : base(new MainWindow())
         {
             _instanceCollection = new ObservableCollection<Instance>();
@@ -25,13 +42,15 @@ namespace GhostLauncher.Client.ViewModels
             RefreshInstances();
         }
 
+        #endregion
+
         private void RefreshInstances()
         {
             _instanceCollection.Clear();
             foreach (var instance in Manager.GetSingleton.InstanceManager.Instances)
             {
                 _instanceCollection.Add(instance);
-            } 
+            }
         }
 
         #region Setters / Getters
@@ -55,49 +74,9 @@ namespace GhostLauncher.Client.ViewModels
 
         #endregion
 
-        #region Commands
+        #region Command Events
 
-        public RelayCommand AddInstanceCommand
-        {
-            get
-            {
-                _command = new RelayCommand(AddInstance);
-                return _command;
-            }
-        }
-
-        public RelayCommand DeleteInstanceCommand
-        {
-            get
-            {
-                _command = new RelayCommand(DeleteInstance);
-                return _command;
-            }
-        }
-
-        public RelayCommand SettingsCommand
-        {
-            get
-            {
-                _command = new RelayCommand(Settings);
-                return _command;
-            }
-        }
-
-        public RelayCommand AboutCommand
-        {
-            get
-            {
-                _command = new RelayCommand(About);
-                return _command;
-            }
-        }
-
-        #endregion
-
-        #region CommandHandlers
-
-        private void AddInstance()
+        private void OnAddInstance()
         {
             if (_newInstanceViewModel == null)
             {
@@ -112,7 +91,7 @@ namespace GhostLauncher.Client.ViewModels
             }
         }
 
-        private void DeleteInstance()
+        private void OnDeleteInstance()
         {
             var result = MessageBox.Show("Do you want to delete this instance?", "Delete instance", MessageBoxButton.YesNo, MessageBoxImage.Warning);
             if (result != MessageBoxResult.Yes) return;
@@ -120,7 +99,7 @@ namespace GhostLauncher.Client.ViewModels
             _instanceCollection.Remove(_selectedInstance);
         }
 
-        private void Settings()
+        private void OnSettings()
         {
             if (_settingsViewModel == null)
             {
@@ -130,7 +109,7 @@ namespace GhostLauncher.Client.ViewModels
             _settingsViewModel.GetWindow().Show();
         }
 
-        private void About()
+        private void OnAbout()
         {
             if (_aboutViewModel == null)
             {
