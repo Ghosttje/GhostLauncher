@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows;
 using System.Windows.Controls;
 using GhostLauncher.Client.BL;
 using GhostLauncher.Client.BL.Helpers;
@@ -10,7 +9,6 @@ using GhostLauncher.Client.ViewModels.BaseViewModels;
 using GhostLauncher.Client.ViewModels.Pages;
 using GhostLauncher.Client.Views;
 using GhostLauncher.Client.Views.Pages;
-using GhostLauncher.Core;
 
 namespace GhostLauncher.Client.ViewModels
 {

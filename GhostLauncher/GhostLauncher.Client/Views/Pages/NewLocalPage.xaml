@@ -6,6 +6,10 @@
       mc:Ignorable="d" d:DesignWidth="400"
 	  Title="New local instance">
 
+    <Page.Resources>
+        <ResourceDictionary Source="../../Resources/ResourceDictionary.xaml" />
+    </Page.Resources>
+
     <StackPanel Margin="5,10,5,5" HorizontalAlignment="Center">
         <Button  Width="120">
             <Image Margin="10" Style="{StaticResource InstanceLogo}"/>

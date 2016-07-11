@@ -1,5 +1,4 @@
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.csprojResolveAssemblyReference.cache
-C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\ResourceDictionaries\ResourceDictionary.baml
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\AboutWindow.baml
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\NewInstanceFolderWindow.baml
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\NewInstanceWindow.baml
@@ -50,7 +49,8 @@ C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\Newtonsoft.Jso
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\MainWindow.baml
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.g.resources
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.Properties.Resources.resources
-C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.ResourceDictionaries.InstanceResources.resources
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.csproj.GenerateResource.Cache
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.exe
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.pdb
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Resources\ResourceDictionary.baml
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.Resources.InstanceResources.resources

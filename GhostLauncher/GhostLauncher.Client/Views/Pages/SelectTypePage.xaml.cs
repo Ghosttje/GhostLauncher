@@ -1,6 +1,4 @@
 ﻿using System.Windows.Controls;
-using GhostLauncher.Client.ResourceDictionaries;
-using GhostLauncher.Client.ViewModels.Pages;
 
 namespace GhostLauncher.Client.Views.Pages
 {
@@ -11,9 +9,7 @@ namespace GhostLauncher.Client.Views.Pages
     {
         public SelectTypePage()
         {
-            Resources.MergedDictionaries.Add(SharedDictionaryManager.SharedDictionary);
             InitializeComponent();
-            DataContext = new SelectTypeViewModel();
         }
     }
 }

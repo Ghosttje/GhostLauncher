@@ -84,12 +84,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ResourceDictionaries\InstanceResources.Designer.cs">
+    <Compile Include="Resources\InstanceResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>InstanceResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ResourceDictionaries\SharedDictionaryManager.cs" />
     <Compile Include="Tokens\MessagingTokens.cs" />
     <Compile Include="Validators\NameValidator.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
@@ -152,7 +151,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ResourceDictionaries\InstanceResources.resx">
+    <EmbeddedResource Include="Resources\InstanceResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>InstanceResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -167,7 +166,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="ResourceDictionaries\ResourceDictionary.xaml">
+    <Page Include="Resources\ResourceDictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

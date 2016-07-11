@@ -1,6 +1,4 @@
-﻿using GhostLauncher.Client.ResourceDictionaries;
-
-namespace GhostLauncher.Client.Views
+﻿namespace GhostLauncher.Client.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -9,7 +7,6 @@ namespace GhostLauncher.Client.Views
     {
         public MainWindow()
         {
-            Resources.MergedDictionaries.Add(SharedDictionaryManager.SharedDictionary);
             InitializeComponent();
         }
     }

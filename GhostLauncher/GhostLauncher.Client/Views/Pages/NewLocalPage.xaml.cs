@@ -1,7 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using GhostLauncher.Client.ResourceDictionaries;
-using GhostLauncher.Client.ViewModels.Pages;
 
 namespace GhostLauncher.Client.Views.Pages
 {
@@ -12,9 +10,7 @@ namespace GhostLauncher.Client.Views.Pages
     {
         public NewLocalPage()
         {
-            Resources.MergedDictionaries.Add(SharedDictionaryManager.SharedDictionary);
             InitializeComponent();
-            DataContext = new NewLocalViewModel();
         }
 
         private void RadioButton_FolderLocation(object sender, RoutedEventArgs e)

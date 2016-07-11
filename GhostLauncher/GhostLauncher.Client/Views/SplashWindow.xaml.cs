@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using GhostLauncher.Client.ResourceDictionaries;
 using GhostLauncher.Client.ViewModels;
 
 namespace GhostLauncher.Client.Views
@@ -11,7 +10,6 @@ namespace GhostLauncher.Client.Views
     {
         public SplashWindow()
         {
-            Resources.MergedDictionaries.Add(SharedDictionaryManager.SharedDictionary);
             InitializeComponent();
             new SplashViewModel(this);
         }

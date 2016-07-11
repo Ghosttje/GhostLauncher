@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GhostLauncher.Client.ResourceDictionaries {
+namespace GhostLauncher.Client.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace GhostLauncher.Client.ResourceDictionaries {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GhostLauncher.Client.ResourceDictionaries.InstanceResources", typeof(InstanceResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GhostLauncher.Client.Resources.InstanceResources", typeof(InstanceResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

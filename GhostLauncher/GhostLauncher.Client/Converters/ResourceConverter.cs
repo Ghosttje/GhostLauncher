@@ -13,7 +13,7 @@ namespace GhostLauncher.Client.Converters
         {
             _resourceDictionary = new ResourceDictionary
             {
-                Source = new Uri("pack://application:,,,/ResourceDictionaries/ResourceDictionary.xaml")
+                Source = new Uri("pack://application:,,,/Resources/ResourceDictionary.xaml")
             };
         }
 

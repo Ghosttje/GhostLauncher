@@ -20,6 +20,8 @@ namespace GhostLauncher.Client.ViewModels
 
         public RelayCommand AboutCommand => GetCommand(OnAbout);
 
+        public RelayCommand CloseCommand => GetCommand(OnClose);
+
         #endregion
 
         #region Private Properties
@@ -119,7 +121,7 @@ namespace GhostLauncher.Client.ViewModels
             _aboutViewModel.GetWindow().Show();
         }
 
-        public static void Close()
+        public static void OnClose()
         {
             Manager.GetSingleton.CloseApp();
         }

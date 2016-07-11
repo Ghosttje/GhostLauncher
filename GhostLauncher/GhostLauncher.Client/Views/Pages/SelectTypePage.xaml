@@ -5,6 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" d:DesignWidth="189.64"
 	Title="New instance">
+    
+    <Page.Resources>
+        <ResourceDictionary Source="../../Resources/ResourceDictionary.xaml" />
+    </Page.Resources>
+    
     <StackPanel Orientation="Horizontal">
         <Button Command="{Binding AddInstanceCommand}">
             <StackPanel Orientation="Vertical">
