@@ -30,21 +30,14 @@
                 </Button>
             </ToolBar>
         </ToolBarTray>
-        <ContentControl DockPanel.Dock="Left"></ContentControl>
-        <ListView  ItemsSource="{Binding InstanceCollection}" SelectedItem="{Binding SelectedInstance}">
-            <ListView.ItemTemplate>
-                <DataTemplate DataType="{x:Type local:VM1}">
-                    <!-- View 1 Here -->
-                </DataTemplate>
+        <ContentControl DockPanel.Dock="Left">
+            <DataTemplate DataType="{x:Type local:VM1}">
+                <!-- View 1 Here -->
+            </DataTemplate>
 
-                <DataTemplate DataType="{x:Type local:VM2}">
-                    <!-- View 2 here -->
-                </DataTemplate>
-            </ListView.ItemTemplate>
-            <ListView.InputBindings>
-                <KeyBinding Key="Delete" Command="{Binding DeleteInstanceCommand}" />
-                <MouseBinding Command="{Binding MouseClickCommand}" />
-            </ListView.InputBindings>
-        </ListView>
+            <DataTemplate DataType="{x:Type local:VM2}">
+                <!-- View 2 here -->
+            </DataTemplate>
+        </ContentControl>
     </DockPanel>
 </Window>
