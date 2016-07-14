@@ -13,15 +13,7 @@
     </i:Interaction.Triggers>
 
     <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary>
-                    <converters:ResourceConverter x:Key="ResourceConverter" />
-                </ResourceDictionary>
-                <ResourceDictionary Source="../Resources/ResourceDictionary.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-        
+        <ResourceDictionary Source="../Resources/ResourceDictionary.xaml" />
     </Window.Resources>
 
     <DockPanel>
@@ -38,13 +30,15 @@
                 </Button>
             </ToolBar>
         </ToolBarTray>
-        <ListView DockPanel.Dock="Left" ItemsSource="{Binding InstanceCollection}" SelectedItem="{Binding SelectedInstance}">
+        <ContentControl DockPanel.Dock="Left"></ContentControl>
+        <ListView  ItemsSource="{Binding InstanceCollection}" SelectedItem="{Binding SelectedInstance}">
             <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Vertical">
-                        <Image Style="{Binding Icon, Converter={StaticResource ResourceConverter}}" />
-                        <Label HorizontalAlignment="Center" Content="{Binding Name}" />
-                    </StackPanel>
+                <DataTemplate DataType="{x:Type local:VM1}">
+                    <!-- View 1 Here -->
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type local:VM2}">
+                    <!-- View 2 here -->
                 </DataTemplate>
             </ListView.ItemTemplate>
             <ListView.InputBindings>

@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="GhostLauncher.Client.Views.MainInstanceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters="clr-namespace:GhostLauncher.Client.Converters"
+        mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <converters:ResourceConverter x:Key="ResourceConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <ListView ItemsSource="{Binding InstanceCollection}" SelectedItem="{Binding SelectedInstance}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <Image Style="{Binding Icon, Converter={StaticResource ResourceConverter}}" />
+                        <Label HorizontalAlignment="Center" Content="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.InputBindings>
+                <KeyBinding Key="Delete" Command="{Binding DeleteInstanceCommand}" />
+                <MouseBinding Command="{Binding MouseClickCommand}" />
+            </ListView.InputBindings>
+        </ListView>
+    </Grid>
+</UserControl>

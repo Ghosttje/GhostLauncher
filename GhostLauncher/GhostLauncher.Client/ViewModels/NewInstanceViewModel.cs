@@ -27,7 +27,7 @@ namespace GhostLauncher.Client.ViewModels
 
         private void SetSelectTypePage()
         {
-            CurrentPage = new SelectTypePage();
+            CurrentPage = new SelectTypePageViewModel();
             var viewmodel = (SelectTypeViewModel)CurrentPage.DataContext;
             viewmodel.SelectedTypeHandler += SelectType;
         }

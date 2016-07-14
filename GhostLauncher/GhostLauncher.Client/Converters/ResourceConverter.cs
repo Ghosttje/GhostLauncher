@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 
@@ -24,14 +25,7 @@ namespace GhostLauncher.Client.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            foreach (var key in _resourceDictionary.Keys)
-            {
-                if (_resourceDictionary[key] == value)
-                {
-                    return key.ToString();
-                }
-            }
-            return null;
+            return (from object key in _resourceDictionary.Keys where _resourceDictionary[key] == value select key.ToString()).FirstOrDefault();
         }
     }
 }
