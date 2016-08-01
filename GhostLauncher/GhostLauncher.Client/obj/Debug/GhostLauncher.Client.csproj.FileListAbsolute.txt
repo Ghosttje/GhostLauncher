@@ -54,3 +54,5 @@ C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.pdb
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Resources\ResourceDictionary.baml
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.Resources.InstanceResources.resources
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\MainInstanceWindow.g.cs
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\RibbonView.g.cs
