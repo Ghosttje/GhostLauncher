@@ -3,3 +3,8 @@ C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\GhostLauncher.Co
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.dll
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.pdb
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.csprojResolveAssemblyReference.cache
+E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\GhostLauncher.Core.dll
+E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Core\bin\Debug\GhostLauncher.Core.pdb
+E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.csprojResolveAssemblyReference.cache
+E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.dll
+E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Core\obj\Debug\GhostLauncher.Core.pdb
