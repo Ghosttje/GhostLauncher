@@ -16,8 +16,6 @@ namespace GhostLauncher.Client.ViewModels
 
         public RelayCommand AddInstanceCommand => GetCommand(OnAddInstance);
 
-        public RelayCommand DeleteInstanceCommand => GetCommand(OnDeleteInstance);
-
         public RelayCommand SettingsCommand => GetCommand(OnSettings);
 
         public RelayCommand AboutCommand => GetCommand(OnAbout);
@@ -28,10 +26,6 @@ namespace GhostLauncher.Client.ViewModels
 
         #region Private Properties
 
-        private readonly ObservableCollection<Instance> _instanceCollection;
-        private Instance _selectedInstance;
-
-        
         private SettingsWindowViewModel _settingsWindowViewModel;
         private AboutWindowViewModel _aboutWindowViewModel;
 
@@ -57,9 +51,6 @@ namespace GhostLauncher.Client.ViewModels
             _instanceOverviewViewModel = new InstanceOverviewViewModel();
             MainContentViewModel = _instanceOverviewViewModel;
 
-            //_instanceCollection = new ObservableCollection<Instance>();
-            //RefreshInstances();
-
             Subscribe();
         }
 
@@ -70,30 +61,6 @@ namespace GhostLauncher.Client.ViewModels
         private void Subscribe()
         {
             SubscribeForMessage<BaseViewModel>(MessagingTokens.ChangeContentView, OnChangeContentView);
-        }
-
-        #endregion
-
-        private void RefreshInstances()
-        {
-            _instanceCollection.Clear();
-            foreach (var instance in Manager.GetSingleton.InstanceManager.Instances)
-            {
-                _instanceCollection.Add(instance);
-            }
-        }
-
-        #region Setters / Getters
-
-        public ObservableCollection<Instance> InstanceCollection => _instanceCollection;
-
-        public Instance SelectedInstance
-        {
-            set
-            {
-                _selectedInstance = value;
-
-            }
         }
 
         #endregion
@@ -116,43 +83,26 @@ namespace GhostLauncher.Client.ViewModels
                 _instanceViewModel = new NewInstanceViewModel();
             }
             MainContentViewModel = _instanceViewModel;
-
-            //_newInstanceViewModel.GetWindow().ShowDialog();
-            //var dialogResult = _newInstanceViewModel.GetWindow().DialogResult;
-            //if (dialogResult != null && dialogResult.Value)
-            //{
-            //    RefreshInstances();
-            //}
-        }
-
-        private void OnDeleteInstance()
-        {
-            var result = MessageBox.Show("Do you want to delete this instance?", "Delete instance", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            if (result != MessageBoxResult.Yes) return;
-            Manager.GetSingleton.InstanceManager.DeleteInstance(_selectedInstance);
-            _instanceCollection.Remove(_selectedInstance);
         }
 
         private void OnSettings()
         {
-            //if (_settingsWindowViewModel == null)
-            //{
-            //    _settingsWindowViewModel = new SettingsWindowViewModel();
-            //    _settingsWindowViewModel.GetWindow().Owner = GetWindow();
-            //}
-            //_settingsWindowViewModel.GetWindow().Show();
+            if (_settingsWindowViewModel == null)
+            {
+                _settingsWindowViewModel = new SettingsWindowViewModel();
+                _settingsWindowViewModel.GetWindow().Owner = GetWindow();
+            }
+            _settingsWindowViewModel.GetWindow().Show();
         }
 
         private void OnAbout()
         {
-            //if (_aboutWindowViewModel == null)
-            //{
-            //    var window = new AboutWindow();
-            //    window.Owner
-            //    _aboutWindowViewModel = new AboutWindowViewModel();
-            //    _aboutWindowViewModel.GetWindow().Owner = (Window)View;
-            //}
-            //_aboutWindowViewModel.GetWindow().Show();
+            if (_aboutWindowViewModel == null)
+            {
+                _aboutWindowViewModel = new AboutWindowViewModel();
+                _aboutWindowViewModel.GetWindow().Owner = (Window)View;
+            }
+            _aboutWindowViewModel.GetWindow().Show();
         }
 
         public static void OnClose()
