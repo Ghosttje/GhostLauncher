@@ -2,6 +2,6 @@
 {
     public enum MessagingTokens
     {
-        AppClosing
+        ChangeContentView
     }
 }

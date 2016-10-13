@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="GhostLauncher.Client.Views.Instances.NewInstanceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../../Resources/ResourceDictionary.xaml" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" Grid.Column="0" Command="{Binding AddInstanceCommand}">
+            <StackPanel Orientation="Vertical">
+                <Image Height="256" Style="{StaticResource AddInstance}" />
+                <TextBlock Text="Add normal instance" FontSize="16" TextAlignment="Center" FontWeight="Bold" />
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="0" Grid.Column="1" Command="{Binding AddServerCommand}" IsEnabled="False">
+            <StackPanel Orientation="Vertical">
+                <Image Height="256" Style="{StaticResource AddServer}" />
+                <TextBlock Text="Add server instance" FontSize="16" TextAlignment="Center" FontWeight="Bold" />
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Cancel" Margin="5px" Command="{Binding CancelCommand}" />
+    </Grid>
+</UserControl>

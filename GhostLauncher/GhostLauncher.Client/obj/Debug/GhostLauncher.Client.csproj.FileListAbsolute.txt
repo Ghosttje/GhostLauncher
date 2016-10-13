@@ -1,13 +1,9 @@
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.csprojResolveAssemblyReference.cache
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\AboutWindow.baml
-C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Pages\NewLocalPage.baml
-C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Pages\SelectTypePage.baml
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\SettingsWindow.baml
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\VersionSelectorWindow.baml
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\AboutWindow.g.cs
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\MainWindow.g.cs
-C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Pages\NewLocalPage.g.cs
-C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Pages\SelectTypePage.g.cs
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\SettingsWindow.g.cs
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\VersionSelectorWindow.g.cs
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\App.g.cs
@@ -106,7 +102,6 @@ E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.
 E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.csproj.GenerateResource.Cache
 E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.exe
 E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.pdb
-C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Pages\InstanceOverviewView.g.cs
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\Ninject.dll
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\Xceed.Wpf.AvalonDock.dll
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
@@ -135,6 +130,9 @@ C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\ro\Xceed.Wpf.A
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
-C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Pages\InstanceOverviewView.baml
-C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Pages\NewInstanceView.g.cs
-C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Pages\NewInstanceView.baml
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Instances\NewInstanceView.baml
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Instances\NewLocalInstanceView.baml
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Instances\InstanceOverviewView.g.cs
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Instances\NewInstanceView.g.cs
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Instances\NewLocalInstanceView.g.cs
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Instances\InstanceOverviewView.baml

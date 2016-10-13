@@ -3,8 +3,9 @@ using System.Windows;
 using GalaSoft.MvvmLight.Command;
 using GhostLauncher.Client.BL;
 using GhostLauncher.Client.Entities.Instances;
+using GhostLauncher.Client.Tokens;
 using GhostLauncher.Client.ViewModels.BaseViewModels;
-using GhostLauncher.Client.ViewModels.Pages;
+using GhostLauncher.Client.ViewModels.Instances;
 using GhostLauncher.Client.Views;
 
 namespace GhostLauncher.Client.ViewModels
@@ -55,9 +56,20 @@ namespace GhostLauncher.Client.ViewModels
         {
             _instanceOverviewViewModel = new InstanceOverviewViewModel();
             MainContentViewModel = _instanceOverviewViewModel;
-            
+
             //_instanceCollection = new ObservableCollection<Instance>();
             //RefreshInstances();
+
+            Subscribe();
+        }
+
+        #endregion
+
+        #region Subscribers
+
+        private void Subscribe()
+        {
+            SubscribeForMessage<BaseViewModel>(MessagingTokens.ChangeContentView, OnChangeContentView);
         }
 
         #endregion
@@ -82,6 +94,15 @@ namespace GhostLauncher.Client.ViewModels
                 _selectedInstance = value;
 
             }
+        }
+
+        #endregion
+
+        #region Messaging Events
+
+        private void OnChangeContentView(BaseViewModel viewModel)
+        {
+            MainContentViewModel = viewModel;
         }
 
         #endregion

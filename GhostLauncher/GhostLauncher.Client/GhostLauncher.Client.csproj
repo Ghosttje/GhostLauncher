@@ -119,34 +119,28 @@
     <Compile Include="Tokens\MessagingTokens.cs" />
     <Compile Include="Validators\NameValidator.cs" />
     <Compile Include="ViewModels\AboutWindowViewModel.cs" />
-    <Compile Include="ViewModels\BaseViewModels\BaseNotifyViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModels\BaseWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="ViewModels\Pages\InstanceOverviewViewModel.cs" />
-    <Compile Include="ViewModels\Pages\MainPageWindowViewModel.cs" />
-    <Compile Include="ViewModels\Pages\NewInstanceViewModel.cs" />
-    <Compile Include="ViewModels\Pages\NewLocalWindowViewModel.cs" />
-    <Compile Include="ViewModels\Pages\SelectTypeWindowViewModel.cs" />
+    <Compile Include="ViewModels\Instances\InstanceOverviewViewModel.cs" />
+    <Compile Include="ViewModels\Instances\NewInstanceViewModel.cs" />
+    <Compile Include="ViewModels\Instances\NewLocalInstanceViewModel.cs" />
     <Compile Include="ViewModels\SettingsWindowViewModel.cs" />
     <Compile Include="ViewModels\VersionSelectorWindowViewModel.cs" />
     <Compile Include="Views\AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\InstanceOverviewView.xaml.cs">
+    <Compile Include="Views\Instances\InstanceOverviewView.xaml.cs">
       <DependentUpon>InstanceOverviewView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\NewInstanceView.xaml.cs">
+    <Compile Include="Views\Instances\NewInstanceView.xaml.cs">
       <DependentUpon>NewInstanceView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\NewLocalPage.xaml.cs">
-      <DependentUpon>NewLocalPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Pages\SelectTypePage.xaml.cs">
-      <DependentUpon>SelectTypePage.xaml</DependentUpon>
+    <Compile Include="Views\Instances\NewLocalInstanceView.xaml.cs">
+      <DependentUpon>NewLocalInstanceView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
@@ -175,6 +169,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\InstanceResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -199,7 +194,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Pages\InstanceOverviewView.xaml">
+    <Page Include="Views\Instances\InstanceOverviewView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -207,15 +202,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Pages\NewInstanceView.xaml">
+    <Page Include="Views\Instances\NewInstanceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pages\NewLocalPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Pages\SelectTypePage.xaml">
+    <Page Include="Views\Instances\NewLocalInstanceView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -233,7 +224,6 @@
     <Resource Include="Resources\Add-Instance.png" />
     <Resource Include="Resources\Add-New.png" />
     <Resource Include="Resources\Add-Server.png" />
-    <Resource Include="Resources\Dirt-Background.png" />
     <Resource Include="Resources\mclogo.png" />
     <Resource Include="Resources\Settings.png" />
   </ItemGroup>
@@ -254,9 +244,6 @@
       <Project>{db6101a5-1509-4086-a6cf-a26ff071446c}</Project>
       <Name>GhostLauncher.Entities</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\InstanceResources.bmp" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

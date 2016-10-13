@@ -1,14 +1,13 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 
-namespace GhostLauncher.Client.Views.Pages
+namespace GhostLauncher.Client.Views.Instances
 {
     /// <summary>
     /// Interaction logic for CreateInstanceWindow.xaml
     /// </summary>
-    public partial class NewLocalPage : Page
+    public partial class NewLocalInstanceView
     {
-        public NewLocalPage()
+        public NewLocalInstanceView()
         {
             InitializeComponent();
         }

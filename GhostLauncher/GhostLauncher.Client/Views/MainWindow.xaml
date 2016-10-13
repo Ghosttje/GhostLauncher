@@ -2,8 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        xmlns:pagesviews="clr-namespace:GhostLauncher.Client.Views.Pages"
-        xmlns:pages="clr-namespace:GhostLauncher.Client.ViewModels.Pages"
+        xmlns:pages="clr-namespace:GhostLauncher.Client.ViewModels.Instances"
+        xmlns:instances="clr-namespace:GhostLauncher.Client.Views.Instances"
         Title="GhostLauncher" Height="700" Width="800"
         WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
 
@@ -20,10 +20,13 @@
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type pages:InstanceOverviewViewModel}">
-                <pagesviews:InstanceOverviewView />
+                <instances:InstanceOverviewView />
             </DataTemplate>
             <DataTemplate DataType="{x:Type pages:NewInstanceViewModel}">
-                <pagesviews:NewInstanceView />
+                <instances:NewInstanceView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type pages:NewLocalInstanceViewModel}">
+                <instances:NewLocalInstanceView />
             </DataTemplate>
         </ResourceDictionary>
     </Window.Resources>

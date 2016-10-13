@@ -6,18 +6,17 @@ using GhostLauncher.Client.BL;
 using GhostLauncher.Client.Entities.Instances;
 using GhostLauncher.Client.Entities.Locations;
 using GhostLauncher.Client.Events;
+using GhostLauncher.Client.ViewModels.BaseViewModels;
 using GhostLauncher.Client.Views;
 using GhostLauncher.Entities;
 
-namespace GhostLauncher.Client.ViewModels.Pages
+namespace GhostLauncher.Client.ViewModels.Instances
 {
-    public class NewLocalWindowViewModel : MainPageWindowViewModel
+    public class NewLocalInstanceViewModel : BaseViewModel
     {
         #region Commands
 
         public RelayCommand CreateInstanceCommand => GetCommand(OnCreateInstance);
-
-        public RelayCommand CloseCommand => GetCommand(OnClose);
 
         public RelayCommand SelectPathCommand => GetCommand(OnSelectPath);
 
@@ -71,12 +70,12 @@ namespace GhostLauncher.Client.ViewModels.Pages
 
         #endregion
 
-        public delegate void RaiseCreated(NewLocalWindowViewModel m, CreateInstanceArgs e);
+        public delegate void RaiseCreated(NewLocalInstanceViewModel m, CreateInstanceArgs e);
         public event RaiseCreated CreatedHandler;
 
         #region Constructors
 
-        public NewLocalWindowViewModel()
+        public NewLocalInstanceViewModel()
         {
             InstanceFolders = new ObservableCollection<InstanceFolder>();
             IsFolderLocation = true;
@@ -90,10 +89,10 @@ namespace GhostLauncher.Client.ViewModels.Pages
 
         private void Init()
         {
-            foreach (var instanceFolder in Manager.GetSingleton.GetConfig().InstanceLocations.Where(instanceFolder => instanceFolder.GetType() == typeof(InstanceFolder)))
-            {
-                InstanceFolders.Add((InstanceFolder)instanceFolder);
-            }
+            //foreach (var instanceFolder in Manager.GetSingleton.GetConfig().InstanceLocations.Where(instanceFolder => instanceFolder.GetType() == typeof(InstanceFolder)))
+            //{
+            //    InstanceFolders.Add((InstanceFolder)instanceFolder);
+            //}
         }
 
         #endregion

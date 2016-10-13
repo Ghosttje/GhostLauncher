@@ -1,4 +1,4 @@
-﻿namespace GhostLauncher.Client.Views.Pages
+﻿namespace GhostLauncher.Client.Views.Instances
 {
     /// <summary>
     /// Interaction logic for InstanceOverviewView.xaml
