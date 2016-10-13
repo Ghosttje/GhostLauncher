@@ -1,4 +1,6 @@
-﻿namespace GhostLauncher.Client.Views
+﻿using GhostLauncher.Client.ViewModels;
+
+namespace GhostLauncher.Client.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -8,6 +10,7 @@
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowViewModel(this);
         }
     }
 }

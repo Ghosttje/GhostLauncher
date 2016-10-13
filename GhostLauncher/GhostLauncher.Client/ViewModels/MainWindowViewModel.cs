@@ -4,11 +4,12 @@ using GalaSoft.MvvmLight.Command;
 using GhostLauncher.Client.BL;
 using GhostLauncher.Client.Entities.Instances;
 using GhostLauncher.Client.ViewModels.BaseViewModels;
+using GhostLauncher.Client.ViewModels.Pages;
 using GhostLauncher.Client.Views;
 
 namespace GhostLauncher.Client.ViewModels
 {
-    public class MainViewModel : BaseViewModel
+    public class MainWindowViewModel : BaseWindowViewModel
     {
         #region Commands
 
@@ -29,19 +30,34 @@ namespace GhostLauncher.Client.ViewModels
         private readonly ObservableCollection<Instance> _instanceCollection;
         private Instance _selectedInstance;
 
-        private NewInstanceViewModel _newInstanceViewModel;
-        private SettingsViewModel _settingsViewModel;
-        private AboutViewModel _aboutViewModel;
+        
+        private SettingsWindowViewModel _settingsWindowViewModel;
+        private AboutWindowViewModel _aboutWindowViewModel;
+
+        private InstanceOverviewViewModel _instanceOverviewViewModel;
+        private NewInstanceViewModel _instanceViewModel;
+
+        #endregion
+
+        #region Properties
+
+        public BaseViewModel MainContentViewModel
+        {
+            get { return GetPropertyValue<BaseViewModel>(); }
+            set { SetPropertyValue(value); }
+        }
 
         #endregion
 
         #region Constructors
 
-        public MainViewModel() : base(new MainWindow())
+        public MainWindowViewModel(Window window) : base(window)
         {
-            _instanceCollection = new ObservableCollection<Instance>();
-
-            RefreshInstances();
+            _instanceOverviewViewModel = new InstanceOverviewViewModel();
+            MainContentViewModel = _instanceOverviewViewModel;
+            
+            //_instanceCollection = new ObservableCollection<Instance>();
+            //RefreshInstances();
         }
 
         #endregion
@@ -57,13 +73,7 @@ namespace GhostLauncher.Client.ViewModels
 
         #region Setters / Getters
 
-        public ObservableCollection<Instance> InstanceCollection
-        {
-            get
-            {
-                return _instanceCollection;
-            }
-        }
+        public ObservableCollection<Instance> InstanceCollection => _instanceCollection;
 
         public Instance SelectedInstance
         {
@@ -80,17 +90,18 @@ namespace GhostLauncher.Client.ViewModels
 
         private void OnAddInstance()
         {
-            if (_newInstanceViewModel == null)
+            if (_instanceViewModel == null)
             {
-                _newInstanceViewModel = new NewInstanceViewModel();
-                _newInstanceViewModel.GetWindow().Owner = GetWindow();
+                _instanceViewModel = new NewInstanceViewModel();
             }
-            _newInstanceViewModel.GetWindow().ShowDialog();
-            var dialogResult = _newInstanceViewModel.GetWindow().DialogResult;
-            if (dialogResult != null && dialogResult.Value)
-            {
-                RefreshInstances();
-            }
+            MainContentViewModel = _instanceViewModel;
+
+            //_newInstanceViewModel.GetWindow().ShowDialog();
+            //var dialogResult = _newInstanceViewModel.GetWindow().DialogResult;
+            //if (dialogResult != null && dialogResult.Value)
+            //{
+            //    RefreshInstances();
+            //}
         }
 
         private void OnDeleteInstance()
@@ -103,22 +114,24 @@ namespace GhostLauncher.Client.ViewModels
 
         private void OnSettings()
         {
-            if (_settingsViewModel == null)
-            {
-                _settingsViewModel = new SettingsViewModel();
-                _settingsViewModel.GetWindow().Owner = GetWindow();
-            }
-            _settingsViewModel.GetWindow().Show();
+            //if (_settingsWindowViewModel == null)
+            //{
+            //    _settingsWindowViewModel = new SettingsWindowViewModel();
+            //    _settingsWindowViewModel.GetWindow().Owner = GetWindow();
+            //}
+            //_settingsWindowViewModel.GetWindow().Show();
         }
 
         private void OnAbout()
         {
-            if (_aboutViewModel == null)
-            {
-                _aboutViewModel = new AboutViewModel();
-                _aboutViewModel.GetWindow().Owner = (Window)View;
-            }
-            _aboutViewModel.GetWindow().Show();
+            //if (_aboutWindowViewModel == null)
+            //{
+            //    var window = new AboutWindow();
+            //    window.Owner
+            //    _aboutWindowViewModel = new AboutWindowViewModel();
+            //    _aboutWindowViewModel.GetWindow().Owner = (Window)View;
+            //}
+            //_aboutWindowViewModel.GetWindow().Show();
         }
 
         public static void OnClose()

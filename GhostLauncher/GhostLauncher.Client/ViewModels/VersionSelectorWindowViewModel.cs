@@ -1,15 +1,13 @@
 ﻿using System.Collections.ObjectModel;
-using System.Windows;
 using GalaSoft.MvvmLight.Command;
 using GhostLauncher.Client.BL;
 using GhostLauncher.Client.ViewModels.BaseViewModels;
 using GhostLauncher.Client.Views;
-using GhostLauncher.Core;
 using GhostLauncher.Entities;
 
 namespace GhostLauncher.Client.ViewModels
 {
-    public class VersionSelectorViewModel : BaseViewModel
+    public class VersionSelectorWindowViewModel : BaseWindowViewModel
     {
         #region Commands
 
@@ -33,7 +31,7 @@ namespace GhostLauncher.Client.ViewModels
 
         #region Constructors
 
-        public VersionSelectorViewModel() : base(new VersionSelectorWindow())
+        public VersionSelectorWindowViewModel() : base(new VersionSelectorWindow())
         {
             VersionCollection = new ObservableCollection<MinecraftVersion>();
             ParseVersions();
@@ -58,14 +56,14 @@ namespace GhostLauncher.Client.ViewModels
 
         private void OnSelect()
         {
-            GetWindow().DialogResult = true;
-            GetWindow().Close();
+            //GetWindow().DialogResult = true;
+            //GetWindow().Close();
         }
 
         private void OnClose()
         {
-            GetWindow().DialogResult = false;
-            GetWindow().Close();
+            //GetWindow().DialogResult = false;
+            //GetWindow().Close();
         }
 
         #endregion

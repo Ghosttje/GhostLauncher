@@ -1,8 +1,9 @@
 ﻿<Window x:Class="GhostLauncher.Client.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:converters="clr-namespace:GhostLauncher.Client.Converters"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:pagesviews="clr-namespace:GhostLauncher.Client.Views.Pages"
+        xmlns:pages="clr-namespace:GhostLauncher.Client.ViewModels.Pages"
         Title="GhostLauncher" Height="700" Width="800"
         WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
 
@@ -13,9 +14,20 @@
     </i:Interaction.Triggers>
 
     <Window.Resources>
-        <ResourceDictionary Source="../Resources/ResourceDictionary.xaml" />
-    </Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
 
+            <DataTemplate DataType="{x:Type pages:InstanceOverviewViewModel}">
+                <pagesviews:InstanceOverviewView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type pages:NewInstanceViewModel}">
+                <pagesviews:NewInstanceView />
+            </DataTemplate>
+        </ResourceDictionary>
+    </Window.Resources>
+    
     <DockPanel>
         <ToolBarTray DockPanel.Dock="Top" IsLocked="True">
             <ToolBar ToolBar.OverflowMode="Never">
@@ -30,14 +42,6 @@
                 </Button>
             </ToolBar>
         </ToolBarTray>
-        <ContentControl DockPanel.Dock="Left">
-            <!--<DataTemplate DataType="{x:Type local:VM1}">
-                --><!-- View 1 Here --><!--
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type local:VM2}">
-                --><!-- View 2 here --><!--
-            </DataTemplate>-->
-        </ContentControl>
+        <ContentPresenter DockPanel.Dock="Left" Content="{Binding MainContentViewModel}" />
     </DockPanel>
 </Window>

@@ -4,11 +4,10 @@ using GhostLauncher.Client.Views;
 
 namespace GhostLauncher.Client.ViewModels
 {
-    public class AboutViewModel : BaseViewModel
+    public class SettingsWindowViewModel : BaseWindowViewModel
     {
-        public AboutViewModel() : base(new AboutWindow())
+        public SettingsWindowViewModel() : base(new SettingsWindow())
         {
-
         }
     }
 }

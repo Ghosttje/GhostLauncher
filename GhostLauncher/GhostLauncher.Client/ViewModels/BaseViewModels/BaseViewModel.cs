@@ -1,40 +1,13 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-using System.Windows;
-using System.Windows.Controls;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using GhostLauncher.Core;
 
 namespace GhostLauncher.Client.ViewModels.BaseViewModels
 {
-    public abstract class BaseViewModel : NotifyPropertyChanged
+    public class BaseViewModel : NotifyPropertyChanged
     {
-        #region Properties
-
-        public FrameworkElement View { get; set; }
-
-        #endregion
-
-        #region Constructors
-
-        protected BaseViewModel(FrameworkElement userControl)
-        {
-            View = userControl;
-            View.DataContext = this;
-        }
-
-        #endregion
-
-        #region Getters / Setters
-
-        public Window GetWindow()
-        {
-            return (Window)View;
-        }
-
-        #endregion
-
         #region Messaging
 
         protected void SubscribeForMessage<T>(object token, Action<T> action)

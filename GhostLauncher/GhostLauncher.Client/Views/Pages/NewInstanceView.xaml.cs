@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GhostLauncher.Client.Views
+namespace GhostLauncher.Client.Views.Pages
 {
     /// <summary>
-    /// Interaction logic for RibbonView.xaml
+    /// Interaction logic for NewInstanceView.xaml
     /// </summary>
-    public partial class RibbonView : UserControl
+    public partial class NewInstanceView : UserControl
     {
-        public RibbonView()
+        public NewInstanceView()
         {
             InitializeComponent();
         }

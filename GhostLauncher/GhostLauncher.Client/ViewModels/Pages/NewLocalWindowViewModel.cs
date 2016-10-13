@@ -7,12 +7,11 @@ using GhostLauncher.Client.Entities.Instances;
 using GhostLauncher.Client.Entities.Locations;
 using GhostLauncher.Client.Events;
 using GhostLauncher.Client.Views;
-using GhostLauncher.Client.Views.Pages;
 using GhostLauncher.Entities;
 
 namespace GhostLauncher.Client.ViewModels.Pages
 {
-    public class NewLocalViewModel : MainPageViewModel
+    public class NewLocalWindowViewModel : MainPageWindowViewModel
     {
         #region Commands
 
@@ -72,12 +71,12 @@ namespace GhostLauncher.Client.ViewModels.Pages
 
         #endregion
 
-        public delegate void RaiseCreated(NewLocalViewModel m, CreateInstanceArgs e);
+        public delegate void RaiseCreated(NewLocalWindowViewModel m, CreateInstanceArgs e);
         public event RaiseCreated CreatedHandler;
 
         #region Constructors
 
-        public NewLocalViewModel() : base(new NewLocalPage())
+        public NewLocalWindowViewModel()
         {
             InstanceFolders = new ObservableCollection<InstanceFolder>();
             IsFolderLocation = true;
@@ -138,7 +137,7 @@ namespace GhostLauncher.Client.ViewModels.Pages
 
             if (versionSelector.DialogResult.HasValue && versionSelector.DialogResult.Value)
             {
-                var versionSelectorViewModel = (VersionSelectorViewModel)versionSelector.DataContext;
+                var versionSelectorViewModel = (VersionSelectorWindowViewModel)versionSelector.DataContext;
                 SelectedVersion = versionSelectorViewModel.SelectedVersion;
             }
         }

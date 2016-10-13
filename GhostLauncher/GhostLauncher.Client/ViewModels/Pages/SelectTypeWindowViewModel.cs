@@ -2,11 +2,10 @@
 using GhostLauncher.Client.Entities.Enums;
 using GhostLauncher.Client.Events;
 using GhostLauncher.Client.ViewModels.BaseViewModels;
-using GhostLauncher.Client.Views.Pages;
 
 namespace GhostLauncher.Client.ViewModels.Pages
 {
-    public class SelectTypeViewModel : BaseViewModel
+    public class SelectTypeWindowViewModel : BaseViewModel
     {
         #region Commands
 
@@ -16,17 +15,8 @@ namespace GhostLauncher.Client.ViewModels.Pages
 
         #endregion
 
-        public delegate void RaiseSelectedType(SelectTypeViewModel m, SelectedTypeArgs e);
+        public delegate void RaiseSelectedType(SelectTypeWindowViewModel m, SelectedTypeArgs e);
         public event RaiseSelectedType SelectedTypeHandler;
-
-        #region Constructors
-
-        public SelectTypeViewModel() : base(new SelectTypePage())
-        {
-
-        }
-
-        #endregion
 
         #region Command Events
 
