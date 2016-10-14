@@ -1,7 +1,8 @@
 ﻿using System.IO;
-using GhostLauncher.Client.Entities.Configurations;
 using GhostLauncher.Core.Features.Interfaces;
 using GhostLauncher.Core.Properties;
+using GhostLauncher.Entities.Configurations;
+using GhostLauncher.Entities.Locations;
 
 namespace GhostLauncher.Core.Features.Configurations
 {
@@ -21,7 +22,7 @@ namespace GhostLauncher.Core.Features.Configurations
             if (!File.Exists(GetConfigUrl()))
             {
                 Configuration = new AppConfig();
-
+                Configuration.InstanceLocations.Add(new InstanceFolder { Name = "DefaultInstance", IsDefault = true, Path = "instances/" });
                 SaveConfig();
             }
             else

@@ -24,10 +24,10 @@ namespace GhostLauncher.Core.Features.FileDownloads
 
         #region Constructors
 
-        public DownloadManager(IConfigurationService configurationService, int threadCount = 1)
+        public DownloadManager(IConfigurationService configurationService)
         {
             _configurationService = configurationService;
-            _threadCount = threadCount;
+            _threadCount = _configurationService.Configuration.DownloadThreadCount;
             Files = new BlockingQueue<FileDownload>();
         }
 

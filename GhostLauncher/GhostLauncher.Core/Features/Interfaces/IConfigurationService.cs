@@ -1,4 +1,4 @@
-﻿using GhostLauncher.Client.Entities.Configurations;
+﻿using GhostLauncher.Entities.Configurations;
 
 namespace GhostLauncher.Core.Features.Interfaces
 {

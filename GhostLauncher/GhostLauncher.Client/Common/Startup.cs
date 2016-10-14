@@ -1,4 +1,5 @@
 ﻿using System;
+using GhostLauncher.Core.Features.Interfaces;
 using GhostLauncher.Core.NinjectCore;
 using Ninject;
 
@@ -12,6 +13,8 @@ namespace GhostLauncher.Client.Common
         {
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
             Kernel = BootstrapHelper.LoadNinjectKernel(assemblies);
+
+            Kernel.Get<IConfigurationService>().Init();
         }
     }
 }
