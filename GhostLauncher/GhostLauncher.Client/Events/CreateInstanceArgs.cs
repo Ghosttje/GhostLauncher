@@ -1,5 +1,5 @@
 ﻿using System;
-using GhostLauncher.Client.Entities.Instances;
+using GhostLauncher.Entities.Instances;
 
 namespace GhostLauncher.Client.Events
 {

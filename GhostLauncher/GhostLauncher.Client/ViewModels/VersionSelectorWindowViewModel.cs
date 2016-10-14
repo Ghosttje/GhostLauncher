@@ -1,9 +1,13 @@
 ﻿using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Command;
 using GhostLauncher.Client.BL;
-using GhostLauncher.Client.ViewModels.BaseViewModels;
+using GhostLauncher.Client.Common;
 using GhostLauncher.Client.Views;
+using GhostLauncher.Core.Features.Instances;
+using GhostLauncher.Core.Features.Interfaces;
 using GhostLauncher.Entities;
+using GhostLauncher.WPF.Core.BaseViewModels;
+using Ninject;
 
 namespace GhostLauncher.Client.ViewModels
 {
@@ -14,6 +18,12 @@ namespace GhostLauncher.Client.ViewModels
         public RelayCommand SelectCommand => GetCommand(OnSelect);
 
         public RelayCommand CloseCommand => GetCommand(OnClose);
+
+        #endregion
+
+        #region Private Properties
+
+        private readonly IVersionService _versionService;
 
         #endregion
 
@@ -33,6 +43,7 @@ namespace GhostLauncher.Client.ViewModels
 
         public VersionSelectorWindowViewModel() : base(new VersionSelectorWindow())
         {
+            _versionService = Startup.Kernel.Get<IVersionService>();
             VersionCollection = new ObservableCollection<MinecraftVersion>();
             ParseVersions();
         }
@@ -44,9 +55,9 @@ namespace GhostLauncher.Client.ViewModels
             VersionCollection.Clear();
             SelectedVersion = null;
 
-            Manager.GetSingleton.VersionManager.Init();
+            _versionService.Init();
 
-            foreach (var result in Manager.GetSingleton.VersionManager.MinecraftVersions)
+            foreach (var result in _versionService.MinecraftVersions)
             {
                 VersionCollection.Add(result);
             }

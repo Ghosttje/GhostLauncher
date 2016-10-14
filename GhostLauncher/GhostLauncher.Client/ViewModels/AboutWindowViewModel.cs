@@ -1,6 +1,5 @@
-﻿using System.Windows;
-using GhostLauncher.Client.ViewModels.BaseViewModels;
-using GhostLauncher.Client.Views;
+﻿using GhostLauncher.Client.Views;
+using GhostLauncher.WPF.Core.BaseViewModels;
 
 namespace GhostLauncher.Client.ViewModels
 {

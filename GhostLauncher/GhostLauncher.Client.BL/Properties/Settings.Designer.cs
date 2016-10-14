@@ -22,47 +22,5 @@ namespace GhostLauncher.Client.BL.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("config/")]
-        public string ConfigDirectory {
-            get {
-                return ((string)(this["ConfigDirectory"]));
-            }
-            set {
-                this["ConfigDirectory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("config.xml")]
-        public string ConfigFileName {
-            get {
-                return ((string)(this["ConfigFileName"]));
-            }
-            set {
-                this["ConfigFileName"] = value;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("versions.json")]
-        public string VersionsFileName {
-            get {
-                return ((string)(this["VersionsFileName"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://s3.amazonaws.com/Minecraft.Download/versions/versions.json")]
-        public string VersionsDownloadUrl {
-            get {
-                return ((string)(this["VersionsDownloadUrl"]));
-            }
-        }
     }
 }

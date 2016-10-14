@@ -1,18 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GhostLauncher.Client.BL.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
   <Profiles />
-  <Settings>
-    <Setting Name="ConfigDirectory" Type="System.String" Scope="User">
-      <Value Profile="(Default)">config/</Value>
-    </Setting>
-    <Setting Name="ConfigFileName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">config.xml</Value>
-    </Setting>
-    <Setting Name="VersionsFileName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">versions.json</Value>
-    </Setting>
-    <Setting Name="VersionsDownloadUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://s3.amazonaws.com/Minecraft.Download/versions/versions.json</Value>
-    </Setting>
-  </Settings>
+  <Settings />
 </SettingsFile>

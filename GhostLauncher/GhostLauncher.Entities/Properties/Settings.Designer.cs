@@ -23,15 +23,12 @@ namespace GhostLauncher.Entities.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://s3.amazonaws.com/Minecraft.Download/versions/")]
         public string MinecraftVersionBaseUrl {
             get {
                 return ((string)(this["MinecraftVersionBaseUrl"]));
-            }
-            set {
-                this["MinecraftVersionBaseUrl"] = value;
             }
         }
     }

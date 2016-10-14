@@ -1,4 +1,6 @@
-﻿namespace GhostLauncher.Client.Entities.Instances
+﻿using GhostLauncher.Entities.Instances;
+
+namespace GhostLauncher.Client.Entities.Instances
 {
     public class RemoteInstance : Instance
     {

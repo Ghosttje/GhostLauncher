@@ -136,3 +136,5 @@ C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Instance
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Instances\NewInstanceView.g.cs
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Instances\NewLocalInstanceView.g.cs
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Instances\InstanceOverviewView.baml
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\GhostLauncher.WPF.Core.dll
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\GhostLauncher.WPF.Core.pdb

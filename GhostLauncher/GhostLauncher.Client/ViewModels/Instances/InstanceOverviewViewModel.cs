@@ -2,8 +2,11 @@
 using System.Windows;
 using GalaSoft.MvvmLight.Command;
 using GhostLauncher.Client.BL;
-using GhostLauncher.Client.Entities.Instances;
-using GhostLauncher.Client.ViewModels.BaseViewModels;
+using GhostLauncher.Client.Common;
+using GhostLauncher.Core.Features.Interfaces;
+using GhostLauncher.Entities.Instances;
+using GhostLauncher.WPF.Core.BaseViewModels;
+using Ninject;
 
 namespace GhostLauncher.Client.ViewModels.Instances
 {
@@ -16,6 +19,8 @@ namespace GhostLauncher.Client.ViewModels.Instances
         #endregion
 
         #region Private Properties
+
+        private IInstanceManager _instanceManager;
 
         #endregion
 
@@ -39,6 +44,7 @@ namespace GhostLauncher.Client.ViewModels.Instances
 
         public InstanceOverviewViewModel()
         {
+            _instanceManager = Startup.Kernel.Get<IInstanceManager>();
             InstanceCollection = new ObservableCollection<Instance>();
             RefreshInstances();
         }
@@ -50,7 +56,7 @@ namespace GhostLauncher.Client.ViewModels.Instances
         private void RefreshInstances()
         {
             InstanceCollection.Clear();
-            foreach (var instance in Manager.GetSingleton.InstanceManager.Instances)
+            foreach (var instance in _instanceManager.Instances)
             {
                 InstanceCollection.Add(instance);
             }
@@ -64,7 +70,7 @@ namespace GhostLauncher.Client.ViewModels.Instances
         {
             var result = MessageBox.Show("Do you want to delete this instance?", "Delete instance", MessageBoxButton.YesNo, MessageBoxImage.Warning);
             if (result != MessageBoxResult.Yes) return;
-            Manager.GetSingleton.InstanceManager.DeleteInstance(SelectedInstance);
+            _instanceManager.DeleteInstance(SelectedInstance);
             InstanceCollection.Remove(SelectedInstance);
         }
 

@@ -1,12 +1,9 @@
-﻿using System.Collections.ObjectModel;
-using System.Windows;
+﻿using System.Windows;
 using GalaSoft.MvvmLight.Command;
 using GhostLauncher.Client.BL;
-using GhostLauncher.Client.Entities.Instances;
 using GhostLauncher.Client.Tokens;
-using GhostLauncher.Client.ViewModels.BaseViewModels;
 using GhostLauncher.Client.ViewModels.Instances;
-using GhostLauncher.Client.Views;
+using GhostLauncher.WPF.Core.BaseViewModels;
 
 namespace GhostLauncher.Client.ViewModels
 {
@@ -107,7 +104,7 @@ namespace GhostLauncher.Client.ViewModels
 
         public static void OnClose()
         {
-            Manager.GetSingleton.CloseApp();
+            //Manager.GetSingleton.CloseApp();
         }
 
         #endregion

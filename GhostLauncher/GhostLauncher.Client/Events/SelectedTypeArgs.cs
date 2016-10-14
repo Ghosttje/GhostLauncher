@@ -1,10 +1,10 @@
 ﻿using System;
-using GhostLauncher.Client.Entities.Enums;
+using GhostLauncher.Entities.Enums;
 
 namespace GhostLauncher.Client.Events
 {
     public class SelectedTypeArgs : EventArgs
     {
-        public InstanceType InstanceType { get; set; }
+        public InstanceTypes InstanceType { get; set; }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using GhostLauncher.Core;
 using GhostLauncher.Entities.Enums;
 using GhostLauncher.Entities.Properties;
+using GhostLauncher.WPF.Core;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 

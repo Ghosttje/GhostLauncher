@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,24 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Elements\BlockingQueue.cs" />
-    <Compile Include="Helpers\JarHelper.cs" />
-    <Compile Include="Helpers\JsonHelper.cs" />
-    <Compile Include="Helpers\XmlHelper.cs" />
     <Compile Include="Manager.cs" />
-    <Compile Include="Managers\ConfigurationManager.cs" />
-    <Compile Include="Managers\DownloadManager.cs" />
-    <Compile Include="Managers\InstanceManager.cs" />
-    <Compile Include="Managers\VersionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs" />
-    <Compile Include="Tasks\FileDownloader.cs" />
-    <Compile Include="Threads\DownloadThread.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -75,10 +60,6 @@
     <ProjectReference Include="..\GhostLauncher.Client.Entities\GhostLauncher.Client.Entities.csproj">
       <Project>{b038d5ec-da48-4818-85a6-dde502033c24}</Project>
       <Name>GhostLauncher.Client.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GhostLauncher.Core\GhostLauncher.Core.csproj">
-      <Project>{9ea8738b-d57e-4cbb-93c0-38d0727b047a}</Project>
-      <Name>GhostLauncher.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\GhostLauncher.Entities\GhostLauncher.Entities.csproj">
       <Project>{db6101a5-1509-4086-a6cf-a26ff071446c}</Project>

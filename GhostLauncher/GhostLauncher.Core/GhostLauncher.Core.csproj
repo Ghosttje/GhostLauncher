@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,11 +48,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\NotifiesOnAttribute.cs" />
-    <Compile Include="NotifyPropertyChanged.cs" />
+    <Compile Include="Elements\BlockingQueue.cs" />
+    <Compile Include="Features\Configurations\ConfigurationService.cs" />
+    <Compile Include="Features\Configurations\XmlConfigHelper.cs" />
+    <Compile Include="Features\FileDownloads\DownloadManager.cs" />
+    <Compile Include="Features\FileDownloads\DownloadThread.cs" />
+    <Compile Include="Features\FileDownloads\FileDownloader.cs" />
+    <Compile Include="Features\FileDownloads\JarDownloadHelper.cs" />
+    <Compile Include="Features\Instances\InstanceManager.cs" />
+    <Compile Include="Features\Instances\JsonHelper.cs" />
+    <Compile Include="Features\Instances\VersionService.cs" />
+    <Compile Include="Features\Interfaces\IConfigurationService.cs" />
+    <Compile Include="Features\Interfaces\IDownloadManager.cs" />
+    <Compile Include="Features\Interfaces\IInstanceManager.cs" />
+    <Compile Include="Features\Interfaces\IVersionService.cs" />
+    <Compile Include="NinjectCore\CoreNinjectModuleBootstrapper.cs" />
+    <Compile Include="NinjectCore\Modules\FeatureModule.cs" />
+    <Compile Include="NinjectCore\Interfaces\INinjectModuleBootstrapper.cs" />
+    <Compile Include="NinjectCore\NinjectBootstrapperHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\GhostLauncher.Entities\GhostLauncher.Entities.csproj">
+      <Project>{db6101a5-1509-4086-a6cf-a26ff071446c}</Project>
+      <Name>GhostLauncher.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GhostLauncher.WPF.Core\GhostLauncher.WPF.Core.csproj">
+      <Project>{5814555F-7784-4B41-9DD9-2BCE973DC9DE}</Project>
+      <Name>GhostLauncher.WPF.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -40,25 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configurations\AppConfig.cs" />
-    <Compile Include="Enums\InstanceType.cs" />
-    <Compile Include="Instances\Instance.cs" />
     <Compile Include="Instances\LocalInstance.cs" />
     <Compile Include="Instances\RemoteInstance.cs" />
-    <Compile Include="Locations\InstanceFolder.cs" />
-    <Compile Include="Locations\InstanceLocation.cs" />
-    <Compile Include="Locations\InstancePath.cs" />
-    <Compile Include="Managers\FileDownload.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GhostLauncher.Core\GhostLauncher.Core.csproj">
-      <Project>{9ea8738b-d57e-4cbb-93c0-38d0727b047a}</Project>
-      <Name>GhostLauncher.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GhostLauncher.Entities\GhostLauncher.Entities.csproj">
       <Project>{db6101a5-1509-4086-a6cf-a26ff071446c}</Project>
       <Name>GhostLauncher.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GhostLauncher.WPF.Core\GhostLauncher.WPF.Core.csproj">
+      <Project>{5814555F-7784-4B41-9DD9-2BCE973DC9DE}</Project>
+      <Name>GhostLauncher.WPF.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
