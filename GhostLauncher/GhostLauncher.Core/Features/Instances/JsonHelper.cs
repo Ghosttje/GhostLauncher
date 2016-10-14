@@ -5,6 +5,8 @@ namespace GhostLauncher.Core.Features.Instances
 {
     public static class JsonHelper
     {
+        #region Functionality
+
         public static T ReadJson<T>(string path)
             where T : class
         {
@@ -24,5 +26,7 @@ namespace GhostLauncher.Core.Features.Instances
                 w.Write(json);
             }
         }
+
+        #endregion
     }
 }

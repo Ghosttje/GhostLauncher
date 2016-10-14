@@ -16,16 +16,26 @@ namespace GhostLauncher.Core.Features.FileDownloads
 
         #endregion
 
+        #region Constructors
+
         public JarDownloadHelper(IConfigurationService configurationService, DownloadManager downloadManager)
         {
             _configurationService = configurationService;
             _downloadManager = downloadManager;
         }
 
+        #endregion
+
+        #region Get / Set methods
+
         private string GetCachePath()
         {
             return _configurationService.Configuration.Cache;
         }
+
+        #endregion
+
+        #region Functionality
 
         public void GetFile(Instance instance)
         {
@@ -56,5 +66,7 @@ namespace GhostLauncher.Core.Features.FileDownloads
                 File.Copy(fileDownload.Url, instance.InstanceLocation.Path + _configurationService.Configuration.MinecraftFolderPath + fileDownload.Name + ".jar");
             }
         }
+
+        #endregion
     }
 }

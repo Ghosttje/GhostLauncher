@@ -32,6 +32,8 @@ namespace GhostLauncher.Core.Features.Instances
 
         #endregion
 
+        #region Get / Set methods
+
         private string GetInstanceConfigFile()
         {
             return _configurationService.Configuration.InstanceConfigFile;
@@ -41,6 +43,15 @@ namespace GhostLauncher.Core.Features.Instances
         {
             return instance.InstanceLocation.Path + instance.Name + "/";
         }
+
+        private string GetInstanceXmlPath(string dir)
+        {
+            return dir + "/" + _configurationService.Configuration.InstanceConfigFile;
+        }
+
+        #endregion
+
+        #region Functionality
 
         public void AddInstance(Instance instance)
         {
@@ -102,9 +113,6 @@ namespace GhostLauncher.Core.Features.Instances
             }
         }
 
-        private string GetInstanceXmlPath(string dir)
-        {
-            return dir + "/" + _configurationService.Configuration.InstanceConfigFile;
-        }
+        #endregion
     }
 }

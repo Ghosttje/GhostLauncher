@@ -5,6 +5,8 @@ namespace GhostLauncher.Core.Features.Configurations
 {
     public static class XmlConfigHelper
     {
+        #region Functionality
+
         public static T ReadConfig<T>(string path)
             where T : class
         {
@@ -26,5 +28,7 @@ namespace GhostLauncher.Core.Features.Configurations
             xmlWriter.Serialize(writer, config);
             writer.Close();
         }
+
+        #endregion
     }
 }
