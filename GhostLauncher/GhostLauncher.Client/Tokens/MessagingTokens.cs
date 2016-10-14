@@ -2,6 +2,7 @@
 {
     public enum MessagingTokens
     {
-        ChangeContentView
+        ChangeContentView,
+        SettingsRestartRequired
     }
 }

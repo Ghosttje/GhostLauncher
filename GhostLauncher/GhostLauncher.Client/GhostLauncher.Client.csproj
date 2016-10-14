@@ -111,6 +111,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\Startup.cs" />
+    <Compile Include="Factories\SettingsFactory.cs" />
     <Compile Include="Resources\InstanceResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -123,6 +124,8 @@
     <Compile Include="ViewModels\Instances\InstanceOverviewViewModel.cs" />
     <Compile Include="ViewModels\Instances\NewInstanceViewModel.cs" />
     <Compile Include="ViewModels\Instances\NewLocalInstanceViewModel.cs" />
+    <Compile Include="ViewModels\Settings\Interfaces\ISettingsViewModel.cs" />
+    <Compile Include="ViewModels\Settings\MainSettingsViewModel.cs" />
     <Compile Include="ViewModels\Settings\SettingsWindowViewModel.cs" />
     <Compile Include="ViewModels\Instances\VersionSelectorWindowViewModel.cs" />
     <Compile Include="Views\AboutWindow.xaml.cs">

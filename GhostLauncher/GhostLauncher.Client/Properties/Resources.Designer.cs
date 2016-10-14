@@ -163,5 +163,14 @@ namespace GhostLauncher.Client.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main.
+        /// </summary>
+        public static string Settings_Menu_Main {
+            get {
+                return ResourceManager.GetString("Settings_Menu_Main", resourceCulture);
+            }
+        }
     }
 }

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\SettingsTypeUnkownException.cs" />
     <Compile Include="Instances\LocalInstance.cs" />
     <Compile Include="Instances\RemoteInstance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
