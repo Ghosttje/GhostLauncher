@@ -55,6 +55,7 @@ namespace GhostLauncher.Client.ViewModels.Instances
         private void RefreshInstances()
         {
             InstanceCollection.Clear();
+            _instanceManager.LoadInstances();
             foreach (var instance in _instanceManager.Instances)
             {
                 InstanceCollection.Add(instance);

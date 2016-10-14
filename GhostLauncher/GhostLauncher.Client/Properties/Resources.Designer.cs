@@ -101,6 +101,24 @@ namespace GhostLauncher.Client.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add normal instance.
+        /// </summary>
+        internal static string NewInstance_Normal {
+            get {
+                return ResourceManager.GetString("NewInstance_Normal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add server instance.
+        /// </summary>
+        internal static string NewInstance_Server {
+            get {
+                return ResourceManager.GetString("NewInstance_Server", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Settings {

@@ -11,6 +11,7 @@ namespace GhostLauncher.Core.Features.Interfaces
         void AddInstance(Instance instance);
         void DeleteInstance(Instance instance);
         void SetupStructure(Instance instance);
+        void LoadInstances();
         void FindInstances(InstanceLocation folder);
     }
 }

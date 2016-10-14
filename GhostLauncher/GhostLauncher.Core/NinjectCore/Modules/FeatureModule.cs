@@ -10,10 +10,10 @@ namespace GhostLauncher.Core.NinjectCore.Modules
     {
         public override void Load()
         {
-            Bind<IConfigurationService>().To<ConfigurationService>();
-            Bind<IInstanceManager>().To<InstanceManager>();
-            Bind<IVersionService>().To<VersionService>();
-            Bind<IDownloadManager>().To<DownloadManager>();
+            Bind<IConfigurationService>().To<ConfigurationService>().InSingletonScope();
+            Bind<IInstanceManager>().To<InstanceManager>().InSingletonScope();
+            Bind<IVersionService>().To<VersionService>().InSingletonScope();
+            Bind<IDownloadManager>().To<DownloadManager>().InSingletonScope();
         }
     }
 }

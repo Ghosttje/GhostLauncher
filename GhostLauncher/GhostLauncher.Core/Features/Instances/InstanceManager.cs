@@ -79,6 +79,14 @@ namespace GhostLauncher.Core.Features.Instances
             Directory.CreateDirectory(GetInstancePath(instance) + _configurationService.Configuration.MinecraftFolderPath);
         }
 
+        public void LoadInstances()
+        {
+            foreach (var instanceLocation in _configurationService.Configuration.InstanceLocations)
+            {
+                FindInstances(instanceLocation);
+            }
+        }
+
         public void FindInstances(InstanceLocation folder)
         {
             if (!Directory.Exists(folder.Path))
