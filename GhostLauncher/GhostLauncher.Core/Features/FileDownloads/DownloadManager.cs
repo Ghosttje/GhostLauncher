@@ -15,15 +15,25 @@ namespace GhostLauncher.Core.Features.FileDownloads
 
         #endregion
 
+        #region Properties
+
         public BlockingQueue<FileDownload> Files { get; set; }
         public readonly List<DownloadThread> DownloadThreads = new List<DownloadThread>();
-        
+
+        #endregion
+
+        #region Constructors
+
         public DownloadManager(IConfigurationService configurationService, int threadCount = 1)
         {
             _configurationService = configurationService;
             _threadCount = threadCount;
             Files = new BlockingQueue<FileDownload>();
         }
+
+        #endregion
+
+        #region Functionality
 
         public int ThreadCount
         {
@@ -74,5 +84,7 @@ namespace GhostLauncher.Core.Features.FileDownloads
                 Files.Close();
             }
         }
+
+        #endregion
     }
 }

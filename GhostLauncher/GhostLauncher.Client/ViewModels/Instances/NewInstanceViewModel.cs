@@ -39,7 +39,5 @@ namespace GhostLauncher.Client.ViewModels.Instances
         }
 
         #endregion
-
-
     }
 }

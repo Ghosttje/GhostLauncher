@@ -7,12 +7,13 @@ namespace GhostLauncher.Core.Features.Configurations
 {
     public class ConfigurationService : IConfigurationService
     {
+        #region Properties
+
         public AppConfig Configuration { get; set; }
 
-        private static string GetConfigUrl()
-        {
-            return Settings.Default.ConfigDirectory + "/" + Settings.Default.ConfigFileName;
-        }
+        #endregion
+
+        #region Init
 
         public void Init()
         {
@@ -29,6 +30,19 @@ namespace GhostLauncher.Core.Features.Configurations
             }
         }
 
+        #endregion
+
+        #region Get / Set methods
+
+        private static string GetConfigUrl()
+        {
+            return Settings.Default.ConfigDirectory + "/" + Settings.Default.ConfigFileName;
+        }
+
+        #endregion
+
+        #region Functionality
+
         public void LoadConfig()
         {
             Configuration = XmlConfigHelper.ReadConfig<AppConfig>(GetConfigUrl());
@@ -38,5 +52,7 @@ namespace GhostLauncher.Core.Features.Configurations
         {
             XmlConfigHelper.WriteConfig(GetConfigUrl(), Configuration);
         }
+
+        #endregion
     }
 }

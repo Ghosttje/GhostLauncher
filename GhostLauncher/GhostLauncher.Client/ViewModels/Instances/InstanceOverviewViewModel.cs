@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
 using GalaSoft.MvvmLight.Command;
-using GhostLauncher.Client.BL;
 using GhostLauncher.Client.Common;
 using GhostLauncher.Core.Features.Interfaces;
 using GhostLauncher.Entities.Instances;
@@ -20,7 +19,7 @@ namespace GhostLauncher.Client.ViewModels.Instances
 
         #region Private Properties
 
-        private IInstanceManager _instanceManager;
+        private readonly IInstanceManager _instanceManager;
 
         #endregion
 

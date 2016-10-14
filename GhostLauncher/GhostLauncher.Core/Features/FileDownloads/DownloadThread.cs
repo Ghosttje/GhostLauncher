@@ -17,7 +17,13 @@ namespace GhostLauncher.Core.Features.FileDownloads
 
         #endregion
 
+        #region Properties
+
         public bool IsRunning { set; get; }
+
+        #endregion
+
+        #region Constructors
 
         public DownloadThread(IConfigurationService configurationService, DownloadManager downloadManager)
         {
@@ -32,6 +38,19 @@ namespace GhostLauncher.Core.Features.FileDownloads
 
             thread.Start();
         }
+
+        #endregion
+
+        #region Get / Set methods
+
+        private string GetCachePath()
+        {
+            return _configurationService.Configuration.Cache;
+        }
+
+        #endregion
+
+        #region Functionality
 
         private void DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
@@ -57,9 +76,6 @@ namespace GhostLauncher.Core.Features.FileDownloads
 
         }
 
-        private string GetCachePath()
-        {
-            return _configurationService.Configuration.Cache;
-        }
+#endregion
     }
 }
