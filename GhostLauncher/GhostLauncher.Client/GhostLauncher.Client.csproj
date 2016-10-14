@@ -111,7 +111,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\Startup.cs" />
-    <Compile Include="Converters\DebugConverter.cs" />
     <Compile Include="Resources\InstanceResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,8 +123,8 @@
     <Compile Include="ViewModels\Instances\InstanceOverviewViewModel.cs" />
     <Compile Include="ViewModels\Instances\NewInstanceViewModel.cs" />
     <Compile Include="ViewModels\Instances\NewLocalInstanceViewModel.cs" />
-    <Compile Include="ViewModels\SettingsWindowViewModel.cs" />
-    <Compile Include="ViewModels\VersionSelectorWindowViewModel.cs" />
+    <Compile Include="ViewModels\Settings\SettingsWindowViewModel.cs" />
+    <Compile Include="ViewModels\Instances\VersionSelectorWindowViewModel.cs" />
     <Compile Include="Views\AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
@@ -141,10 +140,13 @@
     <Compile Include="Views\Instances\NewLocalInstanceView.xaml.cs">
       <DependentUpon>NewLocalInstanceView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SettingsWindow.xaml.cs">
+    <Compile Include="Views\Settings\MainSettingsView.xaml.cs">
+      <DependentUpon>MainSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\VersionSelectorWindow.xaml.cs">
+    <Compile Include="Views\Instances\VersionSelectorWindow.xaml.cs">
       <DependentUpon>VersionSelectorWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -166,7 +168,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -209,11 +211,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\SettingsWindow.xaml">
+    <Page Include="Views\Settings\MainSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\SettingsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\VersionSelectorWindow.xaml">
+    <Page Include="Views\Instances\VersionSelectorWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

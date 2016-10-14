@@ -1,15 +1,14 @@
 ﻿using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Command;
-using GhostLauncher.Client.BL;
 using GhostLauncher.Client.Common;
 using GhostLauncher.Client.Views;
-using GhostLauncher.Core.Features.Instances;
 using GhostLauncher.Core.Features.Interfaces;
 using GhostLauncher.Entities;
 using GhostLauncher.WPF.Core.BaseViewModels;
 using Ninject;
+using VersionSelectorWindow = GhostLauncher.Client.Views.Instances.VersionSelectorWindow;
 
-namespace GhostLauncher.Client.ViewModels
+namespace GhostLauncher.Client.ViewModels.Instances
 {
     public class VersionSelectorWindowViewModel : BaseWindowViewModel
     {

@@ -4,4 +4,7 @@
              StartupUri="Views/MainWindow.xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              d1P1:Ignorable="d"
              xmlns:d1P1="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <Application.Resources>
+        <ResourceDictionary Source="../Resources/ResourceDictionary.xaml" />
+    </Application.Resources>
 </Application> 

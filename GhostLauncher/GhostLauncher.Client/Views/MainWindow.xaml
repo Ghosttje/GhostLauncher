@@ -15,10 +15,6 @@
 
     <Window.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Resources/ResourceDictionary.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-
             <DataTemplate DataType="{x:Type pages:InstanceOverviewViewModel}">
                 <instances:InstanceOverviewView />
             </DataTemplate>

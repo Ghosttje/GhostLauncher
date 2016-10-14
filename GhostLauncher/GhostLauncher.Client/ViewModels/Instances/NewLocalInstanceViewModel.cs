@@ -7,6 +7,7 @@ using GhostLauncher.Client.Views;
 using GhostLauncher.Entities;
 using GhostLauncher.Entities.Locations;
 using GhostLauncher.WPF.Core.BaseViewModels;
+using VersionSelectorWindow = GhostLauncher.Client.Views.Instances.VersionSelectorWindow;
 
 namespace GhostLauncher.Client.ViewModels.Instances
 {

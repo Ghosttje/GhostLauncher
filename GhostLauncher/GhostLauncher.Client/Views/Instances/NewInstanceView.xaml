@@ -5,9 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:p="clr-namespace:GhostLauncher.Client.Properties"
              mc:Ignorable="d" d:DesignHeight="700" d:DesignWidth="800">
-    <UserControl.Resources>
-        <ResourceDictionary Source="../../Resources/ResourceDictionary.xaml" />
-    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />

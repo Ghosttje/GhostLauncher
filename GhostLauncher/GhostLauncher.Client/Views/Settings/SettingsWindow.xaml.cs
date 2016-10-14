@@ -1,4 +1,4 @@
-﻿namespace GhostLauncher.Client.Views
+﻿namespace GhostLauncher.Client.Views.Settings
 {
     /// <summary>
     /// Interaction logic for SettingsWindow.xaml

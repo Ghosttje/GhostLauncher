@@ -1,4 +1,4 @@
-﻿namespace GhostLauncher.Client.Views
+﻿namespace GhostLauncher.Client.Views.Instances
 {
     /// <summary>
     /// Interaction logic for VersionSelectorWindow.xaml

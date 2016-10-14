@@ -1,8 +1,8 @@
 ﻿using System.Windows;
 using GalaSoft.MvvmLight.Command;
-using GhostLauncher.Client.BL;
 using GhostLauncher.Client.Tokens;
 using GhostLauncher.Client.ViewModels.Instances;
+using GhostLauncher.Client.ViewModels.Settings;
 using GhostLauncher.WPF.Core.BaseViewModels;
 
 namespace GhostLauncher.Client.ViewModels

@@ -1,11 +1,7 @@
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client.csprojResolveAssemblyReference.cache
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\AboutWindow.baml
-C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\SettingsWindow.baml
-C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\VersionSelectorWindow.baml
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\AboutWindow.g.cs
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\MainWindow.g.cs
-C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\SettingsWindow.g.cs
-C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\VersionSelectorWindow.g.cs
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\App.g.cs
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\GhostLauncher.Client_MarkupCompile.cache
@@ -138,3 +134,10 @@ C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Instance
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Instances\InstanceOverviewView.baml
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\GhostLauncher.WPF.Core.dll
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\bin\Debug\GhostLauncher.WPF.Core.pdb
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Settings\SettingsWindow.g.cs
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Settings\SettingsWindow.baml
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Settings\MainSettingsView.baml
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Settings\MainSettingsView.g.cs
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Instances\VersionSelectorWindow.baml
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\App.baml
+C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Client\obj\Debug\Views\Instances\VersionSelectorWindow.g.cs

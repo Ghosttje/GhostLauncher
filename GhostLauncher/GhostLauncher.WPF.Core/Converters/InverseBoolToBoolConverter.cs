@@ -1,22 +1,19 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Globalization;
 using System.Windows.Data;
 
-namespace GhostLauncher.Client.Converters
+namespace GhostLauncher.WPF.Core.Converters
 {
-    public class DebugConverter : IValueConverter
+    public class InverseBoolToBoolConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            Debugger.Break();
-            return value;
+            return !(bool)value;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            Debugger.Break();
-            return value;
+            throw new NotSupportedException();
         }
     }
 }
