@@ -9,9 +9,7 @@ C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\obj\Debug\GhostLaunche
 E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\GhostLauncher.Entities.dll.config
 E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\GhostLauncher.Entities.dll
 E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\GhostLauncher.Entities.pdb
-E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\GhostLauncher.Core.dll
 E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\Newtonsoft.Json.dll
-E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\GhostLauncher.Core.pdb
 E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\Newtonsoft.Json.xml
 E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\obj\Debug\GhostLauncher.Entities.csprojResolveAssemblyReference.cache
 E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\obj\Debug\GhostLauncher.Entities.dll
@@ -27,3 +25,14 @@ C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\Microsoft.Pr
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
 C:\git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\GhostLauncher.WPF.Core.dll
+E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\GalaSoft.MvvmLight.dll
+E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\GhostLauncher.WPF.Core.pdb
+E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\GalaSoft.MvvmLight.pdb
+E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\GalaSoft.MvvmLight.xml
+E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+E:\Git\GhostLauncher\GhostLauncher\GhostLauncher.Entities\bin\Debug\GalaSoft.MvvmLight.Extras.xml
