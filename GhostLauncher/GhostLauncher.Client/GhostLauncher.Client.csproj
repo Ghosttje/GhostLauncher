@@ -236,10 +236,6 @@
     <Resource Include="Resources\Settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GhostLauncher.Client.BL\GhostLauncher.Client.BL.csproj">
-      <Project>{f7cec4d0-ffe7-4a3c-9be4-ec4c2ecd064d}</Project>
-      <Name>GhostLauncher.Client.BL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GhostLauncher.Client.Entities\GhostLauncher.Client.Entities.csproj">
       <Project>{b038d5ec-da48-4818-85a6-dde502033c24}</Project>
       <Name>GhostLauncher.Client.Entities</Name>
