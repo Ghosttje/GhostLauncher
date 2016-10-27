@@ -112,11 +112,6 @@
     </Compile>
     <Compile Include="Common\Startup.cs" />
     <Compile Include="Factories\SettingsFactory.cs" />
-    <Compile Include="Resources\InstanceResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InstanceResources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Tokens\MessagingTokens.cs" />
     <Compile Include="Validators\NameValidator.cs" />
     <Compile Include="ViewModels\AboutWindowViewModel.cs" />
@@ -175,10 +170,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\InstanceResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>InstanceResources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -228,12 +219,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\About.png" />
-    <Resource Include="Resources\Add-Instance.png" />
-    <Resource Include="Resources\Add-New.png" />
-    <Resource Include="Resources\Add-Server.png" />
-    <Resource Include="Resources\mclogo.png" />
-    <Resource Include="Resources\Settings.png" />
+    <Resource Include="Resources\Images\About.png" />
+    <Resource Include="Resources\Images\Add-Instance.png" />
+    <Resource Include="Resources\Images\Add-New.png" />
+    <Resource Include="Resources\Images\Add-Server.png" />
+    <Resource Include="Resources\Images\mclogo.png" />
+    <Resource Include="Resources\Images\Settings.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GhostLauncher.Client.Entities\GhostLauncher.Client.Entities.csproj">

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using GhostLauncher.Client.Tokens;
-using GhostLauncher.Client.ViewModels.Settings.Interfaces;
+﻿using GhostLauncher.Client.ViewModels.Settings.Interfaces;
 using GhostLauncher.WPF.Core.BaseViewModels;
 
 namespace GhostLauncher.Client.ViewModels.Settings
