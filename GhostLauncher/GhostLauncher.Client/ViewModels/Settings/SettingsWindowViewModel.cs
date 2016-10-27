@@ -39,8 +39,6 @@ namespace GhostLauncher.Client.ViewModels.Settings
         [NotifiesOn(nameof(SelectedSettingItem))]
         public ISettingsViewModel CurrentPageViewModel => GetSettingsViewModel(SelectedSettingItem);
 
-        public Window View { get; set; }
-
         private List<ISettingsViewModel> CachedSettingViewModels { get; set; }
 
         public bool IsRestartRequired
@@ -110,19 +108,19 @@ namespace GhostLauncher.Client.ViewModels.Settings
 
         private void OnCancel()
         {
-            //Properties.Settings.Default.Reload();
+            Properties.Settings.Default.Reload();
             View.Close();
         }
 
         private void OnDefault()
         {
-            //Properties.Settings.Default.Reset();
+            Properties.Settings.Default.Reset();
             View.Close();
         }
 
         private void OnRestart()
         {
-            //SaveSettings();
+            SaveSettings();
             Application.Current.Shutdown();
             System.Windows.Forms.Application.Restart();
         }

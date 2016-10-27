@@ -24,7 +24,7 @@ namespace GhostLauncher.WPF.Core.BaseViewModels
 
         public Window GetWindow()
         {
-            return (Window)View;
+            return View;
         }
 
         #endregion

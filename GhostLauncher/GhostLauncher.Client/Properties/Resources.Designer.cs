@@ -165,6 +165,15 @@ namespace GhostLauncher.Client.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Instance locations.
+        /// </summary>
+        public static string Settings_InstanceLocations_Title {
+            get {
+                return ResourceManager.GetString("Settings_InstanceLocations_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Main.
         /// </summary>
         public static string Settings_Menu_Main {

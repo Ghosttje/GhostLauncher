@@ -3,8 +3,39 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d">
-    <Grid>
-        
+        xmlns:p="clr-namespace:GhostLauncher.Client.Properties"
+        mc:Ignorable="d" Style="{StaticResource SettingsPage}">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Row="0" Header="{x:Static p:Resources.Settings_InstanceLocations_Title}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200px" />
+                    <ColumnDefinition Width="80px" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <ListView Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Height="200">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Location" />
+                            <GridViewColumn Header="Type" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                
+                <Button Grid.Row="0" Grid.Column="1" Content="Add" Margin="2px" />
+                <Button Grid.Row="1" Grid.Column="1" Content="Remove" Margin="2px" />
+            </Grid>
+        </GroupBox>
     </Grid>
 </UserControl>
+

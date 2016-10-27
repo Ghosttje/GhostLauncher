@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight.Command;
 using GhostLauncher.Client.Tokens;
 using GhostLauncher.Client.ViewModels.Instances;
 using GhostLauncher.Client.ViewModels.Settings;
+using GhostLauncher.Client.Views.Settings;
 using GhostLauncher.WPF.Core.BaseViewModels;
 
 namespace GhostLauncher.Client.ViewModels
@@ -88,6 +89,11 @@ namespace GhostLauncher.Client.ViewModels
             {
                 _settingsWindowViewModel = new SettingsWindowViewModel();
                 _settingsWindowViewModel.GetWindow().Owner = GetWindow();
+            }
+            else
+            {
+                var settingsWindow = new SettingsWindow {DataContext = _settingsWindowViewModel};
+                _settingsWindowViewModel.View = settingsWindow;
             }
             _settingsWindowViewModel.GetWindow().Show();
         }
