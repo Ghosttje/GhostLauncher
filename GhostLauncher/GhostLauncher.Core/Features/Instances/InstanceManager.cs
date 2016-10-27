@@ -95,7 +95,7 @@ namespace GhostLauncher.Core.Features.Instances
             }
             else
             {
-                if (folder.GetType() == typeof(InstanceFolder))
+                if (folder.GetType() == typeof(InstancesFolder))
                 {
                     var dirs = Directory.GetDirectories(folder.Path);
 

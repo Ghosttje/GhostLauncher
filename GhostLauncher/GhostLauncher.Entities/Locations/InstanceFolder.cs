@@ -1,6 +1,6 @@
 ﻿namespace GhostLauncher.Entities.Locations
 {
-    public class InstanceFolder : InstanceLocation
+    public class InstancesFolder : InstanceLocation
     {
         public string Name
         {

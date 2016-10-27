@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add_Label" xml:space="preserve">
+    <value>Add</value>
+  </data>
   <data name="Cancel_Label" xml:space="preserve">
     <value>Cancel</value>
   </data>
   <data name="Default_Label" xml:space="preserve">
     <value>Default</value>
+  </data>
+  <data name="InstanceType_Folder" xml:space="preserve">
+    <value>Instance folder</value>
+  </data>
+  <data name="InstanceType_Path" xml:space="preserve">
+    <value>Single instance</value>
   </data>
   <data name="NewInstance_Normal" xml:space="preserve">
     <value>Add normal instance</value>
@@ -131,6 +140,9 @@
   </data>
   <data name="Ok_Label" xml:space="preserve">
     <value>OK</value>
+  </data>
+  <data name="Remove_Label" xml:space="preserve">
+    <value>Remove</value>
   </data>
   <data name="Restart_Label" xml:space="preserve">
     <value>Restart application</value>

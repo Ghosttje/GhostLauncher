@@ -37,15 +37,15 @@ namespace GhostLauncher.Client.ViewModels.Instances
             set { SetPropertyValue(value); }
         }
 
-        public ObservableCollection<InstanceFolder> InstanceFolders
+        public ObservableCollection<InstancesFolder> InstanceFolders
         {
-            get { return GetPropertyValue<ObservableCollection<InstanceFolder>>(); }
+            get { return GetPropertyValue<ObservableCollection<InstancesFolder>>(); }
             set { SetPropertyValue(value); }
         }
 
-        public InstanceFolder SelectedFolder
+        public InstancesFolder SelectedFolder
         {
-            get { return GetPropertyValue<InstanceFolder>(); }
+            get { return GetPropertyValue<InstancesFolder>(); }
             set { SetPropertyValue(value); }
         }
 
@@ -76,7 +76,7 @@ namespace GhostLauncher.Client.ViewModels.Instances
 
         public NewLocalInstanceViewModel()
         {
-            InstanceFolders = new ObservableCollection<InstanceFolder>();
+            InstanceFolders = new ObservableCollection<InstancesFolder>();
             IsFolderLocation = true;
 
             Init();

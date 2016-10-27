@@ -3,7 +3,7 @@ using GhostLauncher.WPF.Core;
 
 namespace GhostLauncher.Entities.Locations
 {
-    [XmlInclude(typeof(InstanceFolder))]
+    [XmlInclude(typeof(InstancesFolder))]
     [XmlInclude(typeof(InstancePath))]
     public class InstanceLocation: NotifyPropertyChanged
     {

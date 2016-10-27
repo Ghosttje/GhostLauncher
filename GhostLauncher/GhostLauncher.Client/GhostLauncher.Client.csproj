@@ -111,6 +111,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\Startup.cs" />
+    <Compile Include="Converters\InstanceLocationToStringConverter.cs" />
     <Compile Include="Factories\SettingsFactory.cs" />
     <Compile Include="Tokens\MessagingTokens.cs" />
     <Compile Include="Validators\NameValidator.cs" />

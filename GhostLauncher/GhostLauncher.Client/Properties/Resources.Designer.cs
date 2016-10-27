@@ -61,6 +61,15 @@ namespace GhostLauncher.Client.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string Add_Label {
+            get {
+                return ResourceManager.GetString("Add_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel_Label {
@@ -75,6 +84,24 @@ namespace GhostLauncher.Client.Properties {
         public static string Default_Label {
             get {
                 return ResourceManager.GetString("Default_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Instance folder.
+        /// </summary>
+        public static string InstanceType_Folder {
+            get {
+                return ResourceManager.GetString("InstanceType_Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Single instance.
+        /// </summary>
+        public static string InstanceType_Path {
+            get {
+                return ResourceManager.GetString("InstanceType_Path", resourceCulture);
             }
         }
         
@@ -102,6 +129,15 @@ namespace GhostLauncher.Client.Properties {
         public static string Ok_Label {
             get {
                 return ResourceManager.GetString("Ok_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        public static string Remove_Label {
+            get {
+                return ResourceManager.GetString("Remove_Label", resourceCulture);
             }
         }
         
