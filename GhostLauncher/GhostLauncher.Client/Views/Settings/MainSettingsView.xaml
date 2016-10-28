@@ -13,7 +13,7 @@
         <GroupBox Grid.Row="0" Header="{x:Static p:Resources.Settings_InstanceLocations_Title}">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="350px" />
+                    <ColumnDefinition Width="500px" />
                     <ColumnDefinition Width="80px" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
@@ -27,8 +27,25 @@
                           SelectedItem="{Binding SelectedInstanceLocation}">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Path}" />
+                            <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Path}" Width="315" />
                             <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Converter={StaticResource InstanceLocationToStringConverter}}" />
+                            <GridViewColumn Header="Default folder" Width="Auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Height="18">
+                                            <Image.Style>
+                                                <Style TargetType="{x:Type Image}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsDefault}" Value="True">
+                                                            <Setter Property="Source" Value="../../Resources/Images/Ok-Checkbox.png"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>

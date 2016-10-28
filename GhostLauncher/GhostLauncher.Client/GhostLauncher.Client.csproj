@@ -224,7 +224,6 @@
     <Resource Include="Resources\Images\Add-Instance.png" />
     <Resource Include="Resources\Images\Add-New.png" />
     <Resource Include="Resources\Images\Add-Server.png" />
-    <Resource Include="Resources\Images\mclogo.png" />
     <Resource Include="Resources\Images\Settings.png" />
   </ItemGroup>
   <ItemGroup>
@@ -247,6 +246,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\NinjectModules\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Ok-Checkbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Mc-Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,9 +10,8 @@
     <converters1:InstanceLocationToStringConverter x:Key="InstanceLocationToStringConverter" />
 
     <Style TargetType="Image" x:Key="InstanceLogo">
-        <Setter Property="Source" Value="Images/mclogo.png" />
+        <Setter Property="Source" Value="Images/Mc-Logo.png" />
     </Style>
-
     <Style TargetType="Image" x:Key="NewInstance">
         <Setter Property="Source" Value="Images/Add-New.png" />
     </Style>
@@ -27,6 +26,9 @@
     </Style>
     <Style TargetType="Image" x:Key="AddServer">
         <Setter Property="Source" Value="Images/Add-Server.png" />
+    </Style>
+    <Style TargetType="Image" x:Key="OkCheckbox">
+        <Setter Property="Source" Value="Images/Ok-Checkbox.png" />
     </Style>
 
     <!--Settings-->

@@ -14,7 +14,7 @@ namespace GhostLauncher.Client.ViewModels.Settings
     {
         #region Private Properties
 
-        private IConfigurationService _configurationService;
+        private readonly IConfigurationService _configurationService;
 
         #endregion
 
@@ -77,7 +77,7 @@ namespace GhostLauncher.Client.ViewModels.Settings
 
         private void OnRemoveInstanceLocation()
         {
-
+            InstanceLocations.Remove(SelectedInstanceLocation);
         }
 
         #endregion

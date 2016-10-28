@@ -22,7 +22,7 @@ namespace GhostLauncher.Core.Features.Configurations
             if (!File.Exists(GetConfigUrl()))
             {
                 Configuration = new AppConfig();
-                Configuration.InstanceLocations.Add(new InstancesFolder { Name = "DefaultInstance", IsDefault = true, Path = "instances/" });
+                Configuration.InstanceLocations.Add(new InstancesFolder { Name = "DefaultInstance", IsDefault = true, Path = "instances\\" });
                 SaveConfig();
             }
             else
