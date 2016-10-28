@@ -7,5 +7,7 @@ namespace GhostLauncher.Core.Features.Interfaces
         AppConfig Configuration { get; set; }
 
         void Init();
+        void LoadConfig();
+        void SaveConfig();
     }
 }

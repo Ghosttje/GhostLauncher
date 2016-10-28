@@ -1,8 +1,10 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows;
 using GalaSoft.MvvmLight.Command;
 using GhostLauncher.Client.Common;
 using GhostLauncher.Client.ViewModels.Settings.Interfaces;
+using GhostLauncher.Core.Extensions;
 using GhostLauncher.Core.Features.Interfaces;
 using GhostLauncher.Entities.Locations;
 using GhostLauncher.WPF.Core.BaseViewModels;
@@ -22,6 +24,9 @@ namespace GhostLauncher.Client.ViewModels.Settings
 
         public RelayCommand AddInstanceLocation => GetCommand(OnAddInstanceLocation);
         public RelayCommand RemoveInstanceLocation => GetCommand(OnRemoveInstanceLocation);
+        public RelayCommand ChangeDefaultInstanceFolder => GetCommand(OnDefaultInstanceFolderChanged);
+
+        private bool _instanceLocationsChanged;
 
         #endregion
 
@@ -39,8 +44,6 @@ namespace GhostLauncher.Client.ViewModels.Settings
             set { SetPropertyValue(value); }
         }
 
-        public bool HasChanges { get; set; }
-
         #endregion
 
         #region Constructors
@@ -56,14 +59,21 @@ namespace GhostLauncher.Client.ViewModels.Settings
 
         #region Functionality
 
-        bool ISettingsViewModel.HasChanges()
+        public bool HasChanges()
         {
-            return false;
+            return _instanceLocationsChanged;
         }
 
         public void ApplySettings()
         {
-            
+            if (_instanceLocationsChanged)
+            {
+                _configurationService.Configuration.InstanceLocations = InstanceLocations.ToList();
+            }
+            if (HasChanges())
+            {
+                _configurationService.SaveConfig();
+            }
         }
 
         #endregion
@@ -72,12 +82,24 @@ namespace GhostLauncher.Client.ViewModels.Settings
 
         private void OnAddInstanceLocation()
         {
-            
+            _instanceLocationsChanged = true;
         }
 
         private void OnRemoveInstanceLocation()
         {
             InstanceLocations.Remove(SelectedInstanceLocation);
+            _instanceLocationsChanged = true;
+        }
+
+        private void OnDefaultInstanceFolderChanged()
+        {
+            if (SelectedInstanceLocation.GetType() != typeof(InstancesFolder))
+            {
+                MessageBox.Show("Please select a instance folder instead!");
+                return;
+            }
+            InstanceLocations.SetDefaultFolder((InstancesFolder)SelectedInstanceLocation);
+            _instanceLocationsChanged = true;
         }
 
         #endregion

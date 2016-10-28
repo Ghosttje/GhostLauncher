@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Elements\BlockingQueue.cs" />
+    <Compile Include="Extensions\InstanceLocationListExtensions.cs" />
     <Compile Include="Features\Configurations\ConfigurationService.cs" />
     <Compile Include="Features\Configurations\XmlConfigHelper.cs" />
     <Compile Include="Features\FileDownloads\DownloadManager.cs" />

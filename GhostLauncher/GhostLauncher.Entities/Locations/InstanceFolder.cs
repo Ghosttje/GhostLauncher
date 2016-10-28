@@ -8,6 +8,9 @@
             set { SetPropertyValue(value); }
         }
 
-        public bool IsDefault { get; set; }
+        public bool IsDefault {
+            get { return GetPropertyValue<bool>(); }
+            set { SetPropertyValue(value); }
+        }
     }
 }
