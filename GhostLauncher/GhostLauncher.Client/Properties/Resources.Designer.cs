@@ -151,6 +151,15 @@ namespace GhostLauncher.Client.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add instance view.
+        /// </summary>
+        public static string Settings_AddInstance_View {
+            get {
+                return ResourceManager.GetString("Settings_AddInstance_View", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Instance locations.
         /// </summary>
         public static string Settings_InstanceLocations_Title {

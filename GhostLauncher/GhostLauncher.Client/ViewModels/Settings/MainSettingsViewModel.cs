@@ -4,6 +4,7 @@ using System.Windows;
 using GalaSoft.MvvmLight.Command;
 using GhostLauncher.Client.Common;
 using GhostLauncher.Client.ViewModels.Settings.Interfaces;
+using GhostLauncher.Client.Views.Settings;
 using GhostLauncher.Core.Extensions;
 using GhostLauncher.Core.Features.Interfaces;
 using GhostLauncher.Entities.Locations;
@@ -22,9 +23,9 @@ namespace GhostLauncher.Client.ViewModels.Settings
 
         #region Commands
 
-        public RelayCommand AddInstanceLocation => GetCommand(OnAddInstanceLocation);
-        public RelayCommand RemoveInstanceLocation => GetCommand(OnRemoveInstanceLocation);
-        public RelayCommand ChangeDefaultInstanceFolder => GetCommand(OnDefaultInstanceFolderChanged);
+        public RelayCommand AddInstanceLocationCommand => GetCommand(OnAddInstanceLocation);
+        public RelayCommand RemoveInstanceLocationCommand => GetCommand(OnRemoveInstanceLocation);
+        public RelayCommand ChangeDefaultInstanceFolderCommand => GetCommand(OnDefaultInstanceFolderChanged);
 
         private bool _instanceLocationsChanged;
 

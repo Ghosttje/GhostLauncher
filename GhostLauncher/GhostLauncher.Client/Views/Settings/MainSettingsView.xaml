@@ -54,11 +54,44 @@
                     </ListView.View>
                 </ListView>
 
-                <Button Grid.Row="0" Grid.Column="1" Content="{x:Static p:Resources.Add_Label}" Margin="2px" Command="{Binding AddInstanceLocation}" />
-                <Button Grid.Row="1" Grid.Column="1" Content="{x:Static p:Resources.Remove_Label}" Margin="2px" Command="{Binding RemoveInstanceLocation}" />
-                <Button Grid.Row="2" Grid.Column="1" Content="{x:Static p:Resources.Default_Label}" Margin="2px" Command="{Binding ChangeDefaultInstanceFolder}" />
+                <Button Grid.Row="0" Grid.Column="1" Content="{x:Static p:Resources.Add_Label}" Margin="2px" Command="{Binding AddInstanceLocationCommand}" />
+                <Button Grid.Row="1" Grid.Column="1" Content="{x:Static p:Resources.Remove_Label}" Margin="2px" Command="{Binding RemoveInstanceLocationCommand}" />
+                <Button Grid.Row="2" Grid.Column="1" Content="{x:Static p:Resources.Default_Label}" Margin="2px" Command="{Binding ChangeDefaultInstanceFolderCommand}" />
             </Grid>
         </GroupBox>
+        <Grid Grid.Row="1" Margin="5px">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <RadioButton GroupName="AddLocation" Grid.Row="0" Grid.Column="0">
+                <StackPanel Orientation="Vertical">
+                    <Image Height="256" Style="{StaticResource AddInstance}" />
+                    <TextBlock Text="{x:Static p:Resources.NewInstance_Normal}" FontSize="16" TextAlignment="Center" FontWeight="Bold" />
+                </StackPanel>
+            </RadioButton>
+            <RadioButton GroupName="AddLocation" Grid.Row="0" Grid.Column="1">
+                <StackPanel Orientation="Vertical">
+                    <Image Height="256" Style="{StaticResource AddServer}" />
+                    <TextBlock Text="{x:Static p:Resources.NewInstance_Server}" FontSize="16" TextAlignment="Center" FontWeight="Bold" />
+                </StackPanel>
+            </RadioButton>
+            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="2px">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" />
+                <Button Grid.Column="1" Padding="5, 0, 5, 0" Content="..." />
+            </Grid>
+            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="{x:Static p:Resources.Add_Label}" Margin="2px" Command="{Binding AddLocationCommand}" />
+        </Grid>
     </Grid>
 </UserControl>
 

@@ -68,6 +68,7 @@ namespace GhostLauncher.Client.ViewModels.Settings
         private void RegisterSubscribers()
         {
             SubscribeForMessage<bool>(MessagingTokens.SettingsRestartRequired, message => IsRestartRequired = message);
+            SubscribeForMessage<string>(MessagingTokens.ChangeSettingsView, name => SelectedSettingItem = name);
         }
 
         #endregion
@@ -96,6 +97,12 @@ namespace GhostLauncher.Client.ViewModels.Settings
             Properties.Settings.Default.Save();
         }
 
+        private void CloseAndReload()
+        {
+            Properties.Settings.Default.Reload();
+            View.Close();
+        }
+
         #endregion
 
         #region Command Events
@@ -108,14 +115,21 @@ namespace GhostLauncher.Client.ViewModels.Settings
 
         private void OnCancel()
         {
-            Properties.Settings.Default.Reload();
-            View.Close();
+            if (CachedSettingViewModels.Any(x => x.HasChanges()))
+            {
+                var result = MessageBox.Show("Are you sure you wanna discard all changes?", "Discard all changes?",
+                    MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.No)
+                {
+                    return;
+                }
+            }
+            CloseAndReload();
         }
 
         private void OnDefault()
         {
             Properties.Settings.Default.Reset();
-            View.Close();
         }
 
         private void OnRestart()
