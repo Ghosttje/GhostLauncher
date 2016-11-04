@@ -30,14 +30,14 @@
     <DockPanel>
         <ToolBarTray DockPanel.Dock="Top" IsLocked="True">
             <ToolBar ToolBar.OverflowMode="Never">
-                <Button Command="{Binding AddInstanceCommand}">
-                    <Image Style="{StaticResource NewInstance}" />
+                <Button Command="{Binding AddInstanceCommand}" Width="48" Height="48">
+                    <Image Source="{StaticResource NewInstance}" Margin="5" />
                 </Button>
-                <Button Command="{Binding SettingsCommand}">
-                    <Image Style="{StaticResource Settings}" />
+                <Button Command="{Binding SettingsCommand}" Width="48" Height="48">
+                    <Image Source="{StaticResource Settings}" Margin="5" />
                 </Button>
-                <Button Command="{Binding AboutCommand}">
-                    <Image Style="{StaticResource About}" />
+                <Button Command="{Binding AboutCommand}" Width="48" Height="48">
+                    <Image Source="{StaticResource About}" Margin="5" />
                 </Button>
             </ToolBar>
         </ToolBarTray>

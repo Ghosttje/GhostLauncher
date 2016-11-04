@@ -46,7 +46,7 @@
                                                         <Style TargetType="{x:Type Image}">
                                                             <Style.Triggers>
                                                                 <DataTrigger Binding="{Binding IsDefault}" Value="True">
-                                                                    <Setter Property="Source" Value="../../Resources/Images/Ok-Checkbox.png"/>
+                                                                    <Setter Property="Source" Value="{StaticResource OkCheckbox}"/>
                                                                 </DataTrigger>
                                                             </Style.Triggers>
                                                         </Style>
@@ -82,13 +82,13 @@
 
             <RadioButton GroupName="AddLocation" Grid.Row="0" Grid.Column="0" VerticalContentAlignment="Center" HorizontalAlignment="Center">
                 <StackPanel Orientation="Vertical">
-                    <Image Height="150" Style="{StaticResource AddInstance}" />
+                    <Image Height="100" Source="{StaticResource PathLocation}" />
                     <TextBlock Text="{x:Static p:Resources.NewInstance_Normal}" FontSize="16" TextAlignment="Center" FontWeight="Bold" />
                 </StackPanel>
             </RadioButton>
             <RadioButton GroupName="AddLocation" Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Center">
                 <StackPanel Orientation="Vertical">
-                    <Image Height="150" Style="{StaticResource AddServer}" />
+                    <Image Height="100" Source="{StaticResource FolderLocation}" />
                     <TextBlock Text="{x:Static p:Resources.NewInstance_Server}" FontSize="16" TextAlignment="Center" FontWeight="Bold" />
                 </StackPanel>
             </RadioButton>

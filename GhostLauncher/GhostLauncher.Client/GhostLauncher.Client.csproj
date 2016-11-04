@@ -220,13 +220,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\About.png" />
-    <Resource Include="Resources\Images\Add-Instance.png" />
-    <Resource Include="Resources\Images\Add-New.png" />
-    <Resource Include="Resources\Images\Add-Server.png" />
-    <Resource Include="Resources\Images\Settings.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\GhostLauncher.Client.Entities\GhostLauncher.Client.Entities.csproj">
       <Project>{b038d5ec-da48-4818-85a6-dde502033c24}</Project>
       <Name>GhostLauncher.Client.Entities</Name>
@@ -246,9 +239,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\NinjectModules\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images\Ok-Checkbox.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\Mc-Logo.png" />
