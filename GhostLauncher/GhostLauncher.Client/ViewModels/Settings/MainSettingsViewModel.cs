@@ -3,6 +3,8 @@ using System.Linq;
 using System.Windows;
 using GalaSoft.MvvmLight.Command;
 using GhostLauncher.Client.Common;
+using GhostLauncher.Client.Tokens;
+using GhostLauncher.Client.ViewModels.InstanceLocations;
 using GhostLauncher.Client.ViewModels.Settings.Interfaces;
 using GhostLauncher.Core.Extensions;
 using GhostLauncher.Core.Features.Interfaces;
@@ -27,9 +29,6 @@ namespace GhostLauncher.Client.ViewModels.Settings
         public RelayCommand RemoveInstanceLocationCommand => GetCommand(OnRemoveInstanceLocation);
         public RelayCommand ChangeDefaultInstanceFolderCommand => GetCommand(OnDefaultInstanceFolderChanged);
 
-        public RelayCommand AddLocationCommand => GetCommand(OnAddLocation);
-        public RelayCommand CancelAddLocationCommand => GetCommand(OnCancelAddLocaton);
-
         #endregion
 
         #region Properties
@@ -43,12 +42,6 @@ namespace GhostLauncher.Client.ViewModels.Settings
         public InstanceLocation SelectedInstanceLocation
         {
             get { return GetPropertyValue<InstanceLocation>(); }
-            set { SetPropertyValue(value); }
-        }
-
-        public bool AddInstanceLocationView
-        {
-            get { return GetPropertyValue<bool>(); }
             set { SetPropertyValue(value); }
         }
 
@@ -90,8 +83,8 @@ namespace GhostLauncher.Client.ViewModels.Settings
 
         private void OnAddInstanceLocation()
         {
+            PublishMessage(MessagingTokens.ChangeSettingsContentView, typeof(AddInstanceLocationViewModel));
             _instanceLocationsChanged = true;
-            AddInstanceLocationView = true;
         }
 
         private void OnRemoveInstanceLocation()
@@ -109,16 +102,6 @@ namespace GhostLauncher.Client.ViewModels.Settings
             }
             InstanceLocations.SetDefaultFolder((InstancesFolder)SelectedInstanceLocation);
             _instanceLocationsChanged = true;
-        }
-
-        private void OnAddLocation()
-        {
-            
-        }
-
-        private void OnCancelAddLocaton()
-        {
-            AddInstanceLocationView = false;
         }
 
         #endregion

@@ -5,104 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:p="clr-namespace:GhostLauncher.Client.Properties"
         mc:Ignorable="d" Style="{StaticResource SettingsPage}">
-    <Grid Margin="5">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <GroupBox Grid.Row="0" Header="{x:Static p:Resources.Settings_InstanceLocations_Title}">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="500px" />
-                            <ColumnDefinition Width="80px" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-
-                        <ListView Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Height="200" Margin="2px" ItemsSource="{Binding InstanceLocations}"
-                          SelectedItem="{Binding SelectedInstanceLocation}">
-                            <ListView.InputBindings>
-                                <KeyBinding Key="Delete" Command="{Binding Path=RemoveInstanceLocation}" />
-                            </ListView.InputBindings>
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Path}" Width="310" />
-                                    <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Converter={StaticResource InstanceLocationToStringConverter}}" />
-                                    <GridViewColumn Header="Default folder" Width="Auto">
-                                        <GridViewColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <Image Height="18">
-                                                    <Image.Style>
-                                                        <Style TargetType="{x:Type Image}">
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{Binding IsDefault}" Value="True">
-                                                                    <Setter Property="Source" Value="{StaticResource OkCheckbox}"/>
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </Image.Style>
-                                                </Image>
-                                            </DataTemplate>
-                                        </GridViewColumn.CellTemplate>
-                                    </GridViewColumn>
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
-
-                        <Button Grid.Row="0" Grid.Column="1" Content="{x:Static p:Resources.Add_Label}" Margin="2px" Command="{Binding AddInstanceLocationCommand}" />
-                        <Button Grid.Row="1" Grid.Column="1" Content="{x:Static p:Resources.Remove_Label}" Margin="2px" Command="{Binding RemoveInstanceLocationCommand}" />
-                        <Button Grid.Row="2" Grid.Column="1" Content="{x:Static p:Resources.Default_Label}" Margin="2px" Command="{Binding ChangeDefaultInstanceFolderCommand}" />
-                    </Grid>
-                </GroupBox>
-            </Grid>
-        </ScrollViewer>
-
-        <!-- Bottom Panel -->
-        <Grid Grid.Row="1" Margin="5px" Height="275px" Visibility="{Binding AddInstanceLocationView, Converter={StaticResource BooleanToVisibilityConverter}}">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
+    <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+        <Grid Margin="5">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
+            <GroupBox Grid.Row="0" Header="{x:Static p:Resources.Settings_InstanceLocations_Title}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="500px" />
+                        <ColumnDefinition Width="80px" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
 
-            <RadioButton GroupName="AddLocation" Grid.Row="0" Grid.Column="0" VerticalContentAlignment="Center" HorizontalAlignment="Center">
-                <StackPanel Orientation="Vertical">
-                    <Image Height="100" Source="{StaticResource PathLocation}" />
-                    <TextBlock Text="{x:Static p:Resources.NewInstance_Normal}" FontSize="16" TextAlignment="Center" FontWeight="Bold" />
-                </StackPanel>
-            </RadioButton>
-            <RadioButton GroupName="AddLocation" Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Center">
-                <StackPanel Orientation="Vertical">
-                    <Image Height="100" Source="{StaticResource FolderLocation}" />
-                    <TextBlock Text="{x:Static p:Resources.NewInstance_Server}" FontSize="16" TextAlignment="Center" FontWeight="Bold" />
-                </StackPanel>
-            </RadioButton>
-            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="2px">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-                <TextBox Grid.Column="0" />
-                <Button Grid.Column="1" Padding="5, 0, 5, 0" Content="..." />
-            </Grid>
-            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="{x:Static p:Resources.Add_Label}" Margin="2px" Command="{Binding AddLocationCommand}" />
-            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Content="{x:Static p:Resources.Cancel_Label}" Margin="2px" Command="{Binding CancelAddLocationCommand}" />
+                    <ListView Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Height="200" Margin="2px" ItemsSource="{Binding InstanceLocations}"
+                          SelectedItem="{Binding SelectedInstanceLocation}">
+                        <ListView.InputBindings>
+                            <KeyBinding Key="Delete" Command="{Binding Path=RemoveInstanceLocation}" />
+                        </ListView.InputBindings>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Path}" Width="310" />
+                                <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Converter={StaticResource InstanceLocationToStringConverter}}" />
+                                <GridViewColumn Header="Default folder" Width="Auto">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Height="18">
+                                                <Image.Style>
+                                                    <Style TargetType="{x:Type Image}">
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsDefault}" Value="True">
+                                                                <Setter Property="Source" Value="{StaticResource OkCheckbox}"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Image.Style>
+                                            </Image>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                    <Button Grid.Row="0" Grid.Column="1" Content="{x:Static p:Resources.Add_Label}" Margin="2px" Command="{Binding AddInstanceLocationCommand}" />
+                    <Button Grid.Row="1" Grid.Column="1" Content="{x:Static p:Resources.Remove_Label}" Margin="2px" Command="{Binding RemoveInstanceLocationCommand}" />
+                    <Button Grid.Row="2" Grid.Column="1" Content="{x:Static p:Resources.Default_Label}" Margin="2px" Command="{Binding ChangeDefaultInstanceFolderCommand}" />
+                </Grid>
+            </GroupBox>
         </Grid>
-    </Grid>
+    </ScrollViewer>
 </UserControl>
 

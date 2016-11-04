@@ -3,7 +3,6 @@ using System.Windows.Forms;
 using GalaSoft.MvvmLight.Command;
 using GhostLauncher.Client.Entities.Instances;
 using GhostLauncher.Client.Events;
-using GhostLauncher.Client.Views;
 using GhostLauncher.Entities;
 using GhostLauncher.Entities.Locations;
 using GhostLauncher.WPF.Core.BaseViewModels;

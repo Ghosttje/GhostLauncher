@@ -17,13 +17,13 @@
 
         <Button Grid.Row="0" Grid.Column="0" Command="{Binding AddInstanceCommand}">
             <StackPanel Orientation="Vertical">
-                <Image Height="256" Style="{StaticResource AddInstance}" />
+                <Image Height="206" Source="{StaticResource AddInstance}" Margin="50" />
                 <TextBlock Text="{x:Static p:Resources.NewInstance_Normal}" FontSize="16" TextAlignment="Center" FontWeight="Bold" />
             </StackPanel>
         </Button>
         <Button Grid.Row="0" Grid.Column="1" Command="{Binding AddServerCommand}" IsEnabled="False">
             <StackPanel Orientation="Vertical">
-                <Image Height="256" Style="{StaticResource AddServer}" />
+                <Image Height="206" Source="{StaticResource AddServer}" Margin="50" />
                 <TextBlock Text="{x:Static p:Resources.NewInstance_Server}" FontSize="16" TextAlignment="Center" FontWeight="Bold" />
             </StackPanel>
         </Button>

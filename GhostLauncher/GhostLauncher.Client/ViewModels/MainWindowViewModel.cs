@@ -103,7 +103,7 @@ namespace GhostLauncher.Client.ViewModels
             if (_aboutWindowViewModel == null)
             {
                 _aboutWindowViewModel = new AboutWindowViewModel();
-                _aboutWindowViewModel.GetWindow().Owner = (Window)View;
+                _aboutWindowViewModel.GetWindow().Owner = View;
             }
             _aboutWindowViewModel.GetWindow().Show();
         }

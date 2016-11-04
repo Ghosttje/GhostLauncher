@@ -116,12 +116,14 @@
     <Compile Include="Tokens\MessagingTokens.cs" />
     <Compile Include="Validators\NameValidator.cs" />
     <Compile Include="ViewModels\AboutWindowViewModel.cs" />
+    <Compile Include="ViewModels\InstanceLocations\AddInstanceLocationViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Instances\InstanceOverviewViewModel.cs" />
     <Compile Include="ViewModels\Instances\NewInstanceViewModel.cs" />
     <Compile Include="ViewModels\Instances\NewLocalInstanceViewModel.cs" />
     <Compile Include="ViewModels\Settings\Interfaces\ISettingsViewModel.cs" />
     <Compile Include="ViewModels\Settings\MainSettingsViewModel.cs" />
+    <Compile Include="ViewModels\Settings\SettingsViewModel.cs" />
     <Compile Include="ViewModels\Settings\SettingsWindowViewModel.cs" />
     <Compile Include="ViewModels\Instances\VersionSelectorWindowViewModel.cs" />
     <Compile Include="Views\AboutWindow.xaml.cs">
@@ -129,6 +131,9 @@
     </Compile>
     <Compile Include="Views\Instances\InstanceOverviewView.xaml.cs">
       <DependentUpon>InstanceOverviewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InstanceLocations\AddInstanceLocationView.xaml.cs">
+      <DependentUpon>AddInstanceLocationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -141,6 +146,9 @@
     </Compile>
     <Compile Include="Views\Settings\MainSettingsView.xaml.cs">
       <DependentUpon>MainSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Settings\SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
@@ -194,6 +202,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\InstanceLocations\AddInstanceLocationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -207,6 +219,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Settings\MainSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\SettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -3,6 +3,7 @@
     public enum MessagingTokens
     {
         ChangeContentView,
+        ChangeSettingsContentView,
         SettingsRestartRequired,
         ChangeSettingsView
     }
