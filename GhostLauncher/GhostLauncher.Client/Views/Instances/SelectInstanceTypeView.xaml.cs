@@ -5,9 +5,9 @@ namespace GhostLauncher.Client.Views.Instances
     /// <summary>
     /// Interaction logic for NewInstanceView.xaml
     /// </summary>
-    public partial class NewInstanceView : UserControl
+    public partial class SelectInstanceTypeView : UserControl
     {
-        public NewInstanceView()
+        public SelectInstanceTypeView()
         {
             InitializeComponent();
         }

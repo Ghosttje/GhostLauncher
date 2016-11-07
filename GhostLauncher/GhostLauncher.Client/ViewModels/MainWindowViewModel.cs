@@ -28,7 +28,7 @@ namespace GhostLauncher.Client.ViewModels
         private AboutWindowViewModel _aboutWindowViewModel;
 
         private InstanceOverviewViewModel _instanceOverviewViewModel;
-        private NewInstanceViewModel _instanceViewModel;
+        private SelectInstanceTypeViewModel _instanceViewModel;
 
         #endregion
 
@@ -78,7 +78,7 @@ namespace GhostLauncher.Client.ViewModels
         {
             if (_instanceViewModel == null)
             {
-                _instanceViewModel = new NewInstanceViewModel();
+                _instanceViewModel = new SelectInstanceTypeViewModel();
             }
             MainContentViewModel = _instanceViewModel;
         }

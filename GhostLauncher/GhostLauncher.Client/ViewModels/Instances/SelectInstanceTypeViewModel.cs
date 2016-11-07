@@ -4,7 +4,7 @@ using GhostLauncher.WPF.Core.BaseViewModels;
 
 namespace GhostLauncher.Client.ViewModels.Instances
 {
-    public class NewInstanceViewModel : BaseViewModel
+    public class SelectInstanceTypeViewModel : BaseViewModel
     {
         #region Commands
 

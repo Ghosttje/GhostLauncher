@@ -18,7 +18,7 @@
             <DataTemplate DataType="{x:Type pages:InstanceOverviewViewModel}">
                 <instances:InstanceOverviewView />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type pages:NewInstanceViewModel}">
+            <DataTemplate DataType="{x:Type pages:SelectInstanceTypeViewModel}">
                 <instances:NewInstanceView />
             </DataTemplate>
             <DataTemplate DataType="{x:Type pages:NewLocalInstanceViewModel}">
