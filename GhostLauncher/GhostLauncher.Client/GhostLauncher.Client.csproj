@@ -116,7 +116,8 @@
     <Compile Include="Tokens\MessagingTokens.cs" />
     <Compile Include="Validators\NameValidator.cs" />
     <Compile Include="ViewModels\AboutWindowViewModel.cs" />
-    <Compile Include="ViewModels\InstanceLocations\AddInstanceLocationViewModel.cs" />
+    <Compile Include="ViewModels\InstanceLocationWizard\SelectInstanceLocationTypeViewModel.cs" />
+    <Compile Include="ViewModels\InstanceLocationWizard\AddInstanceLocationViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Instances\InstanceOverviewViewModel.cs" />
     <Compile Include="ViewModels\Instances\SelectInstanceTypeViewModel.cs" />
@@ -129,13 +130,13 @@
     <Compile Include="Views\AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\InstanceLocations\AddInstanceLocationView.xaml.cs">
+    <Compile Include="Views\InstanceLocationWizard\AddInstanceLocationView.xaml.cs">
       <DependentUpon>AddInstanceLocationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Instances\InstanceOverviewView.xaml.cs">
       <DependentUpon>InstanceOverviewView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\InstanceLocations\SelectInstanceLocationTypeView.xaml.cs">
+    <Compile Include="Views\InstanceLocationWizard\SelectInstanceLocationTypeView.xaml.cs">
       <DependentUpon>SelectInstanceLocationTypeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
@@ -201,7 +202,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\InstanceLocations\AddInstanceLocationView.xaml">
+    <Page Include="Views\InstanceLocationWizard\AddInstanceLocationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -209,7 +210,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\InstanceLocations\SelectInstanceLocationTypeView.xaml">
+    <Page Include="Views\InstanceLocationWizard\SelectInstanceLocationTypeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

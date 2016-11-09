@@ -138,6 +138,12 @@
   <data name="NewInstance_Server" xml:space="preserve">
     <value>Add server instance</value>
   </data>
+  <data name="NewLocation_Folder" xml:space="preserve">
+    <value>Add folder</value>
+  </data>
+  <data name="NewLocation_Path" xml:space="preserve">
+    <value>Add path</value>
+  </data>
   <data name="Ok_Label" xml:space="preserve">
     <value>OK</value>
   </data>

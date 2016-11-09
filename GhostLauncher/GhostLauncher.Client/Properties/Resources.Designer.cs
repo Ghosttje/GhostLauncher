@@ -124,6 +124,24 @@ namespace GhostLauncher.Client.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add folder.
+        /// </summary>
+        public static string NewLocation_Folder {
+            get {
+                return ResourceManager.GetString("NewLocation_Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add path.
+        /// </summary>
+        public static string NewLocation_Path {
+            get {
+                return ResourceManager.GetString("NewLocation_Path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
         public static string Ok_Label {

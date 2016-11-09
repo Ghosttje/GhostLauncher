@@ -4,7 +4,8 @@ using System.Windows;
 using GalaSoft.MvvmLight.Command;
 using GhostLauncher.Client.Common;
 using GhostLauncher.Client.Tokens;
-using GhostLauncher.Client.ViewModels.InstanceLocations;
+using GhostLauncher.Client.ViewModels.InstanceLocationWizard;
+using GhostLauncher.Client.ViewModels.Instances;
 using GhostLauncher.Client.ViewModels.Settings.Interfaces;
 using GhostLauncher.Core.Extensions;
 using GhostLauncher.Core.Features.Interfaces;
@@ -83,7 +84,7 @@ namespace GhostLauncher.Client.ViewModels.Settings
 
         private void OnAddInstanceLocation()
         {
-            PublishMessage(MessagingTokens.ChangeSettingsContentView, typeof(AddInstanceLocationViewModel));
+            PublishMessage(MessagingTokens.ChangeSettingsContentView, typeof(SelectInstanceLocationTypeViewModel));
             _instanceLocationsChanged = true;
         }
 

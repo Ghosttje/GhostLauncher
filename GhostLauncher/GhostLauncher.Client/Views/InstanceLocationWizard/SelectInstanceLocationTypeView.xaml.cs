@@ -1,4 +1,4 @@
-﻿namespace GhostLauncher.Client.Views.InstanceLocations
+﻿namespace GhostLauncher.Client.Views.InstanceLocationWizard
 {
     /// <summary>
     /// Interaction logic for AddLocationTypeView.xaml

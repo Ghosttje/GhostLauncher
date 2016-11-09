@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Windows;
-using GhostLauncher.Client.Factories;
 using GhostLauncher.Client.Tokens;
-using GhostLauncher.Client.ViewModels.InstanceLocations;
-using GhostLauncher.Client.ViewModels.Settings.Interfaces;
+using GhostLauncher.Client.ViewModels.InstanceLocationWizard;
 using GhostLauncher.Client.Views.Settings;
 using GhostLauncher.WPF.Core.BaseViewModels;
 
@@ -15,6 +11,7 @@ namespace GhostLauncher.Client.ViewModels.Settings
         #region Private Properties
 
         private SettingsViewModel _settingsViewModel;
+        private SelectInstanceLocationTypeViewModel _selectLocationTypeViewModel;
         private AddInstanceLocationViewModel _addLocationViewModel;
 
         #endregion
@@ -34,7 +31,6 @@ namespace GhostLauncher.Client.ViewModels.Settings
         public SettingsWindowViewModel(string settingName = null) : base(new SettingsWindow())
         {
             _settingsViewModel = new SettingsViewModel(this, settingName);
-            _addLocationViewModel = new AddInstanceLocationViewModel();
             SettingsContentViewModel = _settingsViewModel;
 
             Subscribe();
@@ -68,6 +64,14 @@ namespace GhostLauncher.Client.ViewModels.Settings
                     _settingsViewModel = new SettingsViewModel(this);
                 }
                 SettingsContentViewModel = _settingsViewModel;
+            }
+            else if (type == typeof(SelectInstanceLocationTypeViewModel))
+            {
+                if (_selectLocationTypeViewModel == null)
+                {
+                    _selectLocationTypeViewModel = new SelectInstanceLocationTypeViewModel();
+                }
+                SettingsContentViewModel = _selectLocationTypeViewModel;
             }
             else if (type == typeof(AddInstanceLocationViewModel))
             {

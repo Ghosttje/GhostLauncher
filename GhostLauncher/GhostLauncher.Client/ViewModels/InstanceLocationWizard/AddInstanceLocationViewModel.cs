@@ -3,7 +3,7 @@ using GhostLauncher.Client.Tokens;
 using GhostLauncher.Client.ViewModels.Settings;
 using GhostLauncher.WPF.Core.BaseViewModels;
 
-namespace GhostLauncher.Client.ViewModels.InstanceLocations
+namespace GhostLauncher.Client.ViewModels.InstanceLocationWizard
 {
     public class AddInstanceLocationViewModel : BaseViewModel
     {

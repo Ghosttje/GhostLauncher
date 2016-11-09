@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:settings="clr-namespace:GhostLauncher.Client.Views.Settings"
         xmlns:settings1="clr-namespace:GhostLauncher.Client.ViewModels.Settings"
-        xmlns:instanceLocations="clr-namespace:GhostLauncher.Client.ViewModels.InstanceLocations"
-        xmlns:instanceLocations1="clr-namespace:GhostLauncher.Client.Views.InstanceLocations"
+        xmlns:instanceLocationWizard="clr-namespace:GhostLauncher.Client.ViewModels.InstanceLocationWizard"
+        xmlns:instanceLocationWizard1="clr-namespace:GhostLauncher.Client.Views.InstanceLocationWizard"
         Title="SettingsWindow" Height="600" Width="800"
         ResizeMode="CanMinimize">
     
@@ -13,8 +13,11 @@
             <DataTemplate DataType="{x:Type settings1:SettingsViewModel}">
                 <settings:SettingsView />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type instanceLocations:AddInstanceLocationViewModel}">
-                <instanceLocations1:AddInstanceLocationView />
+            <DataTemplate DataType="{x:Type instanceLocationWizard:SelectInstanceLocationTypeViewModel}">
+                <instanceLocationWizard1:SelectInstanceLocationTypeView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type instanceLocationWizard:AddInstanceLocationViewModel}">
+                <instanceLocationWizard1:AddInstanceLocationView />
             </DataTemplate>
         </ResourceDictionary>
     </Window.Resources>
